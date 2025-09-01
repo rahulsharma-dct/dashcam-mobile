@@ -1,0 +1,118 @@
+ {
+  "drivers": [
+    {
+      "status": "Moving",
+      "time": "03:30 PM",
+      "name": "TestDashCam-Volume",
+      "speed": "40 mph",
+      "location": "7014 E Cameback Rd, Scottsdale, AZ 85251",
+      "gpsLock": true,
+      "dropDownData":[
+        {
+          "lastCellConnect": "4m 11d ago",
+          "lastSatelliteConnect":"4m 11d ago",
+          "speedoMeter":500,
+          "truckSpeed":"00mph",
+          "volmeterReading":"25V",
+          "location":"NE",
+          "sattelite":"7"
+        }
+      ]
+    },
+    {
+      "status": "Power Disconnected",
+      "time": "03:30 PM",
+      "name": "TestDashCam-Volume",
+      "speed": "40 mph",
+      "location": "No GPS Lock?",
+      "gpsLock": false,
+      "dropDownData":[
+        {
+          "lastCellConnect": "4m 11d ago",
+          "lastSatelliteConnect":"4m 12d ago",
+          "speedoMeter":600,
+          "truckSpeed":"00mph",
+          "volmeterReading":"25V",
+          "location":"NE",
+          "sattelite":"7"
+        }
+      ]
+    },
+    {
+      "status": "Not Updated for 72 hrs",
+      "time": "03:30 PM",
+      "name": "TestDashCam-Volume",
+      "speed": "40 mph",
+      "location": "7014 E Cameback Rd, Scottsdale, AZ 85251",
+      "gpsLock": true,
+    "dropDownData":[
+        {
+          "lastCellConnect": "4m 11d ago",
+          "lastSatelliteConnect":"4m 11d ago",
+          "speedoMeter":700,
+          "truckSpeed":"00mph",
+          "volmeterReading":"25V",
+          "location":"NE",
+          "sattelite":"7"
+        }
+      ]
+    },
+    {
+      "status": "Vehicle Idling",
+      "time": "03:30 PM",
+      "name": "TestDashCam-Volume",
+      "speed": "40 mph",
+      "location": "7014 E Cameback Rd, Scottsdale, AZ 85251",
+      "gpsLock": true,
+      "dropDownData":[
+        {
+          "lastCellConnect": "4m 11d ago",
+          "lastSatelliteConnect":"4m 11d ago",
+          "speedoMeter":800,
+          "truckSpeed":"00mph",
+          "volmeterReading":"25V",
+          "location":"NE",
+          "sattelite":"7"
+        }
+      ]
+    },
+    {
+      "status": "Vehicle Idling",
+      "time": "03:30 PM",
+      "name": "TestDashCam-Volume",
+      "speed": "40 mph",
+      "location": "No GPS Lock?",
+      "gpsLock": false,
+      "dropDownData":[
+        {
+          "lastCellConnect": "4m 11d ago",
+          "lastSatelliteConnect":"4m 11d ago",
+          "speedoMeter":500,
+          "truckSpeed":"00mph",
+          "volmeterReading":"25V",
+          "location":"NE",
+          "sattelite":"7"
+        }
+      ]
+    },
+    {
+      "status": "Vehicle Idling",
+      "time": "03:30 PM",
+      "name": "TestDashCam-Volume",
+      "speed": "40 mph",
+      "location": "No GPS Lock?",
+      "gpsLock": false,
+      "dropDownData":[
+        {
+          "lastCellConnect": "4m 11d ago",
+          "lastSatelliteConnect":"4m 11d ago",
+          "speedoMeter":200,
+          "truckSpeed":"55mph",
+          "volmeterReading":"25V",
+          "location":"NE",
+          "sattelite":"7"
+        }
+      ]
+    }
+  ]
+}

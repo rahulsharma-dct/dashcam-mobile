@@ -1,0 +1,137 @@
+{
+  "drivers": [
+    {
+      "status": "Moving",
+      "time": "03:30 PM",
+      "name": "DashCam-Alpha",
+      "speed": "42 mph",
+      "location": "7014 E Camelback Rd, Scottsdale, AZ 85251",
+      "gpsLock": true,
+      "dropDownData": [
+        {
+          "lastCellConnect": "3m 10d ago",
+          "lastSatelliteConnect": "3m 10d ago",
+          "speedoMeter": 520,
+          "truckSpeed": "40mph",
+          "volmeterReading": "24.8V",
+          "location": "NW",
+          "sattelite": "8"
+        }
+      ]
+    },
+    {
+      "status": "Power Disconnected",
+      "time": "03:45 PM",
+      "name": "DashCam-Beta",
+      "speed": "0 mph",
+      "location": "No GPS Lock?",
+      "gpsLock": false,
+      "dropDownData": [
+        {
+          "lastCellConnect": "5m 9d ago",
+          "lastSatelliteConnect": "5m 10d ago",
+          "speedoMeter": 610,
+          "truckSpeed": "00mph",
+          "volmeterReading": "25.1V",
+          "location": "SE",
+          "sattelite": "6"
+        }
+      ]
+    },
+    {
+      "status": "Not Updated for 72 hrs",
+      "time": "01:15 PM",
+      "name": "DashCam-Gamma",
+      "speed": "38 mph",
+      "location": "123 Main St, Phoenix, AZ 85004",
+      "gpsLock": true,
+      "dropDownData": [
+        {
+          "lastCellConnect": "6m 12d ago",
+          "lastSatelliteConnect": "6m 11d ago",
+          "speedoMeter": 720,
+          "truckSpeed": "35mph",
+          "volmeterReading": "24.5V",
+          "location": "SW",
+          "sattelite": "9"
+        }
+      ]
+    },
+    {
+      "status": "Vehicle Idling",
+      "time": "02:05 PM",
+      "name": "DashCam-Delta",
+      "speed": "0 mph",
+      "location": "456 Market St, Tempe, AZ 85281",
+      "gpsLock": true,
+      "dropDownData": [
+        {
+          "lastCellConnect": "2m 5d ago",
+          "lastSatelliteConnect": "2m 6d ago",
+          "speedoMeter": 810,
+          "truckSpeed": "00mph",
+          "volmeterReading": "25.2V",
+          "location": "NE",
+          "sattelite": "5"
+        }
+      ]
+    },
+    {
+      "status": "Vehicle Idling",
+      "time": "04:00 PM",
+      "name": "DashCam-Epsilon",
+      "speed": "0 mph",
+      "location": "No GPS Lock?",
+      "gpsLock": false,
+      "dropDownData": [
+        {
+          "lastCellConnect": "1m 3d ago",
+          "lastSatelliteConnect": "1m 3d ago",
+          "speedoMeter": 530,
+          "truckSpeed": "00mph",
+          "volmeterReading": "24.7V",
+          "location": "NW",
+          "sattelite": "4"
+        }
+      ]
+    },
+    {
+      "status": "Moving",
+      "time": "05:10 PM",
+      "name": "DashCam-Zeta",
+      "speed": "47 mph",
+      "location": "789 Broadway Rd, Mesa, AZ 85210",
+      "gpsLock": true,
+      "dropDownData": [
+        {
+          "lastCellConnect": "7m 8d ago",
+          "lastSatelliteConnect": "7m 8d ago",
+          "speedoMeter": 560,
+          "truckSpeed": "45mph",
+          "volmeterReading": "25V",
+          "location": "E",
+          "sattelite": "10"
+        }
+      ]
+    },
+    {
+      "status": "Moving",
+      "time": "06:20 PM",
+      "name": "DashCam-Eta",
+      "speed": "50 mph",
+      "location": "1600 S Priest Dr, Tempe, AZ 85281",
+      "gpsLock": true,
+      "dropDownData": [
+        {
+          "lastCellConnect": "8m 15d ago",
+          "lastSatelliteConnect": "8m 16d ago",
+          "speedoMeter": 590,
+          "truckSpeed": "48mph",
+          "volmeterReading": "25.3V",
+          "location": "W",
+          "sattelite": "11"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+.device-container {
+  margin: 30px auto;
+  background: #f8fbfc;
+  border-radius: 18px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.device-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+
+  padding: 16px 18px;
+}
+
+.device-title {
+  font-weight: 600;
+  font-size: 1.18rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.device-user {
+  position: relative;
+  background-color: #e7f6f8;
+  padding: 7px;
+  border-radius: 5px;
+}
+.device-badge {
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  background: #ee3342;
+  color: #fff;
+  font-size: 0.65rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+.icon-button-2 {
+  background: #f3f4f6;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+  .device-container {
+    border-radius: 0;
+    margin: 0 auto;
+  }
+}

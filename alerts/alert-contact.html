@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>alert</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="/account-settings/css/header.css" />
+    <link rel="stylesheet" href="alert-contact.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="margin: 0">
+    <div class="device-container">
+      <div class="device-topbar">
+        <button id="closeSidebar" class="icon-button-2">
+          <!-- Back Arrow -->
+          <svg
+            width="14"
+            height="12"
+            viewBox="0 0 14 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
+              fill="#5D5D5D"
+            />
+          </svg>
+        </button>
+        <div class="device-title">Alert Contacts</div>
+        <div class="device-user">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 8C8.06087 8 9.07828 7.57857 9.82843 6.82843C10.5786 6.07828 11 5.06087 11 4C11 2.93913 10.5786 1.92172 9.82843 1.17157C9.07828 0.421427 8.06087 0 7 0C5.93913 0 4.92172 0.421427 4.17157 1.17157C3.42143 1.92172 3 2.93913 3 4C3 5.06087 3.42143 6.07828 4.17157 6.82843C4.92172 7.57857 5.93913 8 7 8ZM5.57188 9.5C2.49375 9.5 0 11.9937 0 15.0719C0 15.5844 0.415625 16 0.928125 16H13.0719C13.5844 16 14 15.5844 14 15.0719C14 11.9937 11.5063 9.5 8.42813 9.5H5.57188Z"
+              fill="#27B9CD"
+            />
+          </svg>
+
+          <span class="device-badge">3</span>
+        </div>
+      </div>
+      <div class="alert-contact-card">
+        <div class="alert-tabs">
+          <div id="emailTab" class="alert-tab active">Email</div>
+          <div id="phoneTab" class="alert-tab">Phone Number</div>
+        </div>
+        <div id="emailContent" class="content-box">
+          <div class="alert-form-group">
+            <label>Email:</label>
+            <div style="display: flex; flex: 1; gap: 10px">
+              <input type="email" placeholder="Enter Email" />
+              <button class="alert-submit">Submit</button>
+            </div>
+          </div>
+          <button class="alert-btn alert-btn-blue">
+            Dashcam Alerts Settings
+          </button>
+          <button class="alert-btn alert-btn-grey">
+            Change Alert Settings
+          </button>
+          <div class="alert-list-section">
+            <div class="alert-list-header">
+              <span>Email</span>
+              <span class="alert-list-icon"
+                ><svg
+                  width="10"
+                  height="12"
+                  viewBox="0 0 10 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.00008 6.58268V2.39727L1.498 3.89935L0.666748 3.08268L3.58341 0.166016L6.50008 3.08268L5.66883 3.89935L4.16675 2.39727V6.58268H3.00008ZM7.08341 11.8327L4.16675 8.91602L4.998 8.09935L6.50008 9.60143V5.41602H7.66675V9.60143L9.16883 8.09935L10.0001 8.91602L7.08341 11.8327Z"
+                    fill="#364153"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="alert-list">
+              <div class="alert-list-item">
+                <span>bowerschristina@gmail.com</span>
+                <button class="alert-delete-btn">
+                  <svg
+                    width="11"
+                    height="13"
+                    viewBox="0 0 11 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.15989 12.5836C1.8211 12.5836 1.53132 12.463 1.29056 12.2217C1.0498 11.9804 0.929165 11.6911 0.928657 11.3539V1.91693H0.547705C0.439515 1.91693 0.349102 1.88036 0.276467 1.80722C0.203833 1.73407 0.167261 1.64341 0.166753 1.53522C0.166245 1.42703 0.202817 1.33661 0.276467 1.26398C0.350118 1.19134 0.440531 1.15503 0.547705 1.15503H3.21437C3.21437 0.997565 3.27278 0.860423 3.38961 0.743597C3.50643 0.626772 3.64358 0.568359 3.80104 0.568359H7.19913C7.35659 0.568359 7.49373 0.626772 7.61056 0.743597C7.72738 0.860423 7.78579 0.997565 7.78579 1.15503H10.4525C10.5606 1.15503 10.6511 1.1916 10.7237 1.26474C10.7963 1.33788 10.8329 1.42855 10.8334 1.53674C10.8339 1.64493 10.7973 1.73534 10.7237 1.80798C10.65 1.88061 10.5596 1.91693 10.4525 1.91693H10.0715V11.3531C10.0715 11.6914 9.95087 11.9809 9.7096 12.2217C9.46833 12.4624 9.17881 12.5831 8.84103 12.5836H2.15989ZM9.3096 1.91693H1.69056V11.3531C1.69056 11.4897 1.7345 11.602 1.82237 11.6899C1.91024 11.7777 2.02275 11.8217 2.15989 11.8217H8.84103C8.97767 11.8217 9.08992 11.7777 9.17779 11.6899C9.26567 11.602 9.3096 11.4897 9.3096 11.3531V1.91693ZM4.21094 10.2979C4.31913 10.2979 4.4098 10.2613 4.48294 10.1882C4.55608 10.115 4.5924 10.0246 4.59189 9.91692V3.82169C4.59189 3.7135 4.55532 3.62309 4.48218 3.55045C4.40903 3.47782 4.31837 3.44125 4.21018 3.44074C4.10199 3.44023 4.01158 3.4768 3.93894 3.55045C3.86631 3.6241 3.82999 3.71451 3.82999 3.82169V9.91692C3.82999 10.0251 3.86656 10.1155 3.9397 10.1882C4.01284 10.2613 4.10326 10.2979 4.21094 10.2979ZM6.78999 10.2979C6.89818 10.2979 6.98859 10.2613 7.06122 10.1882C7.13386 10.115 7.17018 10.0246 7.17018 9.91692V3.82169C7.17018 3.7135 7.1336 3.62309 7.06046 3.55045C6.98732 3.47731 6.89691 3.44074 6.78922 3.44074C6.68103 3.44074 6.59037 3.47731 6.51722 3.55045C6.44408 3.62359 6.40776 3.71401 6.40827 3.82169V9.91692C6.40827 10.0251 6.44484 10.1155 6.51799 10.1882C6.59113 10.2608 6.68179 10.2974 6.78999 10.2979Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="alert-list-item">
+                <span>vperez@yahoo.com</span>
+                <button class="alert-delete-btn">
+                  <svg
+                    width="11"
+                    height="13"
+                    viewBox="0 0 11 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.15989 12.5836C1.8211 12.5836 1.53132 12.463 1.29056 12.2217C1.0498 11.9804 0.929165 11.6911 0.928657 11.3539V1.91693H0.547705C0.439515 1.91693 0.349102 1.88036 0.276467 1.80722C0.203833 1.73407 0.167261 1.64341 0.166753 1.53522C0.166245 1.42703 0.202817 1.33661 0.276467 1.26398C0.350118 1.19134 0.440531 1.15503 0.547705 1.15503H3.21437C3.21437 0.997565 3.27278 0.860423 3.38961 0.743597C3.50643 0.626772 3.64358 0.568359 3.80104 0.568359H7.19913C7.35659 0.568359 7.49373 0.626772 7.61056 0.743597C7.72738 0.860423 7.78579 0.997565 7.78579 1.15503H10.4525C10.5606 1.15503 10.6511 1.1916 10.7237 1.26474C10.7963 1.33788 10.8329 1.42855 10.8334 1.53674C10.8339 1.64493 10.7973 1.73534 10.7237 1.80798C10.65 1.88061 10.5596 1.91693 10.4525 1.91693H10.0715V11.3531C10.0715 11.6914 9.95087 11.9809 9.7096 12.2217C9.46833 12.4624 9.17881 12.5831 8.84103 12.5836H2.15989ZM9.3096 1.91693H1.69056V11.3531C1.69056 11.4897 1.7345 11.602 1.82237 11.6899C1.91024 11.7777 2.02275 11.8217 2.15989 11.8217H8.84103C8.97767 11.8217 9.08992 11.7777 9.17779 11.6899C9.26567 11.602 9.3096 11.4897 9.3096 11.3531V1.91693ZM4.21094 10.2979C4.31913 10.2979 4.4098 10.2613 4.48294 10.1882C4.55608 10.115 4.5924 10.0246 4.59189 9.91692V3.82169C4.59189 3.7135 4.55532 3.62309 4.48218 3.55045C4.40903 3.47782 4.31837 3.44125 4.21018 3.44074C4.10199 3.44023 4.01158 3.4768 3.93894 3.55045C3.86631 3.6241 3.82999 3.71451 3.82999 3.82169V9.91692C3.82999 10.0251 3.86656 10.1155 3.9397 10.1882C4.01284 10.2613 4.10326 10.2979 4.21094 10.2979ZM6.78999 10.2979C6.89818 10.2979 6.98859 10.2613 7.06122 10.1882C7.13386 10.115 7.17018 10.0246 7.17018 9.91692V3.82169C7.17018 3.7135 7.1336 3.62309 7.06046 3.55045C6.98732 3.47731 6.89691 3.44074 6.78922 3.44074C6.68103 3.44074 6.59037 3.47731 6.51722 3.55045C6.44408 3.62359 6.40776 3.71401 6.40827 3.82169V9.91692C6.40827 10.0251 6.44484 10.1155 6.51799 10.1882C6.59113 10.2608 6.68179 10.2974 6.78999 10.2979Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="phoneContent" style="display: none">
+          <div class="phone-contact-card">
+            <form>
+              <label for="phoneInput" class="phone-label">Phone Number:</label>
+              <input
+                type="text"
+                id="phoneInput"
+                class="phone-input"
+                placeholder="Enter Phone Number"
+              />
+
+              <label class="phone-label" style="margin-top: 16px"
+                >Select Network:</label
+              >
+              <div class="network-group">
+                <label class="network-option"
+                  ><input type="radio" name="network" value="ATT" />
+                  AT&amp;T</label
+                >
+                <label class="network-option"
+                  ><input type="radio" name="network" value="TMobile" />
+                  T-Mobile</label
+                >
+                <label class="network-option"
+                  ><input type="radio" name="network" value="Verizon" />
+                  Verizon</label
+                >
+                <label class="network-option"
+                  ><input type="radio" name="network" value="Sprint" checked />
+                  Sprint</label
+                >
+              </div>
+
+              <button class="phone-submit" type="submit">Submit</button>
+            </form>
+            <div class="phone-list-section">
+              <div class="phone-list-header">
+                <span>Phone Contact</span>
+                <span class="phone-list-icon"
+                  ><svg
+                    width="10"
+                    height="12"
+                    viewBox="0 0 10 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.99996 6.58268V2.39727L1.49788 3.89935L0.666626 3.08268L3.58329 0.166016L6.49996 3.08268L5.66871 3.89935L4.16663 2.39727V6.58268H2.99996ZM7.08329 11.8327L4.16663 8.91602L4.99788 8.09935L6.49996 9.60143V5.41602H7.66663V9.60143L9.16871 8.09935L9.99996 8.91602L7.08329 11.8327Z"
+                      fill="#364153"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="phone-list">
+                <div class="phone-list-item">+636 315 981 6522</div>
+                <div class="phone-list-item">+636 315 981 6522</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const emailTab = document.getElementById("emailTab");
+      const phoneTab = document.getElementById("phoneTab");
+      const emailContent = document.getElementById("emailContent");
+      const phoneContent = document.getElementById("phoneContent");
+
+      emailTab.onclick = function () {
+        emailTab.classList.add("active");
+        phoneTab.classList.remove("active");
+        emailContent.style.display = "block";
+        phoneContent.style.display = "none";
+      };
+      phoneTab.onclick = function () {
+        phoneTab.classList.add("active");
+        emailTab.classList.remove("active");
+        phoneContent.style.display = "block";
+        emailContent.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

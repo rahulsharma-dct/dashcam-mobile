@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="subgroup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"
+    />
+  </head>
+  <body>
+    <header>
+      <button id="menuBtn" class="menu-btn" aria-label="Open menu">
+        <svg class="icon"><use href="#menu" /></svg>
+      </button>
+
+      <div class="user-icon" aria-label="User menu, 3 unread notifications">
+        <svg class="icon" width="16" height="16"><use href="#user" /></svg>
+        <span class="notification-badge" aria-hidden="true">3</span>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="header-container">
+        <button id="closeSidebar" class="icon-button-2">
+          <!-- Back Arrow -->
+          <svg
+            width="14"
+            height="12"
+            viewBox="0 0 14 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
+              fill="#5D5D5D"
+            />
+          </svg>
+        </button>
+        <h1 class="header-title">Menu</h1>
+      </div>
+
+      <div class="actions">
+        <div class="action-group">
+          <a href="./Home.html" class="action-btn">
+            <svg
+              width="19"
+              height="15"
+              viewBox="0 0 19 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.25 14.3778L6.25 12.6621V0.621509L12.25 2.33713V14.3778ZM13.25 14.3403V2.26213L17.2219 0.671509C17.7156 0.474634 18.25 0.837134 18.25 1.36838V11.8309C18.25 12.1371 18.0625 12.4121 17.7781 12.5278L13.25 14.3371V14.3403ZM0.721875 2.47151L5.25 0.662134V12.7371L1.27813 14.3278C0.784375 14.5246 0.25 14.1621 0.25 13.6309V3.16838C0.25 2.86213 0.4375 2.58713 0.721875 2.47151Z"
+                fill="#27B9CD"
+              />
+            </svg>
+            Return to Map
+          </a>
+
+          <a href="../DriverLog/Driver Log.html" class="action-btn">
+            <svg
+              width="15"
+              height="17"
+              viewBox="0 0 15 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.5 8.5C8.56087 8.5 9.57828 8.07857 10.3284 7.32843C11.0786 6.57828 11.5 5.56087 11.5 4.5C11.5 3.43913 11.0786 2.42172 10.3284 1.67157C9.57828 0.921427 8.56087 0.5 7.5 0.5C6.43913 0.5 5.42172 0.921427 4.67157 1.67157C3.92143 2.42172 3.5 3.43913 3.5 4.5C3.5 5.56087 3.92143 6.57828 4.67157 7.32843C5.42172 8.07857 6.43913 8.5 7.5 8.5ZM6.07188 10C2.99375 10 0.5 12.4937 0.5 15.5719C0.5 16.0844 0.915625 16.5 1.42813 16.5H13.5719C14.0844 16.5 14.5 16.0844 14.5 15.5719C14.5 12.4937 12.0063 10 8.92813 10H6.07188Z"
+                fill="#27B9CD"
+              />
+            </svg>
+            Drivers Card
+          </a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <div
+          class="menu-item"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 12px 14px;
+          "
+        >
+          <div style="display: flex; align-items: center; flex: 1">
+            <div style="display: flex; align-items: center">
+              <div class="menu-icon bg-cyan">
+                <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
+                  <path
+                    d="M8 0C10.21 0 12 1.79 12 4C12 6.21 10.21 8 8 8C5.79 8 4 6.21 4 4C4 1.79 5.79 0 8 0ZM8 2C6.9 2 6 2.9 6 4C6 5.1 6.9 6 8 6C9.1 6 10 5.11 10 4C10 2.89 9.11 2 8 2ZM8 9C10.67 9 16 10.33 16 13V16H0V13C0 10.33 5.33 9 8 9ZM8 10.9C5.03 10.9 1.9 12.36 1.9 13V14.1H14.1V13C14.1 12.36 10.97 10.9 8 10.9ZM9 18H7V20H9V18ZM13 18H11V20H13V18ZM5 18H3V20H5V18Z"
+                    fill="#27B9CD"
+                  />
+                </svg>
+              </div>
+              <div class="menu-text">
+                <h3>Account Settings</h3>
+                <p>Manage your account</p>
+              </div>
+            </div>
+            <div style="margin-left: auto">
+              <svg
+                id="menu-arrow"
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                fill="none"
+                style="cursor: pointer"
+              >
+                <path
+                  d="M13 1L7 7L1 0.999999"
+                  stroke="#BBBBBB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div id="menu-list" style="display: none; margin-top: 12px">
+            <a href="#" class="menu-link active">List Of Devices</a>
+            <a href="/account-settings/edit.html" class="menu-link"
+              >Add/Edit Device</a
+            >
+            <a href="/account-settings/change-password.html" class="menu-link"
+              >Change Password</a
+            >
+            <a href="/account-settings/change-timezone.html" class="menu-link"
+              >Change Timezone</a
+            >
+            <a href="/account-settings/view.html" class="menu-link"
+              >View/Edit Users</a
+            >
+            <a href="/account-settings/subgroup.html" class="menu-link"
+              >Subgroups</a
+            >
+            <a href="#" class="menu-link">Track Info Display Options</a>
+            <a href="#" class="menu-link">Asset Tracker Settings</a>
+            <a href="#" class="menu-link">Waterproof Locate Now</a>
+            <a href="#" class="menu-link">Pulsing Icon Settings</a>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <div style="display: flex; align-items: center">
+            <div class="menu-icon bg-cyan">
+              <svg
+                width="16"
+                height="20"
+                viewBox="0 0 16 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 17V15H2V8C2 6.61667 2.41667 5.3875 3.25 4.3125C4.08333 3.2375 5.16667 2.53333 6.5 2.2V1.5C6.5 1.08333 6.6458 0.72917 6.9375 0.4375C7.2292 0.14583 7.5833 0 8 0C8.4167 0 8.7708 0.14583 9.0625 0.4375C9.3542 0.72917 9.5 1.08333 9.5 1.5V2.2C10.8333 2.53333 11.9167 3.2375 12.75 4.3125C13.5833 5.3875 14 6.61667 14 8V15H16V17H0ZM8 20C7.45 20 6.9792 19.8042 6.5875 19.4125C6.1958 19.0208 6 18.55 6 18H10C10 18.55 9.8042 19.0208 9.4125 19.4125C9.0208 19.8042 8.55 20 8 20ZM4 15H12V8C12 6.9 11.6083 5.95833 10.825 5.175C10.0417 4.39167 9.1 4 8 4C6.9 4 5.95833 4.39167 5.175 5.175C4.39167 5.95833 4 6.9 4 8V15Z"
+                  fill="#D3332C"
+                />
+              </svg>
+            </div>
+            <div class="menu-text">
+              <h3>Alerts</h3>
+              <p>Manage alert settings</p>
+            </div>
+          </div>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L7 7L1 0.999999"
+              stroke="#BBBBBB"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div class="menu-item">
+          <div style="display: flex; align-items: center">
+            <div class="menu-icon bg-cyan">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.0589 10.0594C12.7651 10.3531 12.412 10.5 11.9995 10.5C11.587 10.5 11.2339 10.3531 10.9401 10.0594C10.6464 9.7656 10.4995 9.41248 10.4995 8.99998C10.4995 8.58749 10.6464 8.23437 10.9401 7.94062C11.2339 7.64687 11.587 7.5 11.9995 7.5C12.412 7.5 12.7651 7.64687 13.0589 7.94062C13.3526 8.23437 13.4995 8.58749 13.4995 8.99998C13.4995 9.41248 13.3526 9.7656 13.0589 10.0594Z"
+                  fill="#3F61E9"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.49011 13.228C8.48385 14.6967 9.98696 16.2873 11.9994 17.9998C14.0119 16.2873 15.515 14.6967 16.5087 13.228C17.5024 11.7593 17.9993 10.3999 17.9993 9.14992C17.9993 7.27494 17.3962 5.78121 16.19 4.66873C14.9837 3.55624 13.5869 3 11.9994 3C10.4119 3 9.01509 3.55624 7.80886 4.66873C6.60263 5.78121 5.99951 7.27494 5.99951 9.14992C5.99951 10.3999 6.49638 11.7593 7.49011 13.228ZM15.3931 12.1968C14.6556 13.3405 13.5244 14.6123 11.9994 16.0123C10.4744 14.6123 9.34321 13.3405 8.60572 12.1968C7.86823 11.053 7.49949 10.0374 7.49949 9.14992C7.49949 7.78744 7.93386 6.67183 8.8026 5.80309C9.67134 4.93435 10.7369 4.49998 11.9994 4.49998C13.2619 4.49998 14.3275 4.93435 15.1962 5.80309C16.065 6.67183 16.4993 7.78744 16.4993 9.14992C16.4993 10.0374 16.1306 11.053 15.3931 12.1968Z"
+                  fill="#3F61E9"
+                />
+                <path
+                  d="M17.8894 17.3019C17.524 17.18 17.1169 17.0684 16.6741 16.9695C16.9853 16.5864 17.4153 16.0469 17.6795 15.6729C19.7056 16.223 20.9998 17.0612 20.9998 18.0001C20.9998 19.657 16.9704 21.0001 11.9999 21.0001C7.02939 21.0001 3 19.657 3 18.0001C3 17.0612 4.29413 16.223 6.32027 15.6729C6.58005 16.0405 6.995 16.5587 7.33089 16.9684C6.88608 17.0675 6.47725 17.1796 6.11034 17.3019C5.39525 17.5402 4.91903 17.7913 4.649 18.0001C4.91903 18.209 5.39525 18.4601 6.11034 18.6984C7.54862 19.1779 9.63099 19.5001 11.9999 19.5001C14.3688 19.5001 16.4511 19.1779 17.8894 18.6984C18.6045 18.4601 19.0807 18.209 19.3508 18.0001C19.0807 17.7913 18.6045 17.5402 17.8894 17.3019Z"
+                  fill="#3F61E9"
+                />
+              </svg>
+            </div>
+            <div class="menu-text">
+              <h3>Geofencing</h3>
+              <p>Create & manage zones</p>
+            </div>
+          </div>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L7 7L1 0.999999"
+              stroke="#BBBBBB"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div class="menu-item">
+          <div style="display: flex; align-items: center">
+            <div class="menu-icon bg-red">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 18C6.7 18 4.69583 17.2375 2.9875 15.7125C1.27917 14.1875 0.3 12.2833 0.05 10H2.1C2.33333 11.7333 3.10417 13.1667 4.4125 14.3C5.72083 15.4333 7.25 16 9 16C10.95 16 12.6042 15.3208 13.9625 13.9625C15.3208 12.6042 16 10.95 16 9C16 7.05 15.3208 5.39583 13.9625 4.0375C12.6042 2.67917 10.95 2 9 2C7.85 2 6.775 2.26667 5.775 2.8C4.775 3.33333 3.93333 4.06667 3.25 5H6V7H0V1H2V3.35C2.85 2.28333 3.8875 1.45833 5.1125 0.875C6.3375 0.29167 7.6333 0 9 0C10.25 0 11.4208 0.2375 12.5125 0.7125C13.6042 1.1875 14.5542 1.82917 15.3625 2.6375C16.1708 3.44583 16.8125 4.39583 17.2875 5.4875C17.7625 6.57917 18 7.75 18 9C18 10.25 17.7625 11.4208 17.2875 12.5125C16.8125 13.6042 16.1708 14.5542 15.3625 15.3625C14.5542 16.1708 13.6042 16.8125 12.5125 17.2875C11.4208 17.7625 10.25 18 9 18ZM11.8 13.2L8 9.4V4H10V8.6L13.2 11.8L11.8 13.2Z"
+                  fill="#E15E1D"
+                />
+              </svg>
+            </div>
+            <div class="menu-text">
+              <a style="text-decoration: none" href="../track-history.html">
+                <h3>Track History</h3>
+                <p>Select vehicle & view history</p>
+              </a>
+            </div>
+          </div>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L7 7L1 0.999999"
+              stroke="#BBBBBB"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <!-- Example Menu Item -->
+        <div class="menu-item">
+          <div style="display: flex; align-items: center">
+            <div class="menu-icon bg-cyan">
+              <svg
+                width="18"
+                height="21"
+                viewBox="0 0 18 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9 0.0927734C11.3869 0.0927734 13.6761 1.04098 15.364 2.72881C17.0518 4.41664 18 6.70582 18 9.09277C18 12.1668 16.324 14.6828 14.558 16.4878C13.6757 17.3798 12.7129 18.1886 11.682 18.9038L11.256 19.1938L11.056 19.3268L10.679 19.5668L10.343 19.7718L9.927 20.0138C9.64463 20.1749 9.32513 20.2597 9 20.2597C8.67487 20.2597 8.35537 20.1749 8.073 20.0138L7.657 19.7718L7.137 19.4518L6.945 19.3268L6.535 19.0538C5.42283 18.3013 4.3869 17.4419 3.442 16.4878C1.676 14.6818 0 12.1668 0 9.09277C0 6.70582 0.948211 4.41664 2.63604 2.72881C4.32387 1.04098 6.61305 0.0927734 9 0.0927734ZM9 2.09277C7.14348 2.09277 5.36301 2.83027 4.05025 4.14303C2.7375 5.45578 2 7.23626 2 9.09277C2 11.4148 3.272 13.4528 4.871 15.0888C5.55853 15.7848 6.30166 16.4235 7.093 16.9988L7.551 17.3248C7.699 17.4281 7.84133 17.5241 7.978 17.6128L8.368 17.8628L8.711 18.0718L9 18.2408L9.455 17.9718L9.822 17.7418C10.0173 17.6178 10.2263 17.4788 10.449 17.3248L10.907 16.9988C11.6983 16.4235 12.4415 15.7848 13.129 15.0888C14.728 13.4538 16 11.4148 16 9.09277C16 7.23626 15.2625 5.45578 13.9497 4.14303C12.637 2.83027 10.8565 2.09277 9 2.09277ZM9 5.09277C10.0609 5.09277 11.0783 5.5142 11.8284 6.26435C12.5786 7.01449 13 8.03191 13 9.09277C13 10.1536 12.5786 11.1711 11.8284 11.9212C11.0783 12.6713 10.0609 13.0928 9 13.0928C7.93913 13.0928 6.92172 12.6713 6.17157 11.9212C5.42143 11.1711 5 10.1536 5 9.09277C5 8.03191 5.42143 7.01449 6.17157 6.26435C6.92172 5.5142 7.93913 5.09277 9 5.09277ZM9 7.09277C8.46957 7.09277 7.96086 7.30349 7.58579 7.67856C7.21071 8.05363 7 8.56234 7 9.09277C7 9.62321 7.21071 10.1319 7.58579 10.507C7.96086 10.8821 8.46957 11.0928 9 11.0928C9.53043 11.0928 10.0391 10.8821 10.4142 10.507C10.7893 10.1319 11 9.62321 11 9.09277C11 8.56234 10.7893 8.05363 10.4142 7.67856C10.0391 7.30349 9.53043 7.09277 9 7.09277Z"
+                  fill="#32A24C"
+                />
+              </svg>
+            </div>
+            <div class="menu-text">
+              <a style="text-decoration: none" href="../real-time.html">
+                <h3>Real Time Traking</h3>
+                <p>Live vehicle tracking</p>
+              </a>
+            </div>
+          </div>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L7 7L1 0.999999"
+              stroke="#BBBBBB"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div class="menu-item">
+          <div style="display: flex; align-items: center">
+            <div class="menu-icon bg-cyan">
+              <svg
+                width="20"
+                height="14"
+                viewBox="0 0 20 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 5L17.553 2.724C17.7054 2.64784 17.8748 2.61188 18.045 2.61955C18.2152 2.62721 18.3806 2.67825 18.5256 2.76781C18.6706 2.85736 18.7902 2.98248 18.8733 3.13127C18.9563 3.28007 18.9999 3.44761 19 3.618V10.382C18.9999 10.5524 18.9563 10.7199 18.8733 10.8687C18.7902 11.0175 18.6706 11.1426 18.5256 11.2322C18.3806 11.3218 18.2152 11.3728 18.045 11.3805C17.8748 11.3881 17.7054 11.3522 17.553 11.276L13 9V5ZM1 3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H11C11.5304 1 12.0391 1.21071 12.4142 1.58579C12.7893 1.96086 13 2.46957 13 3V11C13 11.5304 12.7893 12.0391 12.4142 12.4142C12.0391 12.7893 11.5304 13 11 13H3C2.46957 13 1.96086 12.7893 1.58579 12.4142C1.21071 12.0391 1 11.5304 1 11V3Z"
+                  stroke="#27B9CD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="menu-text">
+              <h3>Dashcam</h3>
+              <p>Photo & video settings</p>
+            </div>
+          </div>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L7 7L1 0.999999"
+              stroke="#BBBBBB"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <!-- Example Menu Item -->
+        <a href="../TravelLog/Travel Log.html" class="menu-item">
+          <div style="display: flex; align-items: center">
+            <div class="menu-icon bg-red">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 5H6C5.46957 5 4.96086 5.21071 4.58579 5.58579C4.21071 5.96086 4 6.46957 4 7V19C4 19.5304 4.21071 20.0391 4.58579 20.4142C4.96086 20.7893 5.46957 21 6 21H11.697M18 14V18H22M18 11V7C18 6.46957 17.7893 5.96086 17.4142 5.58579C17.0391 5.21071 16.5304 5 16 5H14"
+                  stroke="#D3332C"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 11H12M8 15H11M8 5C8 4.46957 8.21071 3.96086 8.58579 3.58579C8.96086 3.21071 9.46957 3 10 3H12C12.5304 3 13.0391 3.21071 13.4142 3.58579C13.7893 3.96086 14 4.46957 14 5C14 5.53043 13.7893 6.03914 13.4142 6.41421C13.0391 6.78929 12.5304 7 12 7H10C9.46957 7 8.96086 6.78929 8.58579 6.41421C8.21071 6.03914 8 5.53043 8 5ZM14 18C14 19.0609 14.4214 20.0783 15.1716 20.8284C15.9217 21.5786 16.9391 22 18 22C19.0609 22 20.0783 21.5786 20.8284 20.8284C21.5786 20.0783 22 19.0609 22 18C22 16.9391 21.5786 15.9217 20.8284 15.1716C20.0783 14.4214 19.0609 14 18 14C16.9391 14 15.9217 14.4214 15.1716 15.1716C14.4214 15.9217 14 16.9391 14 18Z"
+                  stroke="#D3332C"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="menu-text">
+              <h3>Reports & Analytics</h3>
+              <p>Analytics & data</p>
+            </div>
+          </div>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L7 7L1 0.999999"
+              stroke="#BBBBBB"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <main id="map"></main>
+
+    <section class="stats">
+      <div class="subgroups-container">
+        <div class="subgroups-header-row">
+          <button class="subgroups-back-btn">
+            <svg
+              width="14"
+              height="12"
+              viewBox="0 0 14 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
+                fill="#5D5D5D"
+              />
+            </svg>
+          </button>
+          <h2 class="subgroups-title">Subgroups</h2>
+        </div>
+        <div class="subgroups-toolbar">
+          <div class="subgroups-searchbar">
+            <svg width="20" height="20" fill="none" style="margin-left: 8px">
+              <circle cx="9" cy="9" r="7" stroke="#bbb" stroke-width="2" />
+              <path
+                d="M17 17L14 14"
+                stroke="#bbb"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <input
+              type="search"
+              class="subgroups-search"
+              placeholder="Search"
+            />
+          </div>
+          <button class="subgroups-add-btn">
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.00016 5.66536H5.66683V8.9987C5.66683 9.17551 5.59659 9.34508 5.47157 9.4701C5.34654 9.59513 5.17697 9.66536 5.00016 9.66536C4.82335 9.66536 4.65378 9.59513 4.52876 9.4701C4.40373 9.34508 4.3335 9.17551 4.3335 8.9987V5.66536H1.00016C0.823352 5.66536 0.653783 5.59513 0.528758 5.4701C0.403734 5.34508 0.333496 5.17551 0.333496 4.9987C0.333496 4.82189 0.403734 4.65232 0.528758 4.52729C0.653783 4.40227 0.823352 4.33203 1.00016 4.33203H4.3335V0.998698C4.3335 0.821887 4.40373 0.652317 4.52876 0.527293C4.65378 0.402269 4.82335 0.332031 5.00016 0.332031C5.17697 0.332031 5.34654 0.402269 5.47157 0.527293C5.59659 0.652317 5.66683 0.821887 5.66683 0.998698V4.33203H9.00016C9.17697 4.33203 9.34654 4.40227 9.47157 4.52729C9.59659 4.65232 9.66683 4.82189 9.66683 4.9987C9.66683 5.17551 9.59659 5.34508 9.47157 5.4701C9.34654 5.59513 9.17697 5.66536 9.00016 5.66536Z"
+                fill="white"
+              />
+            </svg>
+            Add
+          </button>
+        </div>
+        <!-- Table style list -->
+        <div class="subgroups-list"></div>
+      </div>
+    </section>
+
+    <!-- SVG sprite -->
+    <svg style="display: none">
+      <defs>
+        <symbol id="menu" viewBox="0 0 24 24">
+          <path
+            d="M4 6h16M4 12h16M4 18h16"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="user" viewBox="0 0 14 16">
+          <path
+            d="M7 8C8.06087 8 9.07828 7.57857 9.82843 6.82843C10.5786 6.07828 11 5.06087 11 4C11 2.93913 10.5786 1.92172 9.82843 1.17157C9.07828 0.421427 8.06087 0 7 0C5.93913 0 4.92172 0.421427 4.17157 1.17157C3.42143 1.92172 3 2.93913 3 4C3 5.06087 3.42143 6.07828 4.17157 6.82843C4.92172 7.57857 5.93913 8 7 8ZM5.57188 9.5C2.49375 9.5 0 11.9937 0 15.0719C0 15.5844 0.415625 16 0.928125 16H13.0719C13.5844 16 14 15.5844 14 15.0719C14 11.9937 11.5063 9.5 8.42813 9.5H5.57188Z"
+            fill="#27B9CD"
+          />
+        </symbol>
+        <symbol id="layers" viewBox="0 0 18 16">
+          <path
+            d="m9 11.047 7.36-4.507L18 5.541 9 .035 0 5.541 1.63 6.54m0 0L9 13.045l-7.38-4.507L0 9.529 9 15.035l9-5.506-1.63-.999L9 13.045Z"
+          />
+        </symbol>
+        <symbol id="car" viewBox="0 0 20 16">
+          <path
+            d="M1.5 0A1.5 1.5 0 0 0 0 1.5v10A1.5 1.5 0 0 0 1.5 13H2c0 1.656 1.344 3 3 3s3-1.344 3-3h4c0 1.656 1.344 3 3 3s3-1.344 3-3h1a1 1 0 0 0 1-1V9V8V7.416c0-.531-.209-1.04-.584-1.415L16.416 3c-.375-.375-.884-.584-1.415-.584H13V1.5A1.5 1.5 0 0 0 11.5 0h-10Zm11.5 5h1.584L17 7.416V8h-4V5Zm-7.928 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm9.928 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+            fill="#27B9CD"
+          />
+        </symbol>
+        <symbol id="route" viewBox="0 0 20 16">
+          <path
+            d="M16 3c0 1.569-1.847 3.909-2.644 4.844a.5.5 0 0 1-.453.156H10a1 1 0 0 0 0 2h3c1.656 0 3 1.344 3 3s-1.344 3-3 3H4.363c.272-.31.603-.707.937-1.15.197-.262.4-.55.594-.85H13a1 1 0 0 0 1-1 1 1 0 0 0-1-1h-3c-1.656 0-3-1.344-3-3 0-1.656 1.344-3 3-3h1.244c-.656-.984-1.244-2.116-1.244-3 0-1.656 1.344-3 3-3s3 1.344 3 3ZM3.66 15.284a.502.502 0 0 1-.703-.047C1.868 14.78 0 12.578 0 11c0-1.656 1.344-3 3-3s3 1.344 3 3c0 .938-.659 2.094-1.359 3.06-.335.459-.678.875-.963 1.203Zm9.34-11.284a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+            fill="#27B9CD"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const menuBtn = document.getElementById("menuBtn");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.add("active");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+      });
+
+      const platform = new H.service.Platform({
+        apikey: "kre4_OutjD9fpCNKHjwXfTrSbGWhVo7cG7id5zP2ULE",
+      });
+
+      const defaultLayers = platform.createDefaultLayers();
+
+      const map = new H.Map(
+        document.getElementById("map"),
+        defaultLayers.vector.normal.map,
+        {
+          center: { lat: 28.6139, lng: 77.209 },
+          zoom: 10,
+          pixelRatio: window.devicePixelRatio || 1,
+        }
+      );
+
+      const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+      const ui = H.ui.UI.createDefault(map, defaultLayers);
+
+      const vehicles = [
+        { lat: 27.6139, lng: 77.209, color: "#30a71a", speed: "90 mph" },
+        { lat: 27.6041, lng: 77.1025, color: "#e43c35", speed: "0 mph" },
+        { lat: 27.6355, lng: 77.391, color: "#d4941a", speed: "55 mph" },
+        { lat: 27.6345, lng: 77.281, color: "#d4941a", speed: "55 mph" },
+      ];
+
+      vehicles.forEach((v) => {
+        const svgMarkup = `
+  <div>
+  <svg width="60" height="60" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path fill="${v.color}" d="M12 2C8.13 2 5 5.13 5 9c0 4.97 7 13 7 13s7-8.03 7-13c0-3.87-3.13-7-7-7z"/>
+    <circle cx="12" cy="9" r="5.5" fill="#FFFFFF"/>
+      <g transform="translate(12,9) scale(0.45) translate(-9,-8)">
+    <svg
+        width="18"
+        height="16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.435 5.64539L15.238 2.05439C15.0644 1.53156 14.7304 1.07675 14.2835 0.754585C13.8366 0.432417 13.2996 0.259277 12.7486 0.259767H4.7704C4.21949 0.259277 3.68243 0.432417 3.23555 0.754585C2.78866 1.07675 2.45466 1.53156 2.28102 2.05439L1.08402 5.64539C0.765716 5.77858 0.493887 6.00289 0.302705 6.29013C0.111523 6.57737 0.00952106 6.91472 0.00952148 7.25977V11.6348C0.00952148 12.2805 0.363021 12.8388 0.884521 13.1424V15.1348C0.884521 15.3668 0.976709 15.5894 1.1408 15.7535C1.3049 15.9176 1.52746 16.0098 1.75952 16.0098H2.63452C2.86659 16.0098 3.08915 15.9176 3.25324 15.7535C3.41733 15.5894 3.50952 15.3668 3.50952 15.1348V13.3848H14.0095V15.1348C14.0095 15.3668 14.1017 15.5894 14.2658 15.7535C14.4299 15.9176 14.6525 16.0098 14.8845 16.0098H15.7595C15.9916 16.0098 16.2141 15.9176 16.3782 15.7535C16.5423 15.5894 16.6345 15.3668 16.6345 15.1348V13.1424C16.9 12.9901 17.1206 12.7706 17.2743 12.506C17.4279 12.2413 17.509 11.9408 17.5095 11.6348V7.25977C17.5095 6.91472 17.4075 6.57737 17.2163 6.29013C17.0252 6.00289 16.7533 5.77858 16.435 5.64539ZM4.7704 2.00977H12.7478C13.1249 2.00977 13.4591 2.24952 13.5781 2.60827L14.5459 5.50977H2.97315L3.94002 2.60827C3.99808 2.43396 4.10952 2.28235 4.25856 2.17493C4.40761 2.06751 4.58668 2.00972 4.7704 2.00977ZM3.07202 10.7598C2.8996 10.7597 2.72889 10.7257 2.56962 10.6597C2.41034 10.5936 2.26564 10.4969 2.14376 10.3749C2.02189 10.2529 1.92522 10.1082 1.8593 9.94886C1.79337 9.78955 1.75946 9.61881 1.75952 9.44639C1.75958 9.27397 1.7936 9.10326 1.85963 8.94399C1.92566 8.78471 2.02242 8.64001 2.14438 8.51813C2.26634 8.39626 2.41111 8.29959 2.57042 8.23367C2.72974 8.16774 2.90048 8.13383 3.0729 8.13389C3.42111 8.13401 3.75501 8.27245 4.00116 8.51875C4.2473 8.76506 4.38551 9.09905 4.3854 9.44727C4.38528 9.79548 4.24684 10.1294 4.00054 10.3755C3.75423 10.6217 3.42023 10.7599 3.07202 10.7598ZM14.447 10.7598C14.2746 10.7597 14.1039 10.7257 13.9446 10.6597C13.7853 10.5936 13.6406 10.4969 13.5188 10.3749C13.3969 10.2529 13.3002 10.1082 13.2343 9.94886C13.1684 9.78955 13.1345 9.61881 13.1345 9.44639C13.1346 9.27397 13.1686 9.10326 13.2346 8.94399C13.3007 8.78471 13.3974 8.64001 13.5194 8.51813C13.6413 8.39626 13.7861 8.29959 13.9454 8.23367C14.1047 8.16774 14.2755 8.13383 14.4479 8.13389C14.7961 8.13401 15.13 8.27245 15.3762 8.51875C15.6223 8.76506 15.7605 9.09905 15.7604 9.44727C15.7603 9.79548 15.6218 10.1294 15.3755 10.3755C15.1292 10.6217 14.7952 10.7599 14.447 10.7598Z"
+          fill="${v.color}"
+        />
+      </svg>
+        </g>
+      </svg>
+ <vehicle-marker style="
+  color:${v.color};
+  bottom: 20%;
+  background: ${v.color};
+  color: #fff;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-top:-1.2rem;
+  margin-left:-5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: transform 0.2s;"
+      ><svg
+        width="22"
+        height="15"
+        viewBox="0 0 22 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="22" height="15" rx="7.5" fill="white" />
+        <path
+          d="M4 4.48157C4 4.70256 4.06925 4.84398 4.25387 5.06045L6.30384 7.43815C6.32304 7.46021 6.33846 7.47775 6.33846 7.5C6.33846 7.52206 6.32304 7.53979 6.304 7.56185L4.25387 9.93955C4.06925 10.156 4 10.2974 4 10.5184C4 10.8145 4.20004 11 4.46146 11C4.60767 11 4.7808 10.9295 4.9385 10.8631L11.5077 8.10112C11.8461 7.9597 12 7.75191 12 7.5C12 7.24809 11.8461 7.04049 11.5077 6.89907L4.9385 4.13689C4.7808 4.07071 4.60767 4 4.46146 4C4.20004 4 4 4.18554 4 4.48157Z"
+          fill="#1C222A"
+        />
+        <path
+          d="M17.4033 9.5H14.8838V5.29883H17.3066V6.06934H15.8301V7.00391H17.2041V7.77148H15.8301V8.73242H17.4033V9.5Z"
+          fill="#1C222A"
+        />
+      </svg>
+      ${v.speed}</vehicle-marker
+    >
+    </div>
+
+    `;
+
+        const icon = new H.map.DomIcon(svgMarkup, { size: { w: 18, h: 16 } });
+        const marker = new H.map.DomMarker(
+          { lat: v.lat, lng: v.lng },
+          { icon: icon }
+        );
+
+        map.setCenter({ lat: v.lat, lng: v.lng });
+        map.addObject(marker);
+      });
+
+      // Minimal JS for toggle on arrow click
+      document.getElementById("menu-arrow").onclick = function () {
+        var menu = document.getElementById("menu-list");
+        menu.style.display =
+          menu.style.display === "none" || menu.style.display === ""
+            ? "block"
+            : "none";
+      };
+
+      const subgroups = [
+        { num: 1, name: "Demo 1" },
+        { num: 2, name: "Demo 2" },
+        { num: 3, name: "Demo 3" },
+        { num: 4, name: "Demo 4" },
+      ];
+
+      const container = document.querySelector(".subgroups-list");
+      container.innerHTML = subgroups
+        .map(
+          (group) => `
+            <div class="subgroups-row">
+              <div class="subgroups-num">${group.num}</div>
+              <div class="subgroups-name">${group.name}</div>
+              <div class="subgroups-actions">
+                <a href="#" class="view-link">View</a>
+                <a href="#" class="delete-link">Delete</a>
+              </div>
+            </div>`
+        )
+        .join("");
+    </script>
+  </body>
+</html>

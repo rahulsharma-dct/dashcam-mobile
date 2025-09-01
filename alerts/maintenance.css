@@ -1,0 +1,88 @@
+.maintenance-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 8px rgba(16, 30, 54, 0.07);
+  padding: 22px 18px 16px 18px;
+  margin: 20px;
+  border: 1px solid #d6dce4;
+}
+.maintenance-label {
+  font-size: 16px;
+  color: #1c222a;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 7px;
+}
+.maintenance-input {
+  width: 100%;
+  border: 1px solid #e6eaef;
+  border-radius: 8px;
+
+  padding: 10px 12px;
+  font-size: 15px;
+  margin-bottom: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+.maintenance-submit {
+  width: 100%;
+  background: #27b9cd;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 11px 0;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.maintenance-list-section {
+  margin-top: 0;
+}
+.maintenance-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 9px 16px;
+  border-radius: 7px 7px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1c222a;
+  border: 1px solid #d6dce4;
+}
+.maintenance-list-icon {
+  font-size: 16px;
+  color: #a5a5a5;
+}
+.maintenance-list {
+  border-radius: 0 0 7px 7px;
+  overflow: hidden;
+  border: 1px solid #d6dce4;
+}
+.maintenance-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f2f2f2;
+  padding: 8px 16px;
+  border-bottom: 1px solid #f0f0f2;
+  font-size: 15px;
+}
+.maintenance-list-item:nth-child(even) {
+  background: #ffff;
+}
+.maintenance-delete-btn {
+  background: #ff4646;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.16s;
+}
+.maintenance-delete-btn:hover {
+  background: #d44040;
+}

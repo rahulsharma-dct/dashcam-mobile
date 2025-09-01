@@ -1,0 +1,228 @@
+.alert-contact-card {
+  background: #fff;
+}
+.alert-tabs {
+  display: flex;
+  border-top: 1px solid #e6eaef;
+  margin-bottom: 20px;
+}
+.alert-tab {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #6b7280;
+
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.alert-tab.active {
+  color: #22b6c7;
+  background: #e7f6f8;
+  border-bottom: 2px solid #22b6c7;
+}
+.alert-form-group {
+  display: flex;
+
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.alert-form-group label {
+  font-weight: 400;
+  font-size: 16px;
+  color: #232323;
+}
+.alert-form-group input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #e6eaef;
+  border-radius: 10px;
+
+  font-size: 14px;
+  outline: none;
+}
+.alert-submit {
+  background: #22b6c7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.alert-btn {
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 16px;
+  transition: background 0.18s;
+}
+.alert-btn-blue {
+  background: #e0f7fa;
+  color: #22b6c7;
+  border: 1px solid #b2ebf2;
+}
+.alert-btn-grey {
+  background: #f4f6f8;
+  color: #595959;
+}
+.alert-list-section {
+  margin-top: 8px;
+}
+.alert-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffff;
+  padding: 7px 16px;
+  border-radius: 7px 7px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #1c222a;
+  border: 1px solid #d6dce4;
+}
+.alert-list-icon {
+  font-size: 17px;
+  color: #a5a5a5;
+}
+.alert-list {
+  border-radius: 0 0 7px 7px;
+  overflow: hidden;
+  border: 1px solid #d6dce4;
+}
+.alert-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f2f2f2;
+  padding: 8px 16px;
+  border-bottom: 1px solid #f0f0f2;
+  font-size: 14px;
+}
+.alert-list-item:nth-child(even) {
+  background: #ffff;
+}
+.alert-delete-btn {
+  background: #ff4646;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 9px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.16s;
+}
+.alert-delete-btn:hover {
+  background: #d44040;
+}
+
+.content-box {
+  padding: 20px;
+  border-radius: 16px;
+  margin: 15px;
+  border: 1px solid #d7dbe2;
+}
+
+.phone-contact-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+
+  margin: 20px;
+  border: 1px solid #d7dbe2;
+}
+.phone-label {
+  font-size: 16px;
+  color: #1c222a;
+  font-weight: 400;
+  margin-bottom: 6px;
+  display: block;
+}
+.phone-input {
+  width: 90%;
+  border: 1px solid #e6eaef;
+  border-radius: 8px;
+
+  padding: 12px 16px;
+  font-size: 15px;
+  margin-bottom: 8px;
+  outline: none;
+}
+.network-group {
+  border: 1px solid #e6eaef;
+  border-radius: 9px;
+  padding: 14px 16px;
+  margin-bottom: 3px;
+  margin-top: 6px;
+}
+.network-option {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.network-option:last-child {
+  margin-bottom: 0;
+}
+.network-option input[type="radio"] {
+  accent-color: #27b9cd;
+  margin-right: 10px;
+  transform: scale(1.1);
+}
+.phone-submit {
+  width: 100%;
+  background: #27b9cd;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.phone-list-section {
+  margin-top: 10px;
+}
+.phone-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d6dce4;
+  padding: 9px 14px;
+  border-radius: 7px 7px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #232323;
+}
+.phone-list-icon {
+  font-size: 15px;
+  color: #a5a5a5;
+}
+.phone-list {
+  border-radius: 0 0 7px 7px;
+  overflow: hidden;
+  border: 1px solid #d6dce4;
+}
+.phone-list-item {
+  background: #f2f2f2;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f2;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.phone-list-item:nth-child(even) {
+  background: #ffff;
+}

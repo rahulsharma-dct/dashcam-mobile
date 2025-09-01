@@ -1,0 +1,354 @@
+.vehicle-dashboard {
+  max-width: 415px;
+  margin: 0 auto;
+}
+
+.vehicle-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+
+  color: #1c222a;
+  padding: 16px 26px;
+  background-color: #ffff;
+  border-top: 1px solid #d7dbe2;
+}
+
+.vehicle-refresh {
+  color: #27b9cd;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.vehicle-card-grid {
+  background: #fff;
+  border-radius: 14px;
+  border: 1.5px solid #e6eaef;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 110px 110px 110px;
+  gap: 13px;
+  padding: 18px 15px 17px 15px;
+  margin: 15px 20px;
+}
+
+.alert-summary-card {
+  grid-column: 1 / 3;
+  background: #eafafd;
+  border-radius: 13px;
+  border: 1px solid #23b7c9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 52px;
+}
+
+.alert-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.alert-count {
+  font-size: 56px;
+  font-weight: 600;
+  color: #232323;
+  margin-right: 0;
+}
+
+.alert-label {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+.alert-priority-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  width: 100%;
+  gap: 20px;
+}
+
+.priority-box {
+  font-size: 12px;
+
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.priority-low {
+  color: #22b65c;
+}
+.priority-med {
+  color: #f6b303;
+}
+.priority-high {
+  color: #ef4444;
+}
+.priority-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #232323;
+}
+
+.vehicle-card {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: none;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px 17px 0px 17px;
+
+  border: 1.2px solid #f2f4f7;
+}
+
+.vehicle-card-blue {
+  background: #eff8ff;
+  border: 1px solid #dcedfc;
+}
+.vehicle-card-green {
+  background: #f1faf0;
+  border: 1px solid #dff2df;
+}
+.vehicle-card-yellow {
+  background: #fcfaed;
+  border: 1px solid #f7f0cb;
+}
+.vehicle-card-red {
+  background: #fef2f2;
+  border: 1px solid #fce8e8;
+}
+.vehicle-card-white {
+  background: #fff;
+  border: 1px solid #ebeef3;
+}
+
+.vehicle-card-main {
+  font-size: 30px;
+  color: #232323;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.vehicle-card-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+}
+.vehicle-card-blue .vehicle-card-label {
+  color: #23b7c9;
+}
+.vehicle-card-green .vehicle-card-label {
+  color: #22b65c;
+}
+.vehicle-card-yellow .vehicle-card-label {
+  color: #bdb767;
+}
+.vehicle-card-red .vehicle-card-label {
+  color: #ef4444;
+}
+.vehicle-card-white .vehicle-card-label {
+  color: #657484;
+}
+
+.alerts-dashboard {
+  background: #fff;
+  border-radius: 15px;
+  border: 1.5px solid #e6eaef;
+  max-width: 400px;
+  margin: 24px auto 0 auto;
+  padding: 20px 18px 20px 18px;
+  font-family: "Inter", sans-serif;
+}
+
+.alert-notify {
+  font-size: 16px;
+  font-weight: 500;
+  color: #232323;
+  margin-bottom: 4px;
+}
+
+.alert-info {
+  margin-top: 6px;
+  font-size: 15px;
+  border-radius: 9px;
+  padding: 10px 15px;
+  font-weight: 500;
+}
+
+.alert-info-gray {
+  background: #f1f5f9;
+  color: #838f9c;
+  border: none;
+}
+
+.alert-info-red {
+  background: #fff5f3;
+  color: #ef4444;
+  border: 1.5px solid #ef4444;
+}
+
+.alert-map-section {
+  margin: 15px 0 12px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.alert-map-img {
+  width: 100%;
+  min-height: 129px;
+  max-height: 130px;
+  border-radius: 10px;
+  border: 1px solid #e6eaef;
+  object-fit: cover;
+  display: block;
+}
+
+.vehicle-alerts-section {
+  margin-top: 8px;
+}
+
+.vehicle-alerts-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #232323;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.vehicle-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+}
+
+.vehicle-search-wrap {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.vehicle-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #767c8c;
+  font-size: 19px;
+}
+.vehicle-search-input {
+  width: 100%;
+  border: 1.2px solid #e6eaef;
+  border-radius: 9px;
+  background: #f8f9fb;
+  padding: 8px 11px 8px 36px;
+  font-size: 15px;
+  color: #4b4b4b;
+  outline: none;
+  transition: border-color 0.18s;
+}
+.vehicle-toolbar-btn {
+  background: #f8f9fb;
+  border: 1.5px solid #e6eaef;
+  border-radius: 10px;
+  width: 39px;
+  height: 39px;
+  color: #5d5d5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.vehicle-grid-btn.active,
+.vehicle-toolbar-btn:hover,
+.vehicle-list-btn.active {
+  background: #eafafd;
+  color: #22b7c9;
+  border-color: #22b7c9;
+}
+
+.vehicle-alerts-list {
+  margin-top: 1px;
+}
+
+.vehicle-alert-item {
+  border-bottom: 1.5px solid #e6eaef;
+  padding: 0 2px;
+}
+.vehicle-alert-item:last-child {
+  border-bottom: none;
+}
+
+.vehicle-alert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.vehicle-alert-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #232323;
+}
+
+.vehicle-alert-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.vehicle-alert-toggle svg {
+  display: block;
+}
+.vehicle-alert-toggle.active svg circle {
+  stroke: #27b9cd;
+}
+.vehicle-alert-toggle.active svg path {
+  stroke: #27b9cd;
+}
+
+.vehicle-alert-body {
+  padding: 0 2px 12px 2px;
+}
+
+.vehicle-link {
+  color: #27b9cd;
+  font-size: 15px;
+  text-decoration: underline;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.vehicle-alert-details {
+  margin-top: 3px;
+}
+.vehicle-alert-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #8396a9;
+  margin-bottom: 1px;
+}

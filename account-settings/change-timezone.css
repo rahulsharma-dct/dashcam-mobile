@@ -1,0 +1,130 @@
+.key-insights-box {
+  padding: 14px 20px 6px 20px;
+}
+.key-insights-title {
+  margin: 0 0 16px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #232323;
+}
+.key-insights-desc {
+  font-size: 1rem;
+  color: #6a6a70;
+  margin-bottom: 10px;
+}
+
+.timezone-container {
+  margin: 0 14px 0 14px;
+  box-shadow: 0 2px 8px rgba(24, 54, 110, 0.08);
+  padding: 16px 0 16px 0;
+  max-width: 380px;
+}
+
+.btn-refresh {
+  width: 92%;
+  margin: 0 4%;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #19adc1;
+  background: #eaf9fb;
+  border: 1.5px solid #19adc1;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-bottom: 17px;
+  transition: background 0.18s;
+}
+.btn-refresh:hover {
+  background: #d1f0f6;
+}
+
+.timezone-form {
+  background: #fff;
+  border-radius: 13px;
+  padding: 10px 14px 18px 14px;
+  box-shadow: 0 2px 7px rgba(24, 54, 110, 0.04);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.timezone-radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.timezone-radio {
+  font-size: 1rem;
+  color: #232323;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+}
+.timezone-radio input[type="radio"] {
+  accent-color: #19adc1;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 3px;
+}
+
+.timezone-btn-submit {
+  width: 100%;
+  padding: 13px 0;
+  background: #19adc1;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 1.07rem;
+  margin-top: 9px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.timezone-btn-submit:hover {
+  background: #138c9e;
+}
+.timezone-btn-cancel {
+  width: 100%;
+  padding: 13px 0;
+  background: #eff2f6;
+  color: #232323;
+  border: none;
+  border-radius: 9px;
+  font-weight: 500;
+  font-size: 1.06rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.timezone-btn-cancel:hover {
+  background: #e3e6eb;
+}
+
+@media (max-width: 520px) {
+  .key-insights-box,
+  .timezone-container,
+  .timezone-form {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .timezone-form {
+    border-radius: 10px;
+    border: 1px solid #d7dbe2;
+  }
+
+  .key-insights-box {
+    border-radius: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #ffffff;
+    border-top: 1px solid #d7dbe2;
+  }
+}

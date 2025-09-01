@@ -1,0 +1,59 @@
+.custom-btn {
+  width: 100%;
+  background: #e7f6f8;
+  color: #27b9cd;
+  border-radius: 7px;
+  border: 1px solid #27b9cd;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 0;
+  margin-bottom: 10px;
+  margin-top: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.active-btn {
+  background: #eafafd;
+  color: #23b7c9;
+}
+
+.custom-section {
+  width: 100%;
+  background: #f4f6f8;
+  color: #1c222a;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.dashcam-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 8px rgba(16, 30, 54, 0.07);
+  padding: 22px 16px 26px 16px;
+  margin: 18px;
+}
+
+.dashcam-label {
+  font-size: 15px;
+  color: #232323;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.dashcam-select {
+  width: 100%;
+
+  border: 1px solid #e6eaef;
+  border-radius: 8px;
+  padding: 12px 13px;
+  font-size: 15px;
+  color: #676b6f;
+  margin-bottom: 18px;
+}

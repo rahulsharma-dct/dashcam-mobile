@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="Home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="edit.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link
+      rel="stylesheet"
+      href="header.css
+    "
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="margin: 0">
+    <div class="device-container">
+      <div class="device-topbar">
+        <button id="closeSidebar" class="icon-button-2">
+          <!-- Back Arrow -->
+          <svg
+            width="14"
+            height="12"
+            viewBox="0 0 14 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
+              fill="#5D5D5D"
+            />
+          </svg>
+        </button>
+        <div class="device-title">Add/Edit Device</div>
+        <div class="device-user">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 8C8.06087 8 9.07828 7.57857 9.82843 6.82843C10.5786 6.07828 11 5.06087 11 4C11 2.93913 10.5786 1.92172 9.82843 1.17157C9.07828 0.421427 8.06087 0 7 0C5.93913 0 4.92172 0.421427 4.17157 1.17157C3.42143 1.92172 3 2.93913 3 4C3 5.06087 3.42143 6.07828 4.17157 6.82843C4.92172 7.57857 5.93913 8 7 8ZM5.57188 9.5C2.49375 9.5 0 11.9937 0 15.0719C0 15.5844 0.415625 16 0.928125 16H13.0719C13.5844 16 14 15.5844 14 15.0719C14 11.9937 11.5063 9.5 8.42813 9.5H5.57188Z"
+              fill="#27B9CD"
+            />
+          </svg>
+
+          <span class="device-badge">3</span>
+        </div>
+      </div>
+      <div class="device-tabs">
+        <button class="device-tab active">Add Device</button>
+        <button class="device-tab">Edit Device</button>
+      </div>
+
+      <!-- Add Device Form -->
+      <form class="device-form add-device-form">
+        <div class="device-field">
+          <label for="imei">IMEI:</label>
+          <input type="text" id="imei" placeholder="Enter IMEI" />
+        </div>
+        <div class="device-field">
+          <label for="device-name">Device Name:</label>
+          <input
+            type="text"
+            id="device-name"
+            placeholder="Enter New Device Name"
+          />
+        </div>
+        <div class="device-field">
+          <label for="icon-select">Icon:</label>
+          <select id="icon-select">
+            <option>All</option>
+            <option>Truck</option>
+            <option>Car</option>
+            <option>Bike</option>
+          </select>
+        </div>
+        <div class="device-icons-box">
+          <div class="device-icons-grid">
+            <label class="device-icon-radio">
+              <input type="radio" name="icon" checked />
+              <span>No Icon</span>
+            </label>
+            <!-- Vehicle icons -->
+            <label class="device-icon-radio">
+              <input type="radio" name="icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f69a.svg"
+                alt="Truck"
+              />
+            </label>
+            <label class="device-icon-radio">
+              <input type="radio" name="icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f699.svg"
+                alt="Blue Car"
+              />
+            </label>
+            <label class="device-icon-radio">
+              <input type="radio" name="icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg"
+                alt="Bus"
+              />
+            </label>
+            <label class="device-icon-radio">
+              <input type="radio" name="icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68b.svg"
+                alt="Taxi"
+              />
+            </label>
+            <!-- Add more as needed -->
+          </div>
+        </div>
+        <button class="device-add-btn" type="submit">Add Device</button>
+      </form>
+
+      <!-- Edit Device Form -->
+      <form class="device-form edit-device-form" style="display: none">
+        <div class="device-field">
+          <label for="device-select" class="device-label">Device:</label>
+          <div class="device-row">
+            <select id="device-select" class="device-select">
+              <option>Device 1</option>
+              <option>Device 2</option>
+              <option>Device 3</option>
+            </select>
+            <button class="delete-btn" title="Delete">
+              <!-- Trash SVG Icon -->
+              <svg
+                width="16"
+                height="18"
+                viewBox="0 0 16 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 0V1H0V3H1V16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H13C13.5304 18 14.0391 17.7893 14.4142 17.4142C14.7893 17.0391 15 16.5304 15 16V3H16V1H11V0H5ZM3 3H13V16H3V3ZM5 5V14H7V5H5ZM9 5V14H11V5H9Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="device-field">
+          <label for="edit-device-name">New Device Name:</label>
+          <input
+            type="text"
+            id="edit-device-name"
+            placeholder="Enter New Device Name"
+          />
+        </div>
+        <div style="display: flex; gap: 10px; margin-bottom: 10px">
+          <input type="checkbox" name="" id="" />
+          <div style="color: #6b7280">Show as Pulsing Icon</div>
+          <div></div>
+        </div>
+        <div class="device-field">
+          <label for="edit-icon-select">Icon:</label>
+          <select id="edit-icon-select">
+            <option>All</option>
+            <option>Truck</option>
+            <option>Car</option>
+            <option>Bike</option>
+          </select>
+        </div>
+        <div class="device-icons-box">
+          <div class="device-icons-grid">
+            <label class="device-icon-radio">
+              <input type="radio" name="edit-icon" checked />
+              <span>No Icon</span>
+            </label>
+            <!-- Same vehicle icons as Add Device -->
+            <label class="device-icon-radio">
+              <input type="radio" name="edit-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f69a.svg"
+                alt="Truck"
+              />
+            </label>
+            <label class="device-icon-radio">
+              <input type="radio" name="edit-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f699.svg"
+                alt="Blue Car"
+              />
+            </label>
+            <label class="device-icon-radio">
+              <input type="radio" name="edit-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg"
+                alt="Bus"
+              />
+            </label>
+            <label class="device-icon-radio">
+              <input type="radio" name="edit-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68b.svg"
+                alt="Taxi"
+              />
+            </label>
+            <!-- More icons if needed -->
+          </div>
+        </div>
+        <button class="device-add-btn" type="submit">Add Device</button>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll(".device-tab");
+        const addForm = document.querySelector(".add-device-form");
+        const editForm = document.querySelector(".edit-device-form");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            if (tab.textContent.trim() === "Add Device") {
+              addForm.style.display = "block";
+              editForm.style.display = "none";
+            } else if (tab.textContent.trim() === "Edit Device") {
+              addForm.style.display = "none";
+              editForm.style.display = "block";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

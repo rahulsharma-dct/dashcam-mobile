@@ -1,0 +1,105 @@
+.afterhour-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 8px rgba(16, 30, 54, 0.07);
+  padding: 22px 18px 18px 18px;
+  margin: 20px;
+}
+
+.afterhour-label {
+  font-size: 16px;
+  color: #1c222a;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.afterhour-select {
+  width: 100%;
+
+  border: 1px solid #e6eaef;
+  border-radius: 8px;
+  padding: 12px 13px;
+  font-size: 15px;
+  color: #676b6f;
+  margin-bottom: 12px;
+}
+
+.afterhour-group {
+  border: 1px solid #e6eaef;
+  border-radius: 9px;
+  padding: 13px 11px 10px 11px;
+  margin-bottom: 16px;
+  margin-top: 7px;
+}
+
+.afterhour-radio {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.afterhour-radio:last-child {
+  margin-bottom: 0;
+}
+.afterhour-radio input[type="radio"] {
+  accent-color: #22b6c7;
+  margin-right: 12px;
+  transform: scale(1.1);
+}
+
+.afterhour-times {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.afterhour-timeinput {
+  position: relative;
+  margin-bottom: 12px;
+}
+.afterhour-input {
+  width: 140px;
+  border: 1px solid #e6eaef;
+  border-radius: 8px;
+
+  padding: 16px 38px 16px 12px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  color: #6b7280;
+}
+.afterhour-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a6a6a6;
+  font-size: 19px;
+  pointer-events: none;
+}
+
+.afterhour-btn {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 7px;
+  border: none;
+  padding: 12px 0;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.advanced-btn {
+  background: #e7f6f8;
+  color: #27b9cd;
+  border: 1px solid #27b9cd;
+  margin-bottom: 8px;
+}
+.submit-btn {
+  background: #22b6c7;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}

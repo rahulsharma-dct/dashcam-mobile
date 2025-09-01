@@ -1,0 +1,368 @@
+.service-card {
+  background: #fff;
+  border-radius: 15px;
+  border: 1.5px solid #e6eaef;
+  padding: 20px;
+
+  margin: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.service-label {
+  font-size: 12px;
+  color: #888b93;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.service-select {
+  width: 100%;
+
+  border: 1px solid #e6eaef;
+  border-radius: 8px;
+  padding: 12px 13px;
+  font-size: 15px;
+  color: #676b6f;
+  margin-bottom: 14px;
+}
+
+.service-report-btn {
+  width: 100%;
+  background: #eef1f6;
+  color: #1c222a;
+  border-radius: 7px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 0;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+.number-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.service-input {
+  width: 100%;
+  border: 1.5px solid #e6eaef;
+  border-radius: 13px;
+
+  padding: 12px 38px 12px 16px;
+  font-size: 17px;
+  color: #6b7280;
+  outline: none;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: "Inter", sans-serif;
+}
+
+.service-input::-webkit-outer-spin-button,
+.service-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.service-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.custom-spin {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 17px;
+  pointer-events: none;
+}
+
+.custom-spin .up,
+.custom-spin .down {
+  line-height: 0.85;
+}
+
+.service-add-btn {
+  width: 100%;
+  background: #22b6c7;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 0;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.service-addtype-btn {
+  width: 100%;
+  background: #eafafd;
+  color: #23b7c9;
+  border-radius: 7px;
+  border: 1px solid #23b7c9;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 0;
+  cursor: pointer;
+  margin-bottom: 9px;
+}
+
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.toolbar-search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.toolbar-search-input {
+  width: 100%;
+  border: 1px solid #e6eaef;
+  border-radius: 10px;
+
+  padding: 11px 13px 12px 36px;
+  font-size: 14px;
+  color: #4b4b4b;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.toolbar-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 56%;
+  transform: translateY(-50%);
+  color: #5d5d5d;
+  font-size: 19px;
+  pointer-events: none;
+}
+
+.toolbar-btn {
+  background: #ffff;
+  border: 1px solid #e6eaef;
+  border-radius: 10px;
+  font-size: 21px;
+  width: 44px;
+  height: 44px;
+  min-width: 40px;
+  min-height: 40px;
+  color: #5d5d5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.toolbar-toggle {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid #e6eaef;
+
+  height: 40px;
+}
+.toolbar-toggle-btn {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  width: 44px;
+  height: 100%;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  color: #5d5d5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-toggle-btn.active {
+  background: #eafafd;
+  color: #23b7c9;
+}
+
+.toolbar-toggle-btn + .toolbar-toggle-btn {
+  border-left: 1.5px solid #e6eaef;
+}
+
+.service-entry {
+  border-bottom: 1.5px solid #e6eaef;
+  padding: 0 2px;
+}
+.service-entry:last-child {
+  border-bottom: none;
+}
+.service-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  cursor: pointer;
+  padding-left: 4px;
+}
+
+.service-entry-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.service-title-red {
+  color: #ef4444;
+}
+.service-title-green {
+  color: #30a71a;
+}
+
+.service-entry-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  height: 36px;
+  cursor: pointer;
+}
+.service-entry-toggle svg {
+  display: block;
+}
+.service-entry-toggle.active svg circle {
+  stroke: #27b9cd;
+}
+.service-entry-toggle.active svg path {
+  stroke: #27b9cd;
+}
+
+.service-entry-body {
+  padding: 6px 4px 12px 4px;
+}
+
+.service-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.service-label {
+  color: #888b93;
+}
+.service-link {
+  color: #27b9cd;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.service-value {
+  color: #888b93;
+  font-weight: 600;
+}
+.highlight {
+  color: #787486;
+  font-weight: 600;
+}
+
+.service-note {
+  margin-top: 8px;
+  background: #f4f6f8;
+  border-radius: 7px;
+  padding: 7px 11px;
+  font-size: 15px;
+}
+
+.note-label {
+  color: #888b93;
+  font-size: 12px;
+  display: block;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.note-content {
+  color: #787486;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.service-alert-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+}
+.service-switch {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+  height: 16px;
+}
+.service-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.service-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+.service-status-on {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.service-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.service-edit-btn {
+  flex: 1;
+  background: #e7f6f8;
+  color: #27b9cd;
+  border: 1px solid #27b9cd;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 400;
+  padding: 7px 0;
+  cursor: pointer;
+}
+
+.service-delete-btn {
+  flex: 1;
+  background: #f443361a;
+  color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 400;
+  padding: 7px 0;
+  cursor: pointer;
+}

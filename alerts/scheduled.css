@@ -1,0 +1,119 @@
+.alert-tabs {
+  display: flex;
+  border-top: 1px solid #e6eaef;
+  margin-bottom: 20px;
+}
+.alert-tab {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #6b7280;
+
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  background: white;
+}
+.alert-tab.active {
+  color: #22b6c7;
+  background: #e7f6f8;
+  border-bottom: 2px solid #22b6c7;
+}
+
+.schedule-email-form {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #d7dbe2;
+}
+
+.form-label {
+  font-size: 16px;
+  color: #1c222a;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid #e6eaef;
+  border-radius: 8px;
+
+  padding: 10px 12px;
+  font-size: 15px;
+  margin-bottom: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.schedule-report-list {
+  background: #fff;
+  border-radius: 13px;
+  border: 1px solid #e6eaef;
+  padding: 17px 15px 10px 15px;
+  margin-bottom: 12px;
+}
+
+.report-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 13px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.report-checkbox input[type="checkbox"] {
+  margin-right: 13px;
+  width: 14px;
+  height: 14px;
+  accent-color: #22b6c7;
+}
+
+.help-icon {
+  display: inline-block;
+  margin-left: 9px;
+  padding: 0 2.5px;
+  background: #eafafd;
+  color: #23b7c9;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+.schedule-submit-btn {
+  width: 100%;
+  background: #22b6c7;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 0;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.schedule-time-box {
+  position: relative;
+}
+
+.schedule-time-box .form-input {
+  padding-right: 36px;
+}
+
+.time-icon {
+  position: absolute;
+  right: 13px;
+  top: 34%;
+  transform: translateY(-50%);
+  color: #a6a6a6;
+  font-size: 19px;
+  pointer-events: none;
+}

@@ -1,0 +1,46 @@
+.pagination {
+  position: sticky; /* keeps it stuck to bottom inside scrolling container */
+  bottom: 0;
+  left: 0;
+
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+  z-index: 10;
+}
+
+.pagination-text {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.pagination-btn:hover {
+  background-color: #f8fafc;
+}
+
+.pagination-btn svg {
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+}

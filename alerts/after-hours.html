@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>alert</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="/account-settings/css/header.css" />
+    <link rel="stylesheet" href="after-hours.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="margin: 0">
+    <div class="device-container">
+      <div class="device-topbar">
+        <button id="closeSidebar" class="icon-button-2">
+          <!-- Back Arrow -->
+          <svg
+            width="14"
+            height="12"
+            viewBox="0 0 14 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
+              fill="#5D5D5D"
+            />
+          </svg>
+        </button>
+        <div class="device-title">After Hours Settings</div>
+        <div class="device-user">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 8C8.06087 8 9.07828 7.57857 9.82843 6.82843C10.5786 6.07828 11 5.06087 11 4C11 2.93913 10.5786 1.92172 9.82843 1.17157C9.07828 0.421427 8.06087 0 7 0C5.93913 0 4.92172 0.421427 4.17157 1.17157C3.42143 1.92172 3 2.93913 3 4C3 5.06087 3.42143 6.07828 4.17157 6.82843C4.92172 7.57857 5.93913 8 7 8ZM5.57188 9.5C2.49375 9.5 0 11.9937 0 15.0719C0 15.5844 0.415625 16 0.928125 16H13.0719C13.5844 16 14 15.5844 14 15.0719C14 11.9937 11.5063 9.5 8.42813 9.5H5.57188Z"
+              fill="#27B9CD"
+            />
+          </svg>
+
+          <span class="device-badge">3</span>
+        </div>
+      </div>
+
+      <div class="afterhour-card">
+        <label for="deviceSelect" class="afterhour-label">Devices:</label>
+        <select id="deviceSelect" class="afterhour-select">
+          <option selected disabled>Select Device</option>
+          <!-- Add device options here -->
+        </select>
+
+        <label class="afterhour-label" style="margin-top: 16px"
+          >Working Hours:</label
+        >
+        <div class="afterhour-group">
+          <label class="afterhour-radio"
+            ><input type="radio" name="workinghour" checked /> All Days</label
+          >
+          <label class="afterhour-radio"
+            ><input type="radio" name="workinghour" /> Custom Days</label
+          >
+          <label class="afterhour-radio"
+            ><input type="radio" name="workinghour" /> Weekdays</label
+          >
+        </div>
+
+        <div class="afterhour-times">
+          <div>
+            <label class="afterhour-label" for="fromTime">From:</label>
+            <div class="afterhour-timeinput">
+              <input
+                type="text"
+                id="fromTime"
+                class="afterhour-input"
+                value="09:00 AM"
+              />
+              <span class="afterhour-icon"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.0625 0.9375C10.0516 0.9375 11.9593 1.72768 13.3658 3.1342C14.7723 4.54072 15.5625 6.44838 15.5625 8.4375C15.5625 10.4266 14.7723 12.3343 13.3658 13.7408C11.9593 15.1473 10.0516 15.9375 8.0625 15.9375C6.07338 15.9375 4.16572 15.1473 2.7592 13.7408C1.35268 12.3343 0.5625 10.4266 0.5625 8.4375C0.5625 6.44838 1.35268 4.54072 2.7592 3.1342C4.16572 1.72768 6.07338 0.9375 8.0625 0.9375ZM8.0625 1.72697C6.28276 1.72697 4.57591 2.43397 3.31744 3.69244C2.05897 4.95091 1.35197 6.65776 1.35197 8.4375C1.35197 10.2172 2.05897 11.9241 3.31744 13.1826C4.57591 14.441 6.28276 15.148 8.0625 15.148C8.94374 15.148 9.81635 14.9745 10.6305 14.6372C11.4447 14.3 12.1844 13.8057 12.8076 13.1826C13.4307 12.5594 13.925 11.8197 14.2622 11.0055C14.5995 10.1913 14.773 9.31874 14.773 8.4375C14.773 6.65776 14.066 4.95091 12.8076 3.69244C11.5491 2.43397 9.84224 1.72697 8.0625 1.72697ZM7.66776 4.0954L8.45724 4.0954L8.45724 8.37434L12.1678 10.5138L11.773 11.2007L7.66776 8.83224L7.66776 4.0954Z"
+                    fill="#6B7280"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div>
+            <label class="afterhour-label" for="toTime">To:</label>
+            <div class="afterhour-timeinput">
+              <input
+                type="text"
+                id="toTime"
+                class="afterhour-input"
+                value="06:00 PM"
+              />
+              <span class="afterhour-icon"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.0625 0.9375C10.0516 0.9375 11.9593 1.72768 13.3658 3.1342C14.7723 4.54072 15.5625 6.44838 15.5625 8.4375C15.5625 10.4266 14.7723 12.3343 13.3658 13.7408C11.9593 15.1473 10.0516 15.9375 8.0625 15.9375C6.07338 15.9375 4.16572 15.1473 2.7592 13.7408C1.35268 12.3343 0.5625 10.4266 0.5625 8.4375C0.5625 6.44838 1.35268 4.54072 2.7592 3.1342C4.16572 1.72768 6.07338 0.9375 8.0625 0.9375ZM8.0625 1.72697C6.28276 1.72697 4.57591 2.43397 3.31744 3.69244C2.05897 4.95091 1.35197 6.65776 1.35197 8.4375C1.35197 10.2172 2.05897 11.9241 3.31744 13.1826C4.57591 14.441 6.28276 15.148 8.0625 15.148C8.94374 15.148 9.81635 14.9745 10.6305 14.6372C11.4447 14.3 12.1844 13.8057 12.8076 13.1826C13.4307 12.5594 13.925 11.8197 14.2622 11.0055C14.5995 10.1913 14.773 9.31874 14.773 8.4375C14.773 6.65776 14.066 4.95091 12.8076 3.69244C11.5491 2.43397 9.84224 1.72697 8.0625 1.72697ZM7.66776 4.0954L8.45724 4.0954L8.45724 8.37434L12.1678 10.5138L11.773 11.2007L7.66776 8.83224L7.66776 4.0954Z"
+                    fill="#6B7280"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <button class="afterhour-btn advanced-btn">Advanced Settings</button>
+        <button class="afterhour-btn submit-btn">Submit</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+:root {
+  --accent: #27b9cd;
+  --danger: #ff4444;
+  --success: #00b894;
+  --warning: #f39c12;
+  --radius: 12px;
+  --header-h: 60px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  color: #1c222a;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  z-index: 1000;
+}
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: var(--shadow);
+}
+.menu-btn:hover,
+.menu-btn:focus-visible {
+  background: #fff;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background: #e7f6f8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background: #ff4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ---------- MAP ---------- */
+#map {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%, #a29bfe 100%);
+  position: relative;
+}
+#map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+/* ---------- MARKERS ---------- */
+vehicle-marker {
+  --color: var(--success);
+  position: absolute;
+  width: clamp(48px, 4vw, 60px);
+  height: clamp(32px, 3vw, 40px);
+  background: var(--color);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+vehicle-marker.red {
+  --color: var(--danger);
+}
+vehicle-marker.orange {
+  --color: var(--warning);
+}
+vehicle-marker:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- CONTROLS ---------- */
+.controls {
+  position: fixed;
+  right: 1.25rem;
+  bottom: clamp(180px, 20vh, 220px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 200;
+}
+.control-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+.control-btn:hover,
+.control-btn:focus-visible {
+  background: #f8f9fa;
+}
+
+/* ---------- STATS PANEL ---------- */
+.stats {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 1.25rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+.drag-indicator {
+  width: 20%;
+  height: 4px;
+  background: #bbb;
+  border-radius: 2px;
+  margin: 0 auto 0.75rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.stat {
+  border: 1px solid #d7dbe2;
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: left;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.icon {
+  fill: currentColor; /* matches text color */
+}
+
+.stat-value {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+}
+.stat-change {
+  font-size: 12px;
+  color: var(--accent);
+}
+/* ---------- SVG ICONS ---------- */
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px; /* hidden off screen */
+  width: 380px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: var(--shadow);
+  z-index: 1500;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.icon-button-2 {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+.action-group {
+  display: flex;
+  gap: 5px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #e7f6f8;
+  border: 1px solid #27b9cd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #0891b2;
+  font-weight: 500;
+  cursor: pointer;
+  flex: 1;
+  width: auto;
+  text-decoration: none;
+}
+
+.menu {
+  margin-top: 1rem;
+}
+
+.menu-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background: #f9fafb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bg-cyan {
+  background: #e7f6f8;
+}
+
+.menu-text h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+  padding-left: 5px;
+  text-decoration: none;
+}
+
+.menu-text p {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+  padding-left: 5px;
+  text-decoration: none;
+}
+
+.menu-item svg:last-child {
+  flex-shrink: 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between button & title */
+}
+
+.icon-button-2 {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0; /* remove default h1 margin */
+  line-height: 1; /* keeps text centered with icon */
+}

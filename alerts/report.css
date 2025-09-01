@@ -1,0 +1,254 @@
+.period-card {
+  border-radius: 14px;
+
+  padding: 20px;
+}
+
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.toolbar-search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.toolbar-search-input {
+  width: 100%;
+  border: 1px solid #e6eaef;
+  border-radius: 10px;
+
+  padding: 11px 13px 12px 36px;
+  font-size: 14px;
+  color: #4b4b4b;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.toolbar-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5d5d5d;
+  font-size: 19px;
+  pointer-events: none;
+}
+
+.toolbar-btn {
+  background: #ffff;
+  border: 1px solid #e6eaef;
+  border-radius: 10px;
+  font-size: 21px;
+  width: 44px;
+  height: 44px;
+  min-width: 40px;
+  min-height: 40px;
+  color: #5d5d5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.toolbar-toggle {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid #e6eaef;
+
+  height: 40px;
+}
+.toolbar-toggle-btn {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  width: 44px;
+  height: 100%;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  color: #5d5d5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-toggle-btn.active {
+  background: #eafafd;
+  color: #23b7c9;
+}
+
+.toolbar-toggle-btn + .toolbar-toggle-btn {
+  border-left: 1.5px solid #e6eaef;
+}
+
+.maintenance-list {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid #e6eaef;
+  padding: 15px;
+
+  margin: 18px auto 0 auto;
+}
+
+.maintenance-item {
+  border-bottom: 1.5px solid #e6eaef;
+}
+.maintenance-item:last-child {
+  border-bottom: none;
+}
+
+.maintenance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.maintenance-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c222a;
+}
+
+.maintenance-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.maintenance-toggle svg {
+  display: block;
+}
+
+.maintenance-toggle.active svg circle {
+  stroke: #27b9cd;
+}
+.maintenance-toggle.active svg path {
+  stroke: #27b9cd;
+}
+
+.maintenance-body {
+  padding: 10px 0 10px 0;
+}
+
+.maintenance-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.maintenance-label {
+  color: #888b93;
+  font-size: 12px;
+}
+
+.maintenance-link {
+  color: #27b9cd;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.maintenance-value {
+  color: #888b93;
+  font-size: 12px;
+  font-weight: 600;
+}
+.highlight {
+  color: #888b93;
+  font-weight: 600;
+}
+
+.maintenance-note {
+  margin-top: 9px;
+  background: #f3f4f6;
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+.note-label {
+  color: #888b93;
+  font-size: 12px;
+  display: block;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.note-content {
+  color: #787486;
+  font-size: 12px;
+}
+
+.period-results {
+  margin: 10px 0 20px 0;
+}
+
+.period-result-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e6eaef;
+  margin-bottom: 13px;
+  padding: 13px 18px 11px 18px;
+}
+
+.pagination-text {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.pagination-btn:hover {
+  background-color: #f8fafc;
+}
+
+.pagination-btn svg {
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    padding: 16px;
+  }
+
+  .pagination {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffff;
+  }
+}

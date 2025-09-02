@@ -1,0 +1,100 @@
+.geoform-card {
+  background: #fff;
+
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.geoform-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.geoform-back {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 7px;
+  padding: 0;
+  outline: none;
+}
+
+.geoform-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: #232323;
+  margin: 0 auto;
+}
+
+.geoform-info-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 13px;
+}
+
+.geoform-label {
+  color: #888b93;
+  font-weight: 400;
+  min-width: 120px;
+}
+
+.geoform-value {
+  color: #787486;
+  font-weight: 400;
+}
+
+.geoform-address {
+  color: #27b9cd;
+  font-weight: 500;
+}
+
+.geoform-link {
+  color: #27b9cd;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  display: flex;
+  text-align: right;
+}
+
+.geoform-edit {
+  background: #23b7cd;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 9px;
+  border: none;
+  margin-top: 14px;
+  font-weight: 600;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.geoform-edit:hover {
+  background: #1ca4b6;
+}
+
+.geoform-delete {
+  background: #ef44441a;
+  color: #ef4444;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 9px;
+  border: 1.3px solid #ef4444;
+  margin-top: 13px;
+  font-weight: 600;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}

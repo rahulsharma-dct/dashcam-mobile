@@ -1,0 +1,89 @@
+.geoform-card {
+  background: #fff;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.geoform-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 17px;
+}
+
+.geoform-back {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 7px;
+  padding: 0;
+  outline: none;
+}
+
+.geoform-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1c222a;
+  display: flex;
+  margin: 0 auto;
+}
+
+.geoform-label {
+  display: block;
+  font-size: 15px;
+  color: #1c222a;
+  margin-bottom: 5px;
+  margin-top: 17px;
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+}
+
+.geoform-select-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.geoform-select {
+  width: 100%;
+  border-radius: 9px;
+  border: 1px solid #ececec;
+  background: #fafbfc;
+  color: #6b7280;
+  font-size: 14px;
+  padding: 13px 44px 13px 14px;
+
+  font-weight: 400;
+  appearance: none;
+  outline: none;
+}
+
+.geoform-dropdown-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.geoform-submit {
+  background: #23b7cd;
+  color: #fff;
+  font-size: 17px;
+  width: 100%;
+  border-radius: 9px;
+  border: none;
+  margin-top: 14px;
+  font-weight: 600;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}

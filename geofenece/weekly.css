@@ -1,0 +1,171 @@
+.geo-report {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #e6eaef;
+
+  padding: 20px;
+  margin: 20px;
+}
+
+.geo-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1c222a;
+  margin-bottom: 11px;
+}
+
+.geo-date-picker-pos {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.geo-date-input {
+  border: 1px solid #e6eaef;
+  border-radius: 9px;
+  font-size: 14px;
+  padding: 13px 45px 13px 14px;
+  background: #fff;
+  color: #838f9c;
+  width: 80%;
+
+  font-weight: 400;
+  outline: none;
+}
+
+.geo-picker-svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: #e6eaef;
+  font-size: 20px;
+}
+
+.geo-date-range {
+  color: #27b9cd;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.geo-form-row {
+  margin-bottom: 7px;
+}
+
+.geoform-label {
+  font-size: 16px;
+  color: #1c222a;
+  font-weight: 400;
+  margin-bottom: 6px;
+  display: block;
+  margin-top: 5px;
+}
+
+.geoform-select-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.geoform-select {
+  width: 100%;
+  border-radius: 9px;
+  border: 1.3px solid #e6eaef;
+
+  color: #6b7280;
+  font-size: 14px;
+  padding: 13px 44px 13px 14px;
+
+  font-weight: 400;
+  appearance: none;
+  outline: none;
+}
+
+.geoform-dropdown-arrow {
+  position: absolute;
+  right: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.geoform-submit {
+  background: #27b9cd;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 9px;
+  border: none;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  padding: 15px 0 12px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.geo-car-card {
+  background: #fff;
+
+  margin-bottom: 11px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.geo-car-card.open {
+  padding: 0 0 11px 0;
+}
+
+.geo-car-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1c222a;
+  padding-bottom: 10px;
+
+  background: #fff;
+  cursor: pointer;
+}
+
+.geo-collapse-arrow {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.geo-car-details {
+  margin-top: 3px;
+}
+
+.geo-car-detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #888b93;
+  padding-bottom: 2px;
+  font-weight: 400;
+  margin-top: 6px;
+}
+
+.geo-car-detail-row.faded {
+  color: #888b93;
+  font-size: 12px;
+}
+
+.geoform-viewdetail-btn {
+  background: #e7f6f8;
+  color: #37bed1;
+  border: 1px solid #37bed1;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 11px;
+  padding: 7px 0 7px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}

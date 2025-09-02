@@ -1,0 +1,157 @@
+/* Add below your existing CSS */
+
+.geo-report-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #e6eaef;
+
+  padding: 20px;
+  margin: 20px;
+}
+
+.geo-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1c222a;
+  margin-bottom: 8px;
+
+  letter-spacing: 0.01em;
+}
+
+.geo-date-picker-pos {
+  position: relative;
+
+  max-width: 100%;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.geo-date-input {
+  border: 1px solid #bfc9d7;
+  border-radius: 14px;
+  font-size: 14px;
+  padding: 12px 40px 12px 15px; /* Extra right padding for icon */
+  background: #fff;
+  color: #838f9c;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  outline: none;
+  letter-spacing: 0.02em;
+}
+
+.geo-picker-svg {
+  position: absolute;
+  right: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: #bfc9d7;
+  font-size: 24px;
+  pointer-events: none;
+}
+
+.geo-date-range {
+  color: #27b9cd;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.geo-select-row {
+  margin-bottom: 0;
+}
+
+.geo-select-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.geo-select {
+  width: 100%;
+  border-radius: 9px;
+  border: 1px solid #e6eaef;
+  font-size: 15px;
+  padding: 12px 40px 12px 15px;
+  background: #f1f5f9;
+  color: #838f9c;
+  appearance: none;
+}
+
+.geo-select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.geo-day-card {
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.geo-day-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1c222a;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.geo-collapse-arrow {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.geo-day-details {
+  font-size: 15px;
+  color: #838f9c;
+  margin-left: 2px;
+  margin-top: 1px;
+  margin-bottom: 6px;
+}
+
+.geo-day-details > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.geo-day-details .important {
+  color: #787486;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.geo-summary-row {
+  background: #f1f5f9;
+  border-radius: 9px;
+  padding: 11px 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 13px;
+  color: #838f9c;
+  font-weight: 500;
+  font-size: 15px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+span {
+  font-weight: 600;
+}

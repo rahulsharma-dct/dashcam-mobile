@@ -1,0 +1,151 @@
+.geoform-card {
+  background: #fff;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.geoform-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.geoform-back {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 7px;
+  padding: 0;
+  outline: none;
+}
+
+.geoform-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1c222a;
+  margin: 0 auto;
+}
+
+.geoform-label {
+  display: block;
+  font-size: 16px;
+  color: #1c222a;
+  margin-bottom: 7px;
+  margin-top: 9px;
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+}
+
+.geoform-select-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.geoform-select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1.6px solid #d5dde5;
+
+  color: #6b7280;
+  font-size: 14px;
+  padding: 16px 45px 16px 17px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  appearance: none;
+  outline: none;
+}
+
+.geoform-dropdown-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.geoform-radio-row {
+  display: flex;
+  gap: 30px;
+
+  border-radius: 12px;
+  border: 1px solid #d5dde5;
+  width: 100%;
+  padding: 16px 0 16px 18px;
+
+  margin-bottom: 14px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.geoform-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  color: #717d8c;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.geoform-radio input[type="radio"] {
+  display: none;
+}
+
+.geo-radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c2c8ce;
+  border-radius: 50%;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.geoform-radio input[type="radio"]:checked + .geo-radio-custom {
+  border-color: #23b7cd;
+  background: #e6fafd;
+}
+
+.geoform-radio input[type="radio"]:checked + .geo-radio-custom::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #23b7cd;
+  display: block;
+}
+
+.geo-radio-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #232323;
+}
+
+.geoform-submit {
+  background: #27b9cd;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+
+  font-weight: 600;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}

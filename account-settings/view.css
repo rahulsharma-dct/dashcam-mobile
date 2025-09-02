@@ -630,6 +630,9 @@
   user-select: text;
   gap: 12px;
 }
+.devices-card-item-radius{
+  border-radius: 11px !important;
+}
 .device-name {
   font-weight: 400;
   line-height: 1.2;

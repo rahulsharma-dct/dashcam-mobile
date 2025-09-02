@@ -597,3 +597,108 @@ function setActiveToggle(id) {
     .forEach((btn) => btn.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
+
+// Dummy Subusers Data
+const subusersData = {
+  "john@example.com": {
+    assigned: [{ name: "Device B", imei: "2222222222" }],
+    unassigned: [{ name: "Device D", imei: "4444444444" }],
+  },
+  "sara@example.com": {
+    assigned: [{ name: "Device X", imei: "5555555555" }],
+    unassigned: [{ name: "Device Z", imei: "7777777777" }],
+  },
+};
+
+// Elements
+const subuserSelect = document.getElementById("subuserSelect");
+const viewBtn = document.querySelector(".subuser-view-btn");
+const assignedContainer = document.querySelector(".assigned-card");
+const unassignedContainer = document.querySelector(".unassigned-card");
+const assignedSearch = document.querySelector(".assigned-search");
+const unassignedSearch = document.querySelector(".unassigned-search");
+
+// Initially show "No Devices Available"
+assignedContainer.innerHTML = `<div class="devices-card-item devices-card-item-radius ">No Devices Available</div>`;
+unassignedContainer.innerHTML = `<div class="devices-card-item devices-card-item-radius">No Devices Available</div>`;
+
+// Populate Dropdown
+Object.keys(subusersData).forEach((email) => {
+  const option = document.createElement("option");
+  option.value = email;
+  option.textContent = email;
+  subuserSelect.appendChild(option);
+});
+
+// Render Function
+function renderDevices(container, devices, type) {
+  container.innerHTML = `
+    <div class="devices-card-header">
+      <b>${type === "assigned" ? "Device Details" : "Name"}</b>
+      <svg width="10" height="12" viewBox="0 0 10 12" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.00008 6.58268V2.39727L1.498 3.89935L0.666748 3.08268L3.58341 0.166016L6.50008 3.08268L5.66883 3.89935L4.16675 2.39727V6.58268H3.00008ZM7.08341 11.8327L4.16675 8.91602L4.998 8.09935L6.50008 9.60143V5.41602H7.66675V9.60143L9.16883 8.09935L10.0001 8.91602L7.08341 11.8327Z"
+          fill="#364153"/>
+      </svg>
+    </div>
+  `;
+
+  if (devices.length === 0) {
+    container.innerHTML += `<div class="no-data-card">No Devices Available</div>`;
+    return;
+  }
+
+  devices.forEach((device) => {
+    container.innerHTML += `
+      <div class="devices-card-item ${type}">
+        <div style="display:flex;flex-direction:column">
+          <span class="device-name">${device.name}</span>
+          <span class="device-imei">IMEI: <a href="#">${device.imei}</a></span>
+        </div>
+        <span class="device-status ${
+          type === "assigned" ? "unassigned-btn" : "assigned-btn"
+        }">
+          ${type === "assigned" ? "Unassigned" : "Assigned"}
+        </span>
+      </div>
+    `;
+  });
+}
+
+// On View Button
+viewBtn.addEventListener("click", () => {
+  const selectedUser = subuserSelect.value;
+  if (!subusersData[selectedUser]) {
+    assignedContainer.innerHTML = `<div class="no-data-card">No Devices Available</div>`;
+    unassignedContainer.innerHTML = `<div class="no-data-card">No Devices Available</div>`;
+    return;
+  }
+
+  const { assigned, unassigned } = subusersData[selectedUser];
+  renderDevices(assignedContainer, assigned, "assigned");
+  renderDevices(unassignedContainer, unassigned, "unassigned");
+
+  // Save for searching
+  assignedContainer.dataset.devices = JSON.stringify(assigned);
+  unassignedContainer.dataset.devices = JSON.stringify(unassigned);
+});
+
+// Search Functionality
+function filterDevices(input, container, type) {
+  const query = input.value.toLowerCase();
+  const devices = JSON.parse(container.dataset.devices || "[]");
+  const filtered = devices.filter(
+    (d) =>
+      d.name.toLowerCase().includes(query) ||
+      d.imei.toLowerCase().includes(query)
+  );
+  renderDevices(container, filtered, type);
+}
+
+assignedSearch.addEventListener("input", () => {
+  filterDevices(assignedSearch, assignedContainer, "assigned");
+});
+
+unassignedSearch.addEventListener("input", () => {
+  filterDevices(unassignedSearch, unassignedContainer, "unassigned");
+});

@@ -583,127 +583,73 @@
         </div>
 
         <div class="subuser-group">
-          <div class="subuser-select-bar">
-            <label for="subuserSelect" class="subuser-label">Subuser:</label>
-            <div class="subuser-controls">
-              <select id="subuserSelect" class="subuser-select">
-                <option>Select Subuser</option>
-                <!-- Add options dynamically -->
-              </select>
-              <button class="subuser-view-btn">View</button>
-            </div>
-          </div>
+  <div class="subuser-select-bar">
+    <label for="subuserSelect" class="subuser-label">Subuser:</label>
+    <div class="subuser-controls">
+      <select id="subuserSelect" class="subuser-select">
+        <option value="" disabled selected hidden>Select Subuser</option>
+        <!-- Options will be injected dynamically -->
+      </select>
+      <button class="subuser-view-btn">View</button>
+    </div>
+  </div>
 
-          <div class="assigned-devices-section">
-            <hr class="devices-divider" />
-            <div class="devices-section-row">
-              <h4 class="devices-title">Assigned Devices</h4>
-              <div class="devices-searchbar">
-                <svg width="17" height="17" fill="none">
-                  <circle
-                    cx="7.5"
-                    cy="7.5"
-                    r="7"
-                    stroke="#bbb"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M16 16L13 13"
-                    stroke="#bbb"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-                <input
-                  type="search"
-                  class="devices-search"
-                  placeholder="Search"
-                />
-              </div>
-            </div>
+  <!-- Assigned Devices -->
+  <div class="assigned-devices-section">
+    <hr class="devices-divider" />
+    <div class="devices-section-row">
+      <h4 class="devices-title">Assigned Devices</h4>
+      <div class="devices-searchbar">
+        <svg width="17" height="17" fill="none">
+          <circle cx="7.5" cy="7.5" r="7" stroke="#bbb" stroke-width="2" />
+          <path
+            d="M16 16L13 13"
+            stroke="#bbb"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <input
+          type="search"
+          class="devices-search assigned-search"
+          placeholder="Search"
+        />
+      </div>
+    </div>
 
-            <div class="devices-card">
-              <div class="devices-card-header">
-                <b>Device Details</b>
-                <svg
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.00008 6.58268V2.39727L1.498 3.89935L0.666748 3.08268L3.58341 0.166016L6.50008 3.08268L5.66883 3.89935L4.16675 2.39727V6.58268H3.00008ZM7.08341 11.8327L4.16675 8.91602L4.998 8.09935L6.50008 9.60143V5.41602H7.66675V9.60143L9.16883 8.09935L10.0001 8.91602L7.08341 11.8327Z"
-                    fill="#364153"
-                  />
-                </svg>
-              </div>
-              <div class="devices-card-item assigned">
-                <div style="display: flex; flex-direction: column">
-                  <span class="device-name">Device 1</span>
-                  <span class="device-imei"
-                    >IMEI: <a href="#">2209021734</a></span
-                  >
-                </div>
-                <span class="device-status unassigned-btn">Unassigned</span>
-              </div>
-            </div>
-          </div>
+    <div class="devices-card assigned-card">
+      <!-- Rendered dynamically -->
+    </div>
+  </div>
 
-          <div class="unassigned-devices-section">
-            <div class="devices-section-row">
-              <h4 class="devices-title">Unassigned Devices</h4>
-              <div class="devices-searchbar">
-                <svg width="17" height="17" fill="none">
-                  <circle
-                    cx="7.5"
-                    cy="7.5"
-                    r="7"
-                    stroke="#bbb"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M16 16L13 13"
-                    stroke="#bbb"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-                <input
-                  type="search"
-                  class="devices-search"
-                  placeholder="Search"
-                />
-              </div>
-            </div>
-            <div class="devices-card">
-              <div class="devices-card-header">
-                <b>Name</b>
-                <svg
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.00008 6.58268V2.39727L1.498 3.89935L0.666748 3.08268L3.58341 0.166016L6.50008 3.08268L5.66883 3.89935L4.16675 2.39727V6.58268H3.00008ZM7.08341 11.8327L4.16675 8.91602L4.998 8.09935L6.50008 9.60143V5.41602H7.66675V9.60143L9.16883 8.09935L10.0001 8.91602L7.08341 11.8327Z"
-                    fill="#364153"
-                  />
-                </svg>
-              </div>
-              <div class="devices-card-item unassigned">
-                <div style="display: flex; flex-direction: column">
-                  <span class="device-name">Device 1</span>
-                  <span class="device-imei"
-                    >IMEI: <a href="#">2209021734</a></span
-                  >
-                </div>
-                <span class="device-status assigned-btn">Assigned</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Unassigned Devices -->
+  <div class="unassigned-devices-section">
+    <div class="devices-section-row">
+      <h4 class="devices-title">Unassigned Devices</h4>
+      <div class="devices-searchbar">
+        <svg width="17" height="17" fill="none">
+          <circle cx="7.5" cy="7.5" r="7" stroke="#bbb" stroke-width="2" />
+          <path
+            d="M16 16L13 13"
+            stroke="#bbb"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <input
+          type="search"
+          class="devices-search unassigned-search"
+          placeholder="Search"
+        />
+      </div>
+    </div>
+
+    <div class="devices-card unassigned-card">
+      <!-- Rendered dynamically -->
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
     <script>

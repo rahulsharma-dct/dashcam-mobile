@@ -4,6 +4,36 @@
   padding: 20px;
 }
 
+/* Hide body by default */
+.maintenance-body {
+  display: none;
+}
+
+/* Show body when item is open */
+.maintenance-item.open .maintenance-body {
+  display: block;
+}
+
+/* Optional: rotate the arrow when open */
+.maintenance-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.maintenance-item.open .maintenance-toggle svg {
+  transform: rotate(180deg);
+}
+
+.maintenance-toggle svg {
+  transform: rotate(180deg); /* ↓ down */
+  transition: transform 0.3s ease;
+}
+
+/* When open: arrow points up */
+.maintenance-item.open .maintenance-toggle svg {
+  transform: rotate(0deg); /* ↑ up */
+}
+
+/* fghjeg */
 .toolbar-row {
   display: flex;
   align-items: center;

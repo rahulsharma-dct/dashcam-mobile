@@ -22,7 +22,7 @@
   <body style="margin: 0">
     <div class="device-container">
       <div class="device-topbar">
-        <button id="closeSidebar" class="icon-button-2">
+        <button id="closeSidebar" class="icon-button-2" onclick="window.location.href='/Home/Home.html'">
           <!-- Back Arrow -->
           <svg
             width="14"
@@ -77,50 +77,19 @@
         <div class="device-field">
           <label for="icon-select">Icon:</label>
           <select id="icon-select">
-            <option>All</option>
-            <option>Truck</option>
-            <option>Car</option>
-            <option>Bike</option>
+            <option value="All">All</option>
+            <option value="Truck">Truck</option>
+            <option value="Car">Car</option>
+            <option value="Bus">Bus</option>
+            <option value="Taxi">Taxi</option>
           </select>
         </div>
-        <div class="device-icons-box">
-          <div class="device-icons-grid">
-            <label class="device-icon-radio">
-              <input type="radio" name="icon" checked />
-              <span>No Icon</span>
-            </label>
-            <!-- Vehicle icons -->
-            <label class="device-icon-radio">
-              <input type="radio" name="icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f69a.svg"
-                alt="Truck"
-              />
-            </label>
-            <label class="device-icon-radio">
-              <input type="radio" name="icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f699.svg"
-                alt="Blue Car"
-              />
-            </label>
-            <label class="device-icon-radio">
-              <input type="radio" name="icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg"
-                alt="Bus"
-              />
-            </label>
-            <label class="device-icon-radio">
-              <input type="radio" name="icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68b.svg"
-                alt="Taxi"
-              />
-            </label>
-            <!-- Add more as needed -->
-          </div>
+
+      <div class="device-icons-box">
+        <div class="device-icons-grid" id="icon-grid">
+          <!-- Icons will be rendered here -->
         </div>
+      </div>
         <button class="device-add-btn" type="submit">Add Device</button>
       </form>
 
@@ -166,52 +135,20 @@
           <div></div>
         </div>
         <div class="device-field">
-          <label for="edit-icon-select">Icon:</label>
-          <select id="edit-icon-select">
-            <option>All</option>
-            <option>Truck</option>
-            <option>Car</option>
-            <option>Bike</option>
-          </select>
+        <label for="edit-icon-select">Icon:</label>
+        <select id="edit-icon-select">
+          <option value="All">All</option>
+          <option value="Truck">Truck</option>
+          <option value="Car">Car</option>
+          <option value="Bus">Bus</option>
+          <option value="Taxi">Taxi</option>
+        </select>
+      </div>
+      <div class="device-icons-box">
+        <div class="device-icons-grid" id="edit-icon-grid">
+          <!-- Icons will be rendered dynamically here -->
         </div>
-        <div class="device-icons-box">
-          <div class="device-icons-grid">
-            <label class="device-icon-radio">
-              <input type="radio" name="edit-icon" checked />
-              <span>No Icon</span>
-            </label>
-            <!-- Same vehicle icons as Add Device -->
-            <label class="device-icon-radio">
-              <input type="radio" name="edit-icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f69a.svg"
-                alt="Truck"
-              />
-            </label>
-            <label class="device-icon-radio">
-              <input type="radio" name="edit-icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f699.svg"
-                alt="Blue Car"
-              />
-            </label>
-            <label class="device-icon-radio">
-              <input type="radio" name="edit-icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg"
-                alt="Bus"
-              />
-            </label>
-            <label class="device-icon-radio">
-              <input type="radio" name="edit-icon" />
-              <img
-                src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68b.svg"
-                alt="Taxi"
-              />
-            </label>
-            <!-- More icons if needed -->
-          </div>
-        </div>
+      </div>
         <button class="device-add-btn" type="submit">Add Device</button>
       </form>
     </div>
@@ -238,5 +175,146 @@
         });
       });
     </script>
+    <script>
+  // 1. Create the icons object
+  const icons = [
+    { name: "No Icon", type: "None", src: null },
+    {
+      name: "Truck",
+      type: "Truck",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f69a.svg"
+    },
+    {
+      name: "Blue Car",
+      type: "Car",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f699.svg"
+    },
+    {
+      name: "Bus",
+      type: "Bus",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg"
+    },
+    {
+      name: "Taxi",
+      type: "Taxi",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68b.svg"
+    }
+    // Add more as needed
+  ];
+
+  const iconGrid = document.getElementById("icon-grid");
+  const iconSelect = document.getElementById("icon-select");
+
+  // 2. Function to render icons
+  function renderIcons(filter = "All") {
+    iconGrid.innerHTML = ""; // Clear previous icons
+    const filteredIcons = filter === "All" ? icons : icons.filter(icon => icon.type === filter);
+
+    filteredIcons.forEach(icon => {
+      const label = document.createElement("label");
+      label.className = "device-icon-radio";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "icon";
+      if (icon.name === "No Icon") input.checked = true;
+
+      label.appendChild(input);
+
+      if (icon.src) {
+        const img = document.createElement("img");
+        img.src = icon.src;
+        img.alt = icon.name;
+        label.appendChild(img);
+      } else {
+        const span = document.createElement("span");
+        span.textContent = icon.name;
+        label.appendChild(span);
+      }
+
+      iconGrid.appendChild(label);
+    });
+  }
+
+  // 3. Initial render
+  renderIcons();
+
+  // 4. Listen for select changes
+  iconSelect.addEventListener("change", (e) => {
+    renderIcons(e.target.value);
+  });
+</script>
+
+<script>
+  // 1. Icon data for Edit Device
+  const editIcons = [
+    { name: "No Icon", type: "None", src: null },
+    {
+      name: "Truck",
+      type: "Truck",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f69a.svg"
+    },
+    {
+      name: "Blue Car",
+      type: "Car",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f699.svg"
+    },
+    {
+      name: "Bus",
+      type: "Bus",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg"
+    },
+    {
+      name: "Taxi",
+      type: "Taxi",
+      src: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68b.svg"
+    }
+    // Add more if needed
+  ];
+
+  const editIconGrid = document.getElementById("edit-icon-grid");
+  const editIconSelect = document.getElementById("edit-icon-select");
+
+  // 2. Function to render Edit Device icons
+  function renderEditIcons(filter = "All") {
+    editIconGrid.innerHTML = ""; // Clear existing icons
+
+    // Filter icons based on selection
+    const filteredIcons = filter === "All" ? editIcons : editIcons.filter(icon => icon.type === filter);
+
+    filteredIcons.forEach(icon => {
+      const label = document.createElement("label");
+      label.className = "device-icon-radio";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "edit-icon";
+      if (icon.name === "No Icon") input.checked = true;
+
+      label.appendChild(input);
+
+      if (icon.src) {
+        const img = document.createElement("img");
+        img.src = icon.src;
+        img.alt = icon.name;
+        label.appendChild(img);
+      } else {
+        const span = document.createElement("span");
+        span.textContent = icon.name;
+        label.appendChild(span);
+      }
+
+      editIconGrid.appendChild(label);
+    });
+  }
+
+  // 3. Initial render
+  renderEditIcons();
+
+  // 4. Listen for changes on the select dropdown
+  editIconSelect.addEventListener("change", (e) => {
+    renderEditIcons(e.target.value);
+  });
+</script>
   </body>
 </html>

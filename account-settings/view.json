@@ -1,0 +1,101 @@
+{
+    "views": 
+    [
+        {
+            "name": "Jeroen Nienke",
+            "email": "jeroennienke@email.com",
+            "permissions": 
+            {
+                "settings": true,
+                "reports": true,
+                "track": false,
+                "specificDevicesOnly": true
+            },
+            "actions": 
+            {
+                "edit": true,
+                "delete": true
+            }
+        },
+        {
+            "name": "Wilhelm Johann",
+            "email": "wilhelmjohann@hotmail.com",
+            "permissions": 
+            {
+                "settings": false,
+                "reports": false,
+                "track": false,
+                "specificDevicesOnly": false
+            },
+            "actions": 
+            {
+                "edit": true,
+                "delete": true
+            }
+        },
+        {
+            "name": "Yannick Diana",
+            "email": "yannickdiana@email.com",
+            "permissions": 
+            {
+                "settings": false,
+                "reports": false,
+                "track": false,
+                "specificDevicesOnly": false
+            },
+            "actions": 
+            {
+                "edit": true,
+                "delete": true
+            }
+        },
+        {
+            "name": "Carlo Susanna",
+            "email": "carlosusanna@email.com",
+            "permissions": 
+            {
+                "settings": false,
+                "reports": false,
+                "track": false,
+                "specificDevicesOnly": false
+            },
+            "actions": 
+            {
+                "edit": true,
+                "delete": true
+            }
+        },
+        {
+            "name": "Sophia Müller",
+            "email": "sophiamuller@email.com",
+            "permissions": 
+            {
+                "settings": true,
+                "reports": false,
+                "track": true,
+                "specificDevicesOnly": true
+            },
+            "actions": 
+            {
+                "edit": true,
+                "delete": true
+            }
+        },
+        {
+            "name": "David Rossi",
+            "email": "davidrossi@email.com",
+            "permissions": 
+            {
+                "settings": true,
+                "reports": true,
+                "track": true,
+                "specificDevicesOnly": false
+            },
+            "actions": 
+            {
+                "edit": true,
+                "delete": true
+            }
+        }
+    ]
+}

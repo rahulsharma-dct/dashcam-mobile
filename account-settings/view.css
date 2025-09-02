@@ -20,6 +20,36 @@
   background: #eaf9fb;
   border-bottom: 2px solid #19adc1;
 }
+.no-data-card {
+  width: 100%;
+  height: 300px; /* adjust if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f6fb; /* light grayish-blue */
+  border: 1px solid #d9e2ec; /* soft border */
+  border-radius: 8px; /* rounded corners */
+  color: #6c7a89; /* subtle gray text */
+  font-size: 14px;
+}
+
+
+.user-card-body {
+  display: none;
+}
+
+.user-item.expanded .user-card-body {
+  display: block;
+}
+
+/* optional arrow rotation */
+.user-arrow svg {
+  transition: transform 0.3s ease;
+}
+
+.user-item.expanded .user-arrow svg {
+  transform: rotate(180deg);
+}
 
 .add-user-form {
   background: #fff;

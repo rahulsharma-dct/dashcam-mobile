@@ -268,6 +268,31 @@
   flex-direction: column;
   gap: 13px;
   margin: 10px 2px 13px 2px;
+  overflow-y: auto;    /* vertical scrollbar */
+  overflow-x: auto;
+}
+.width-btn{
+  width: 70px !important;
+}
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* so columns don’t squeeze */
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-table thead {
+  background: #f9f9f9;
+  position: sticky;
+  top: 0;          /* header stays visible while scrolling */
+  z-index: 2;
 }
 .user-card {
   background: #fff;
@@ -684,3 +709,48 @@
     padding-right: 12px;
   }
 }
+
+
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table thead {
+  background: #f4f6f9;
+}
+
+.user-table th {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.user-table td {
+  font-size: 14px;
+  color: #555;
+}
+
+.user-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.user-table .status {
+  text-align: center;
+  width: 80px;
+  color: green;
+  font-weight: bold;
+}
+

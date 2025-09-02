@@ -384,50 +384,34 @@ function renderViews(users) {
           </div>
                               `;
       } else {
-        viewItem.innerHTML = `
-                              <div class="user-card">
-            <div class="user-card-header">
-              <span class="user-name">${user.name}</span>
-              <span class="user-email">${user.email}</span>
-              <button class="user-arrow dropdown-arrow" title="Expand">
-                <svg
-                  width="20"
-                  height="19"
-                  viewBox="0 0 20 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="-0.5"
-                    y="0.5"
-                    width="19"
-                    height="17"
-                    rx="4.5"
-                    transform="matrix(-1 0 0 1 19 0.5)"
-                    fill="white"
-                  />
-                  <rect
-                    x="-0.5"
-                    y="0.5"
-                    width="19"
-                    height="17"
-                    rx="4.5"
-                    transform="matrix(-1 0 0 1 19 0.5)"
-                    stroke="#D7DBE2"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M9.5678 7.37249C9.68048 7.25984 9.83329 7.19656 9.99262 7.19656C10.1519 7.19656 10.3048 7.25984 10.4174 7.37249L13.8166 10.7716C13.874 10.827 13.9197 10.8933 13.9512 10.9667C13.9827 11.04 13.9993 11.1188 14 11.1986C14.0007 11.2784 13.9855 11.3575 13.9553 11.4313C13.925 11.5052 13.8804 11.5723 13.824 11.6287C13.7676 11.6851 13.7005 11.7297 13.6267 11.7599C13.5528 11.7902 13.4737 11.8054 13.3939 11.8047C13.3141 11.804 13.2353 11.7874 13.162 11.7559C13.0887 11.7244 13.0224 11.6786 12.9669 11.6212L9.99262 8.64694L7.0183 11.6212C6.90498 11.7307 6.7532 11.7913 6.59565 11.7899C6.4381 11.7885 6.2874 11.7253 6.17599 11.6139C6.06458 11.5025 6.00139 11.3518 6.00002 11.1943C5.99865 11.0367 6.05922 10.8849 6.16867 10.7716L9.5678 7.37249Z"
-                    fill="#27B9CD"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div class="user-card-body">
-              <div class="user-permissions-row">
-                <span class="perm-true"
-                  ><svg
+        const table = document.createElement("table");
+        table.className = "user-table";
+
+        // Table Header
+        table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Setting</th>
+          <th>Reports</th>
+          <th>Track</th>
+          <th>Specific Device Only</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+
+        const tbody = table.querySelector("tbody");
+
+        paginatedViews.forEach((user) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td><svg
                     width="15"
                     height="10"
                     viewBox="0 0 15 10"
@@ -438,11 +422,8 @@ function renderViews(users) {
                       d="M0.256348 5.88203L3.7501 9.37578L4.63135 8.48828L1.14385 5.00078M13.9001 0.988281L7.2876 7.60703L4.6876 5.00078L3.79385 5.88203L7.2876 9.37578L14.7876 1.87578M11.2501 1.87578L10.3688 0.988281L6.4001 4.95703L7.2876 5.83828L11.2501 1.87578Z"
                       fill="#30A71A"
                     />
-                  </svg>
-                  Settings</span
-                >
-                <span class="perm-true"
-                  ><svg
+                  </svg></td>
+        <td><svg
                     width="15"
                     height="10"
                     viewBox="0 0 15 10"
@@ -453,11 +434,8 @@ function renderViews(users) {
                       d="M0.256348 5.88203L3.7501 9.37578L4.63135 8.48828L1.14385 5.00078M13.9001 0.988281L7.2876 7.60703L4.6876 5.00078L3.79385 5.88203L7.2876 9.37578L14.7876 1.87578M11.2501 1.87578L10.3688 0.988281L6.4001 4.95703L7.2876 5.83828L11.2501 1.87578Z"
                       fill="#30A71A"
                     />
-                  </svg>
-                  Reports</span
-                >
-                <span class="perm-false"
-                  ><svg
+                  </svg></td>
+        <td><svg
                     width="9"
                     height="8"
                     viewBox="0 0 9 8"
@@ -470,11 +448,8 @@ function renderViews(users) {
                       stroke-width="1.27262"
                       stroke-linecap="round"
                     />
-                  </svg>
-                  Track</span
-                >
-                <span class="perm-true"
-                  ><svg
+                  </svg></td>
+        <td><svg
                     width="15"
                     height="10"
                     viewBox="0 0 15 10"
@@ -485,12 +460,8 @@ function renderViews(users) {
                       d="M0.256348 5.88203L3.7501 9.37578L4.63135 8.48828L1.14385 5.00078M13.9001 0.988281L7.2876 7.60703L4.6876 5.00078L3.79385 5.88203L7.2876 9.37578L14.7876 1.87578M11.2501 1.87578L10.3688 0.988281L6.4001 4.95703L7.2876 5.83828L11.2501 1.87578Z"
                       fill="#30A71A"
                     />
-                  </svg>
-                  Specific Devices Only</span
-                >
-              </div>
-              <div class="user-card-actions">
-                <button class="user-btn-edit">
+                  </svg></td>
+          <td><button class="user-btn-edit width-btn">
                   <svg
                     width="15"
                     height="15"
@@ -507,8 +478,8 @@ function renderViews(users) {
                     />
                   </svg>
                   Edit
-                </button>
-                <button class="user-btn-delete">
+                </button></td>
+            <td><button class="user-btn-delete width-btn">
                   <svg
                     width="15"
                     height="15"
@@ -522,11 +493,13 @@ function renderViews(users) {
                     />
                   </svg>
                   Delete
-                </button>
-              </div>
-            </div>
-          </div>
-                              `;
+                </button></td>
+        
+      `;
+          tbody.appendChild(row);
+        });
+
+        usersList.appendChild(table);
       }
 
       usersList.appendChild(viewItem);

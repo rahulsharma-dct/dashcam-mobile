@@ -58,19 +58,27 @@
         <select id="dashcamSelect" class="dashcam-select">
           <option selected disabled>Select Dashcam</option>
         </select>
-        <label for="alertsSelect" class="alerts-label">Alerts:</label>
-        <select id="alertsSelect" class="alerts-select">
-          <option selected>All Alerts</option>
-          <!-- Add more options if needed -->
-        </select>
-        <div class="alert-btn-row">
-          <button class="alert-btn enable-btn">Enable Alert</button>
-          <button class="alert-btn disable-btn">Disable Alerts</button>
+
+        <div id="alertsSection" style="display: none">
+          <label for="alertsSelect" class="alerts-label">Alerts:</label>
+          <select id="alertsSelect" class="alerts-select">
+            <option selected>All Alerts</option>
+            <!-- Add more options if needed -->
+          </select>
+          <div class="alert-btn-row">
+            <button class="alert-btn enable-btn">Enable Alert</button>
+            <button class="alert-btn disable-btn">Disable Alerts</button>
+          </div>
         </div>
 
-        <button class="custom-btn active-btn">Alerts Contacts</button>
+        <a href="change-setting2.html">
+          <button class="custom-btn active-btn">Alerts Contacts</button>
+        </a>
+
         <div class="custom-section">After Hour Alerts</div>
       </div>
     </div>
   </body>
+
+  <script src="change-alert.js"></script>
 </html>

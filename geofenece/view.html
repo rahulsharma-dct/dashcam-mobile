@@ -426,7 +426,7 @@
       <section class="stats">
         <div class="geoform-card">
           <div class="geoform-title-row">
-            <button class="geoform-back">
+            <a href="/geofenece/geofencing-area.html" class="geoform-back">
               <!-- Left arrow SVG rounded button -->
               <svg
                 width="40"
@@ -444,12 +444,12 @@
                   fill="#5D5D5D"
                 />
               </svg>
-            </button>
+            </a>
             <div class="geoform-title">View/Delete Geofence</div>
           </div>
           <label class="geoform-label">Geofence:</label>
           <div class="geoform-select-wrap">
-            <select class="geoform-select">
+            <select id="geofenceSelect" class="geoform-select">
               <option>Select Geofence</option>
             </select>
             <span class="geoform-dropdown-arrow">
@@ -465,7 +465,7 @@
               </svg>
             </span>
           </div>
-          <button class="geoform-submit">Submit</button>
+          <a href="/geofenece/edit.html" class="geoform-submit">Submit</a>
         </div>
       </section>
     </section>
@@ -507,6 +507,26 @@
       </defs>
     </svg>
 
-    <script src="Home.js"></script>
+    <script >
+      const platform = new H.service.Platform({
+        apikey: "kre4_OutjD9fpCNKHjwXfTrSbGWhVo7cG7id5zP2ULE",
+      });
+
+      const defaultLayers = platform.createDefaultLayers();
+
+      const map = new H.Map(
+        document.getElementById("map"),
+        defaultLayers.vector.normal.map,
+        {
+          center: { lat: 28.6139, lng: 77.209 },
+          zoom: 10,
+          pixelRatio: window.devicePixelRatio || 1,
+        }
+      );
+
+      const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+      const ui = H.ui.UI.createDefault(map, defaultLayers);
+    </script>
+    <script src="./geofence.js"></script>
   </body>
 </html>

@@ -426,7 +426,7 @@
       <section class="stats">
         <div class="geoform-card">
           <div class="geoform-title-row">
-            <button class="geoform-back">
+            <a href="/geofenece/geofencing-area.html" class="geoform-back">
               <!-- Left arrow SVG rounded button -->
               <svg
                 width="40"
@@ -444,12 +444,12 @@
                   fill="#5D5D5D"
                 />
               </svg>
-            </button>
+            </a>
             <div class="geoform-title">View/Delete Geofence</div>
           </div>
           <label class="geoform-label">Geofence:</label>
           <div class="geoform-select-wrap">
-            <select class="geoform-select">
+            <select id="geofenceSelect" class="geoform-select">
               <option>Select Geofence</option>
             </select>
             <span class="geoform-dropdown-arrow">
@@ -465,7 +465,7 @@
               </svg>
             </span>
           </div>
-          <button class="geoform-submit">Submit</button>
+          <a href="/geofenece/edit.html" class="geoform-submit">Submit</a>
         </div>
       </section>
     </section>
@@ -507,6 +507,104 @@
       </defs>
     </svg>
 
-    <script src="/Home/Home.js"></script>
+    <script src="Home.js"></script>
+    <script>
+      // HERE Map setup
+      const platform = new H.service.Platform({
+        apikey: "kre4_OutjD9fpCNKHjwXfTrSbGWhVo7cG7id5zP2ULE",
+      });
+      const defaultLayers = platform.createDefaultLayers();
+
+      const map = new H.Map(
+        document.getElementById("map"),
+        defaultLayers.vector.normal.map,
+        {
+          center: { lat: 28.6139, lng: 77.209 },
+          zoom: 12,
+          pixelRatio: window.devicePixelRatio || 1,
+        }
+      );
+
+      new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+      H.ui.UI.createDefault(map, defaultLayers);
+
+      const geocoder = platform.getSearchService();
+
+      // Track selected color
+      let selectedColor = "yellow";
+
+      // Handle color selection
+      document.querySelectorAll("#colorPicker .color-dot").forEach((dot) => {
+        dot.addEventListener("click", () => {
+          document
+            .querySelectorAll("#colorPicker .color-dot")
+            .forEach((d) => d.classList.remove("selected"));
+          dot.classList.add("selected");
+          selectedColor = dot.getAttribute("data-color");
+        });
+      });
+
+      // Map colors → HEX/RGBA
+      const colorMap = {
+        yellow: "rgba(255, 215, 0, 0.4)",
+        red: "rgba(211, 51, 44, 0.4)",
+        purple: "rgba(128, 0, 128, 0.4)",
+        green: "rgba(0, 128, 0, 0.4)",
+        blue: "rgba(0, 128, 255, 0.4)",
+        grey: "rgba(128, 128, 128, 0.4)",
+      };
+
+      // Submit handler
+      document.getElementById("submit").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const address = document.getElementById("address").value;
+        const radiusFeet =
+          parseFloat(document.getElementById("radius").value) || 500;
+        const radiusMeters = radiusFeet * 0.3048; // ✅ convert feet → meters
+        const geoname = document.getElementById("geoname").value || "Geofence";
+
+        if (!address) {
+          alert("Please enter an address");
+          return;
+        }
+
+        // Geocode the address
+        geocoder.geocode(
+          { q: address },
+          (result) => {
+            if (result.items.length > 0) {
+              const pos = result.items[0].position;
+
+              // Create a circle
+              const circle = new H.map.Circle(pos, radiusMeters, {
+                style: {
+                  strokeColor: "rgba(0,0,0,0.6)",
+                  lineWidth: 2,
+                  fillColor: colorMap[selectedColor] || "rgba(0,128,255,0.2)",
+                },
+              });
+
+              // Optional label (geofence name)
+              const label = new H.map.DomMarker(pos, {
+                icon: new H.map.DomIcon(`<div style="padding:3px 6px; background:white; border:1px solid #666; border-radius:4px; font-size:12px;">
+            ${geoname}
+          </div>`),
+              });
+
+              // Add to map
+              map.addObject(circle);
+              map.addObject(label);
+
+              map.setCenter(pos);
+              map.setZoom(14);
+            } else {
+              alert("Address not found!");
+            }
+          },
+          (err) => console.error(err)
+        );
+      });
+    </script>
   </body>
 </html>

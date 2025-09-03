@@ -1,3 +1,11 @@
+.map-cls{
+  height: 52% !important;
+}
+.stats{
+  height: 50% !important;
+  overflow: scroll;
+}
+
 .geoform-card {
   background: #fff;
 
@@ -95,7 +103,7 @@
 }
 
 .color-dot.selected {
-  border: 2.5px solid #fee488;
+  border: 2.5px solid #d2a0a0;
   color: #f6c941;
   font-weight: bold;
   box-shadow: 0 0 0 2px #fff;

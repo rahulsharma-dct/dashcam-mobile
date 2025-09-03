@@ -225,9 +225,18 @@
             >
           </div>
         </div>
-        <div class="menu-item">
-          <div style="display: flex; align-items: center">
-            <div class="menu-icon bg-cyan">
+        <div
+          class="menu-item"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 12px 14px;
+          "
+        >
+          <div style="display: flex; align-items: center; flex: 1">
+            <div style="display: flex; align-items: center">
+              <div class="menu-icon bg-cyan">
               <svg
                 width="24"
                 height="24"
@@ -251,27 +260,34 @@
                 />
               </svg>
             </div>
-            <div class="menu-text">
-              <h3>Geofencing</h3>
-              <p>Create & manage zones</p>
+              <div class="menu-text">
+                <h3>Geofencing</h3>
+                <p>Create & manage zones</p>
+              </div>
+            </div>
+            <div style="margin-left: auto">
+              <svg
+                id="menu-arrow"
+                class="menu-arrow"
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                fill="none"
+                style="cursor: pointer"
+              >
+                <path
+                  d="M13 1L7 7L1 0.999999"
+                  stroke="#BBBBBB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
-          <svg
-            width="14"
-            class="menu-arrow"
-            height="8"
-            viewBox="0 0 14 8"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13 1L7 7L1 0.999999"
-              stroke="#BBBBBB"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <div class="menu-list" style="display: none; margin-top: 12px">
+            <a href="/geofenece/geofencing-area.html" class="menu-link active">Crete Geofencing Area</a>
+          </div>
         </div>
 
         <div class="menu-item">

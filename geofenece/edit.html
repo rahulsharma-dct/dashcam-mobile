@@ -21,14 +21,19 @@
       href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"
     />
   </head>
+
   <body>
     <header>
       <button id="menuBtn" class="menu-btn" aria-label="Open menu">
-        <svg class="icon"><use href="#menu" /></svg>
+        <svg class="icon">
+          <use href="#menu" />
+        </svg>
       </button>
 
       <div class="user-icon" aria-label="User menu, 3 unread notifications">
-        <svg class="icon" width="16" height="16"><use href="#user" /></svg>
+        <svg class="icon" width="16" height="16">
+          <use href="#user" />
+        </svg>
         <span class="notification-badge" aria-hidden="true">3</span>
       </div>
     </header>
@@ -426,15 +431,9 @@
       <section class="stats">
         <div class="geoform-card">
           <div class="geoform-title-row">
-            <button class="geoform-back">
-              <!-- Left chevron SVG -->
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+            <a href="/geofenece/view.html" class="geoform-back">
+              <!-- Back SVG -->
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                 <path
                   d="M0 8C0 3.58172 3.58172 0 8 0H32C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8Z"
                   fill="#F3F4F6"
@@ -444,29 +443,29 @@
                   fill="#5D5D5D"
                 />
               </svg>
-            </button>
+            </a>
             <div class="geoform-title">Edit Geofence Area</div>
           </div>
+
           <div class="geoform-info-row">
             <span class="geoform-label">Geofence Name:</span>
-            <span class="geoform-value">Test Area</span>
+            <span class="geoform-value" id="geoName">---</span>
           </div>
           <div class="geoform-info-row">
             <span class="geoform-label">Address</span>
             <span class="geoform-address">
-              <a href="#" class="geoform-link"
-                >7014 E Camelback Rd, Scottsdale, AZ 85251</a
-              >
+              <a href="#" class="geoform-link" id="geoAddress">---</a>
             </span>
           </div>
           <div class="geoform-info-row">
             <span class="geoform-label">Type</span>
-            <span class="geoform-value">Geofence Area</span>
+            <span class="geoform-value" id="geoType">---</span>
           </div>
           <div class="geoform-info-row">
             <span class="geoform-label">Radius</span>
-            <span class="geoform-value">500 feet</span>
+            <span class="geoform-value" id="geoRadius">---</span>
           </div>
+
           <button class="geoform-edit">Edit</button>
           <button class="geoform-delete">Delete</button>
         </div>
@@ -510,6 +509,94 @@
       </defs>
     </svg>
 
-    <script src="Home.js"></script>
+    <script>
+      // HERE Map setup
+      const platform = new H.service.Platform({
+        apikey: "kre4_OutjD9fpCNKHjwXfTrSbGWhVo7cG7id5zP2ULE",
+      });
+      const defaultLayers = platform.createDefaultLayers();
+
+      const map = new H.Map(
+        document.getElementById("map"),
+        defaultLayers.vector.normal.map,
+        {
+          center: { lat: 28.6139, lng: 77.209 },
+          zoom: 12,
+          pixelRatio: window.devicePixelRatio || 1,
+        }
+      );
+
+      new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+      H.ui.UI.createDefault(map, defaultLayers);
+
+      // Color map
+      const colorMap = {
+        yellow: "rgba(255, 215, 0, 0.4)",
+        red: "rgba(211, 51, 44, 0.4)",
+        purple: "rgba(128, 0, 128, 0.4)",
+        green: "rgba(0, 128, 0, 0.4)",
+        blue: "rgba(0, 128, 255, 0.4)",
+        grey: "rgba(128, 128, 128, 0.4)",
+      };
+
+      // 🔹 Retrieve selected geofence from localStorage
+      const storedGeofence = JSON.parse(
+        localStorage.getItem("selectedGeofence")
+      );
+
+      if (storedGeofence) {
+        console.log("📌 Retrieved Geofence:", storedGeofence);
+
+        // Draw circle
+        const circle = new H.map.Circle(
+          storedGeofence.center,
+          storedGeofence.radius,
+          {
+            style: {
+              strokeColor: "rgba(0,0,0,0.6)",
+              lineWidth: 2,
+              fillColor:
+                colorMap[storedGeofence.color] || "rgba(0,128,255,0.2)",
+            },
+          }
+        );
+
+        // Add label
+        const label = new H.map.DomMarker(storedGeofence.center, {
+          icon: new H.map.DomIcon(`
+        <div style="padding:3px 6px; background:white; border:1px solid #666; border-radius:4px; font-size:12px;">
+          ${storedGeofence.name}
+        </div>
+      `),
+        });
+
+        // Add to map
+        map.addObject(circle);
+        map.addObject(label);
+
+        // Center map on geofence
+        map.setCenter(storedGeofence.center);
+        map.setZoom(14);
+
+        if (storedGeofence) {
+          document.getElementById("geoName").textContent =
+            storedGeofence.name || "Unnamed";
+          document.getElementById("geoAddress").textContent =
+            storedGeofence.name || "N/A";
+          document.getElementById("geoAddress").href = storedGeofence.address
+            ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                storedGeofence.address
+              )}`
+            : "#";
+          document.getElementById("geoType").textContent = "Geofence Area"; // or storedGeofence.type if available
+          document.getElementById("geoRadius").textContent =
+            storedGeofence.radius
+              ? `${(storedGeofence.radius / 0.3048).toFixed(0)} feet`
+              : "0 feet";
+        }
+      } else {
+        alert("⚠️ No geofence found in localStorage!");
+      }
+    </script>
   </body>
 </html>

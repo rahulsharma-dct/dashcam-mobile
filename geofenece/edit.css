@@ -1,3 +1,11 @@
+#map{
+  height: 66%;
+}
+.stats{
+  height: 35%;
+  overflow: scroll;
+}
+
 .geoform-card {
   background: #fff;
 

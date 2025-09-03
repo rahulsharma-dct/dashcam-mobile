@@ -105,24 +105,28 @@ vehicles.forEach((v) => {
 });
 
 // Minimal JS for toggle on arrow click
-document.getElementById("menu-arrow").onclick = function () {
-  var menu = document.getElementById("menu-list");
-  menu.style.display =
-    menu.style.display === "none" || menu.style.display === ""
-      ? "block"
-      : "none";
-};
+document.querySelectorAll(".menu-item").forEach((menuItem) => {
+  const arrow = menuItem.querySelector(".menu-arrow");
+  const menuList = menuItem.querySelector(".menu-list");
 
-document.querySelectorAll("#menu-list .menu-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    // Remove 'active' from all menu links
-    document.querySelectorAll("#menu-list .menu-link").forEach((item) => {
-      item.classList.remove("active");
+  if (arrow && menuList) {
+    // Toggle menu list on arrow click
+    arrow.addEventListener("click", () => {
+      const isOpen = menuList.style.display === "block";
+      menuList.style.display = isOpen ? "none" : "block";
+      arrow.classList.toggle("rotated", !isOpen);
     });
 
-    // Add 'active' to the clicked one
-    link.classList.add("active");
-  });
+    // Handle active menu-link
+    menuList.querySelectorAll(".menu-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuList
+          .querySelectorAll(".menu-link")
+          .forEach((item) => item.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  }
 });
 
 document.querySelectorAll(".menu-item").forEach((item) => {

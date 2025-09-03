@@ -134,7 +134,7 @@
               </svg>
             </div>
           </div>
-          <div id="menu-list" style="display: none; margin-top: 12px">
+          <div class="menu-list" style="display: none; margin-top: 12px">
             <a href="#" class="menu-link active">List Of Devices</a>
             <a href="/account-settings/edit.html" class="menu-link"
               >Add/Edit Device</a
@@ -158,10 +158,20 @@
           </div>
         </div>
 
-        <div class="menu-item">
-          <div style="display: flex; align-items: center">
-            <div class="menu-icon bg-cyan">
-              <svg
+        
+        <div
+          class="menu-item"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 12px 14px;
+          "
+        >
+          <div style="display: flex; align-items: center; flex: 1">
+            <div style="display: flex; align-items: center">
+              <div class="menu-icon bg-cyan">
+                <svg
                 width="16"
                 height="20"
                 viewBox="0 0 16 20"
@@ -173,30 +183,48 @@
                   fill="#D3332C"
                 />
               </svg>
+              </div>
+              <div class="menu-text">
+                <h3>Alerts</h3>
+                <p>Manage alert settings</p>
             </div>
-            <div class="menu-text">
-              <h3>Alerts</h3>
-              <p>Manage alert settings</p>
+            </div>
+            <div style="margin-left: auto">
+              <svg
+                id="menu-arrow"
+                class="menu-arrow"
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                fill="none"
+                style="cursor: pointer"
+              >
+                <path
+                  d="M13 1L7 7L1 0.999999"
+                  stroke="#BBBBBB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
-          <svg
-            width="14"
-            class="menu-arrow"
-            height="8"
-            viewBox="0 0 14 8"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13 1L7 7L1 0.999999"
-              stroke="#BBBBBB"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <div class="menu-list" style="display: none; margin-top: 12px">
+            <a href="/alerts/alert-contact.html" class="menu-link active">Alert Contacts</a>
+            <a href="/alerts/scheduled.html" class="menu-link"
+              >Schedule Reports</a
+            >
+            <a href="/alerts/maintenance.html" class="menu-link"
+              >Maintenance Contact</a
+            >
+            <a href="/alerts/after-hours.html" class="menu-link"
+              >After Hours Settings</a
+            >
+            <a href="/alerts/report.html" class="menu-link"
+              >Maintenance Report</a
+            >
+          </div>
         </div>
-
         <div class="menu-item">
           <div style="display: flex; align-items: center">
             <div class="menu-icon bg-cyan">

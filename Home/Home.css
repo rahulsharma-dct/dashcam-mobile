@@ -373,6 +373,11 @@ vehicle-marker:hover {
   transition: transform 0.3s ease;
 }
 
+.menu-list {
+  display: none;
+  margin-top: 12px;
+}
+
 .header-container {
   display: flex;
   align-items: center;

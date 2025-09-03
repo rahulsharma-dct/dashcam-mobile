@@ -124,3 +124,14 @@ document.querySelectorAll("#menu-list .menu-link").forEach((link) => {
     link.classList.add("active");
   });
 });
+
+document.querySelectorAll(".menu-item").forEach((item) => {
+  const arrow = item.querySelector(".menu-arrow");
+
+  if (arrow) {
+    // only if arrow exists
+    arrow.addEventListener("click", () => {
+      item.classList.toggle("expanded"); // rotate arrow & toggle submenu
+    });
+  }
+});

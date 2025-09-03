@@ -366,6 +366,12 @@ vehicle-marker:hover {
 .menu-item svg:last-child {
   flex-shrink: 0;
 }
+.menu-item.expanded .menu-arrow {
+  transform: rotate(180deg);
+}
+.menu-arrow {
+  transition: transform 0.3s ease;
+}
 
 .header-container {
   display: flex;

@@ -631,26 +631,73 @@
       };
 
       const subgroups = [
-        { num: 1, name: "Demo 1" },
-        { num: 2, name: "Demo 2" },
-        { num: 3, name: "Demo 3" },
-        { num: 4, name: "Demo 4" },
-      ];
+    { num: 1, name: "Demo 1" },
+    { num: 2, name: "Demo 2" },
+    { num: 3, name: "Demo 3" },
+    { num: 4, name: "Demo 4" },
+  ];
 
-      const container = document.querySelector(".subgroups-list");
-      container.innerHTML = subgroups
-        .map(
-          (group) => `
-            <div class="subgroups-row">
-              <div class="subgroups-num">${group.num}</div>
-              <div class="subgroups-name">${group.name}</div>
-              <div class="subgroups-actions">
-                <a href="#" class="view-link">View</a>
-                <a href="#" class="delete-link">Delete</a>
-              </div>
-            </div>`
-        )
-        .join("");
+  const addBtn = document.querySelector(".subgroups-add-btn");
+  const input = document.querySelector(".subgroups-search");
+  const container = document.querySelector(".subgroups-list");
+
+  // Function to render subgroups
+  function renderSubgroups() {
+    container.innerHTML = subgroups
+      .map(
+        (group) => `
+          <div class="subgroups-row" data-num="${group.num}">
+            <div class="subgroups-num">${group.num}</div>
+            <div class="subgroups-name">${group.name}</div>
+            <div class="subgroups-actions">
+              <a href="#" class="view-link">View</a>
+              <a href="#" class="delete-link">Delete</a>
+            </div>
+          </div>`
+      )
+      .join("");
+  }
+
+  // Initial render
+  renderSubgroups();
+
+  // Add button click
+    addBtn.addEventListener("click", () => {
+      const value = input.value.trim();
+    
+      if (value) {
+        const newItem = {
+          num: subgroups.length + 1,
+          name: value,
+        };
+        subgroups.push(newItem);
+      
+        renderSubgroups();
+        input.value = "";
+      } else {
+        alert("Please enter a subgroup name.");
+      }
+    });
+
+  // Delete button click (event delegation)
+    container.addEventListener("click", (e) => {
+      if (e.target.classList.contains("delete-link")) {
+        e.preventDefault();
+
+        const row = e.target.closest(".subgroups-row");
+        const num = parseInt(row.getAttribute("data-num"));
+
+        // Remove from array
+        const index = subgroups.findIndex((g) => g.num === num);
+        if (index !== -1) {
+          subgroups.splice(index, 1);
+        }
+
+        // Re-render with updated numbers
+        subgroups.forEach((g, i) => (g.num = i + 1));
+        renderSubgroups();
+      }
+    });
     </script>
   </body>
 </html>

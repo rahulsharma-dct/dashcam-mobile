@@ -142,14 +142,17 @@
   background: #f1f5f9;
   border-radius: 9px;
   padding: 11px 15px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 13px;
+  margin-bottom: 10px;
   color: #838f9c;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 12px;
   align-items: center;
   box-sizing: border-box;
+}
+
+.geo-styling {
+  font-weight: 400;
+  margin-bottom: 4px;
 }
 
 span {

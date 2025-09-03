@@ -143,15 +143,37 @@
   border-radius: 9px;
   padding: 11px 15px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 13px;
+  flex-direction: column;
+
+  margin-bottom: 4px;
   color: #838f9c;
   font-weight: 500;
   font-size: 15px;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
+}
+
+.geo-styling {
+  font-weight: 400;
+  font-size: 12px;
 }
 
 span {
   font-weight: 600;
+}
+
+.geo-day-details {
+  display: none;
+}
+
+.geo-day-card-item.open .geo-day-details {
+  display: block;
+}
+
+.geo-collapse-arrow svg {
+  transition: transform 0.3s ease;
+}
+
+.geo-day-card-item.open .geo-collapse-arrow svg {
+  transform: rotate(180deg);
 }

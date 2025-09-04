@@ -123,3 +123,20 @@ options.forEach((item) => {
     data.classList.toggle("open");
   });
 });
+
+// Search functionality for geo-day-card-item
+const searchInput = document.querySelector(".toolbar-search-input");
+
+searchInput.addEventListener("input", function () {
+  const query = searchInput.value.toLowerCase().trim();
+  const cards = document.querySelectorAll(".geo-day-card-item");
+
+  cards.forEach((card) => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(query)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});

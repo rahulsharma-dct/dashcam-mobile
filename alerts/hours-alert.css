@@ -170,8 +170,9 @@ span {
 
 .geo-collapse-arrow svg {
   transition: transform 0.3s ease;
+  transform: rotate(180deg); /* Down by default */
 }
 
 .geo-day-card-item.open .geo-collapse-arrow svg {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }

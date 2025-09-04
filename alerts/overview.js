@@ -41,7 +41,7 @@ options.forEach((item) => {
   data.classList.add("main-vehicle");
 
   data.innerHTML = `
-  <div class="vehicle-alert-item expanded" style="border-bottom: 1px solid #E2E8F0">
+  <div class="vehicle-alert-item" style="border-bottom: 1px solid #E2E8F0">
     <div class="vehicle-alert-header">
       <span class="vehicle-alert-title">${item.device}</span>
       <button class="vehicle-alert-toggle active">
@@ -112,5 +112,29 @@ options.forEach((item) => {
   // toggle on click
   toggleBtn.addEventListener("click", () => {
     alertItem.classList.toggle("open");
+  });
+});
+
+// Search functionality for Vehicle Alerts
+const searchInput = document.querySelector(".toolbar-search-input");
+
+searchInput.addEventListener("input", function () {
+  const query = searchInput.value.toLowerCase();
+  const alertItems = document.querySelectorAll(".vehicle-alert-item");
+
+  alertItems.forEach((item) => {
+    const device = item
+      .querySelector(".vehicle-alert-title")
+      .textContent.toLowerCase();
+    const service = item.querySelector(".vehicle-alert-service")
+      ? item.querySelector(".vehicle-alert-service").textContent.toLowerCase()
+      : "";
+
+    // Match against device or service
+    if (device.includes(query) || service.includes(query)) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
   });
 });

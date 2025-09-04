@@ -102,150 +102,89 @@ const salesCars = [
 ];
 
 const geoReportCard = document.querySelector(".geo-report-card");
-salesCars.forEach((item) => {
-  const div = document.createElement("div");
-  div.classList.add("geo-car-wrapper");
-
-  div.innerHTML = `
-  <div class="geo-car-card ">
-    <div class="geo-car-head">
-      <span class="geo-car-title">${item.car}</span>
-      <span class="geo-car-right">
-        <span class="geo-collapse-arrow">
-          <svg
-            width="21"
-            height="21"
-            viewBox="0 0 21 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="-0.5"
-              y="0.5"
-              width="20"
-              height="20"
-              rx="4.5"
-              transform="matrix(-1 0 0 1 20 0)"
-              fill="white"
-            />
-            <rect
-              x="-0.5"
-              y="0.5"
-              width="20"
-              height="20"
-              rx="4.5"
-              transform="matrix(-1 0 0 1 20 0)"
-              stroke="#D7DBE2"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M10.0766 8.2553C10.1892 8.14265 10.342 8.07937 10.5014 8.07937C10.6607 8.07937 10.8135 8.14265 10.9262 8.2553L14.3253 11.6544C14.3827 11.7099 14.4285 11.7762 14.46 11.8495C14.4915 11.9228 14.508 12.0016 14.5087 12.0814C14.5094 12.1612 14.4942 12.2403 14.464 12.3142C14.4338 12.388 14.3892 12.4551 14.3328 12.5115C14.2763 12.5679 14.2093 12.6125 14.1354 12.6428C14.0616 12.673 13.9824 12.6882 13.9027 12.6875C13.8229 12.6868 13.744 12.6702 13.6707 12.6387C13.5974 12.6072 13.5311 12.5615 13.4757 12.5041L10.5014 9.52975L7.52706 12.5041C7.41374 12.6135 7.26196 12.6741 7.10441 12.6727C6.94686 12.6713 6.79616 12.6081 6.68475 12.4967C6.57334 12.3853 6.51015 12.2346 6.50878 12.0771C6.50741 11.9195 6.56798 11.7678 6.67743 11.6544L10.0766 8.2553Z"
-              fill="#27B9CD"
-            />
-          </svg>
-        </span>
-      </span>
-    </div>
-    <div class="geo-car-details">
-      <div class="geo-car-detail-row">
-        <span class="geo-car-landmark">In Landmark 23e (Mesa)</span>
-        <span class="geo-car-timer">2hrs:18m</span>
-      </div>
-      <div class="geo-car-detail-row">
-        <span>Date</span>
-        <span>${item.date}</span>
-      </div>
-      <div class="geo-car-detail-row">
-        <span>Time</span>
-        <span>${item.time}</span>
-      </div>
-      <div class="geo-car-detail-row">
-        <span>Latitude</span>
-        <span>${item.latitude}</span>
-      </div>
-      <div class="geo-car-detail-row">
-        <span>Longitude</span>
-        <span>${item.longitude}</span>
-      </div>
-      <div class="geo-car-detail-row">
-        <span>Location</span>
-        <span class="styling">
-          <a href="#" class="geoform-link">
-            ${item.location}
-          </a>
-        </span>
-      </div>
-    </div>
-  </div>`;
-
-  geoReportCard.appendChild(div);
-
-  const card = div.querySelector(".geo-car-card");
-  const arrow = div.querySelector(".geo-collapse-arrow");
-
-  arrow.addEventListener("click", () => {
-    card.classList.toggle("open");
-  });
-});
-
 const searchInput = document.querySelector(".search-input");
+const paginationBtns = document.querySelectorAll(".pagination-btn");
+const paginationText = document.querySelector(".pagination-text");
 
-// store all original cards for filtering
-const allCards = Array.from(geoReportCard.children);
-
-searchInput.addEventListener("input", (e) => {
-  const query = e.target.value.toLowerCase();
-
-  allCards.forEach((card) => {
-    const text = card.innerText.toLowerCase();
-    if (text.includes(query)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
-
-// --- Pagination Setup ---
-const itemsPerPage = 4;
+let filteredCars = [...salesCars];
 let currentPage = 1;
+const itemsPerPage = 4;
 
-function renderPagination() {
-  const totalItems = allCards.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+// Render cards (SVG and design untouched)
+function renderCards(array) {
+  geoReportCard.innerHTML = "";
 
-  // Hide/Show cards for current page
-  allCards.forEach((card, index) => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    if (index >= start && index < end) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
+  array.forEach((item) => {
+    const div = document.createElement("div");
+    div.classList.add("geo-car-wrapper");
+
+    div.innerHTML = `
+      <div class="geo-car-card">
+        <div class="geo-car-head">
+          <span class="geo-car-title">${item.car}</span>
+          <span class="geo-car-right">
+            <span class="geo-collapse-arrow">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="-0.5" y="0.5" width="20" height="20" rx="4.5" transform="matrix(-1 0 0 1 20 0)" fill="white"/>
+                <rect x="-0.5" y="0.5" width="20" height="20" rx="4.5" transform="matrix(-1 0 0 1 20 0)" stroke="#D7DBE2"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0766 8.2553C10.1892 8.14265 10.342 8.07937 10.5014 8.07937C10.6607 8.07937 10.8135 8.14265 10.9262 8.2553L14.3253 11.6544C14.3827 11.7099 14.4285 11.7762 14.46 11.8495C14.4915 11.9228 14.508 12.0016 14.5087 12.0814C14.5094 12.1612 14.4942 12.2403 14.464 12.3142C14.4338 12.388 14.3892 12.4551 14.3328 12.5115C14.2763 12.5679 14.2093 12.6125 14.1354 12.6428C14.0616 12.673 13.9824 12.6882 13.9027 12.6875C13.8229 12.6868 13.744 12.6702 13.6707 12.6387C13.5974 12.6072 13.5311 12.5615 13.4757 12.5041L10.5014 9.52975L7.52706 12.5041C7.41374 12.6135 7.26196 12.6741 7.10441 12.6727C6.94686 12.6713 6.79616 12.6081 6.68475 12.4967C6.57334 12.3853 6.51015 12.2346 6.50878 12.0771C6.50741 11.9195 6.56798 11.7678 6.67743 11.6544L10.0766 8.2553Z" fill="#27B9CD"/>
+              </svg>
+            </span>
+          </span>
+        </div>
+        <div class="geo-car-details">
+          <div class="geo-car-detail-row"><span class="geo-car-landmark">${item.status}</span><span class="geo-car-timer">${item.duration}</span></div>
+          <div class="geo-car-detail-row"><span>Date</span><span>${item.date}</span></div>
+          <div class="geo-car-detail-row"><span>Time</span><span>${item.time}</span></div>
+          <div class="geo-car-detail-row"><span>Latitude</span><span>${item.latitude}</span></div>
+          <div class="geo-car-detail-row"><span>Longitude</span><span>${item.longitude}</span></div>
+          <div class="geo-car-detail-row"><span>Location</span><span class="styling"><a href="#" class="geoform-link">${item.location}</a></span></div>
+        </div>
+      </div>
+    `;
+    geoReportCard.appendChild(div);
+
+    // Collapse arrow toggle
+    const card = div.querySelector(".geo-car-card");
+    const arrow = div.querySelector(".geo-collapse-arrow");
+    arrow.addEventListener("click", () => card.classList.toggle("open"));
   });
-
-  // Update pagination text
-  const startEntry = (currentPage - 1) * itemsPerPage + 1;
-  const endEntry = Math.min(currentPage * itemsPerPage, totalItems);
-  document.querySelector(
-    ".pagination-text"
-  ).textContent = `Showing ${startEntry} to ${endEntry} of ${totalItems} entries`;
 }
 
-// Pagination buttons
-const paginationBtns = document.querySelectorAll(".pagination-btn");
+// Render pagination based on filtered cars
+function renderPagination() {
+  const totalItems = filteredCars.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+
+  renderCards(filteredCars.slice(start, end));
+
+  const showingStart = totalItems === 0 ? 0 : start + 1;
+  const showingEnd = Math.min(end, totalItems);
+  paginationText.textContent = `Showing ${showingStart} to ${showingEnd} of ${totalItems} entries`;
+}
+
+// Search
+searchInput.addEventListener("input", (e) => {
+  const query = e.target.value.toLowerCase();
+  filteredCars = salesCars.filter((car) =>
+    car.car.toLowerCase().includes(query)
+  );
+  currentPage = 1;
+  renderPagination();
+});
+
+// Pagination buttons
 paginationBtns[0].addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     renderPagination();
   }
 });
-
 paginationBtns[1].addEventListener("click", () => {
-  const totalPages = Math.ceil(allCards.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredCars.length / itemsPerPage);
   if (currentPage < totalPages) {
     currentPage++;
     renderPagination();

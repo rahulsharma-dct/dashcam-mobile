@@ -150,3 +150,23 @@ function renderContent() {
     });
   });
 }
+
+renderContent();
+
+// Search functionality
+const searchInput = document.querySelector(".toolbar-search-input");
+
+searchInput.addEventListener("input", function () {
+  const query = searchInput.value.toLowerCase().trim();
+  const serviceCards = document.querySelectorAll(".main-service");
+
+  serviceCards.forEach((card) => {
+    const textContent = card.textContent.toLowerCase();
+
+    if (textContent.includes(query)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});

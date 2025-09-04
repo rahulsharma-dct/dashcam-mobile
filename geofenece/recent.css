@@ -1,3 +1,21 @@
+.geo-car-details {
+  display: none;
+}
+
+.geo-car-card.open .geo-car-details {
+  display: block;
+}
+
+.geo-collapse-arrow svg {
+  transform: rotate(180deg); /* Initial state */
+  transition: transform 0.3s ease;
+}
+
+.geo-car-card.open .geo-collapse-arrow svg {
+  transform: rotate(0deg); /* When expanded */
+}
+
+
 .geo-report-card {
   background: #fff;
   border-radius: 16px;

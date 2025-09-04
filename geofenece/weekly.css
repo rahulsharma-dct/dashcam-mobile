@@ -7,6 +7,43 @@
   margin: 20px;
 }
 
+.geo-car-card {
+    border: 1px solid #d7dbe2;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .geo-car-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+  }
+
+  .geo-collapse-arrow svg {
+    transition: transform 0.3s ease;
+  }
+
+  /* Initially hide details */
+  .geo-car-details {
+    display: none;
+    padding: 12px;
+    border-top: 1px solid #eee;
+  }
+
+  /* When card is open */
+  .geo-car-card.open .geo-car-details {
+    display: block;
+  }
+
+  /* Rotate arrow when open */
+  .geo-car-card.open .geo-collapse-arrow svg {
+    transform: rotate(180deg);
+  }
 .geo-title {
   font-size: 16px;
   font-weight: 400;

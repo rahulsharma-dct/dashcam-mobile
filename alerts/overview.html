@@ -14,6 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+  <link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
   </head>
   <body style="margin: 0">
     <div class="device-container">
@@ -194,10 +199,7 @@
           </div>
         </div>
 
-        <!-- Map Section -->
-        <div class="alert-map-section">
-          <img src="/image (34).png" alt="Vehicle Map" class="alert-map-img" />
-        </div>
+        <main id="map"></main>
 
         <!-- Vehicle Alerts Section -->
         <div class="vehicle-alerts-section">
@@ -459,5 +461,33 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+  // HERE Maps Init
+  const platform = new H.service.Platform({
+    apikey: "YOUR_API_KEY" // replace with your HERE Maps API key
+  });
+  const defaultLayers = platform.createDefaultLayers();
+  const map = new H.Map(
+    document.getElementById("map"),
+    defaultLayers.vector.normal.map,
+    {
+      zoom: 10,
+      center: { lat: 28.6139, lng: 77.209 } // New Delhi default
+    }
+  );
+  const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+  H.ui.UI.createDefault(map, defaultLayers);
+
+  // Toggle expand/collapse
+  document.querySelectorAll(".vehicle-alert-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const parent = btn.closest(".vehicle-alert-item");
+      parent.classList.toggle("expanded");
+    });
+  });
+</script>
+
   </body>
 </html>

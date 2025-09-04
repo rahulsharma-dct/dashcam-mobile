@@ -80,6 +80,7 @@
 }
 
 .geoform-submit {
+  text-decoration: none;
   background: #23b7cd;
   color: #fff;
   font-size: 17px;
@@ -91,5 +92,5 @@
   font-weight: 600;
   padding: 15px 0;
   cursor: pointer;
-  transition: background 0.2s;
+  /* transition: background 0.2s; */
 }

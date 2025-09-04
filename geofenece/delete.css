@@ -1,3 +1,10 @@
+#map{
+  height: 66%;
+}
+.stats{
+  height: 35%;
+  overflow: scroll;
+}
 .geoform-card {
   background: #fff;
 
@@ -75,6 +82,8 @@
 }
 
 .geoform-submit {
+  text-decoration: none;
+  text-align: center;
   background: #23b7cd;
   color: #fff;
   font-size: 17px;
@@ -85,5 +94,5 @@
   font-weight: 600;
   padding: 15px 0;
   cursor: pointer;
-  transition: background 0.2s;
+  /* transition: background 0.2s; */
 }

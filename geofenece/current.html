@@ -18,7 +18,7 @@
   <body style="margin: 0">
     <div class="device-container">
       <div class="device-topbar">
-        <button id="closeSidebar" class="icon-button-2">
+        <a href="/Home/Home.html" id="closeSidebar" class="icon-button-2">
           <!-- Back Arrow -->
           <svg
             width="14"
@@ -32,7 +32,7 @@
               fill="#5D5D5D"
             />
           </svg>
-        </button>
+        </a>
         <div class="device-title">Current Geofence Report</div>
         <div class="device-user">
           <svg
@@ -111,230 +111,169 @@
         </div>
         <button class="geoform-submit">View Report</button>
 
-        <!-- Sales Car 1 expanded -->
-        <div class="geo-car-card open">
-          <div class="geo-car-head">
-            <span>Sales Car 1</span>
-            <span class="geo-collapse-arrow">
-              <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  fill="white"
-                />
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  stroke="#D7DBE2"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M9.5678 7.37249C9.68048 7.25984 9.83329 7.19656 9.99262 7.19656C10.1519 7.19656 10.3048 7.25984 10.4174 7.37249L13.8166 10.7716C13.874 10.827 13.9197 10.8933 13.9512 10.9667C13.9827 11.04 13.9993 11.1188 14 11.1986C14.0007 11.2784 13.9855 11.3575 13.9553 11.4313C13.925 11.5052 13.8804 11.5723 13.824 11.6287C13.7676 11.6851 13.7005 11.7297 13.6267 11.7599C13.5528 11.7902 13.4737 11.8054 13.3939 11.8047C13.3141 11.804 13.2353 11.7874 13.162 11.7559C13.0887 11.7244 13.0224 11.6786 12.9669 11.6212L9.99262 8.64694L7.0183 11.6212C6.90498 11.7307 6.7532 11.7913 6.59565 11.7899C6.4381 11.7885 6.2874 11.7253 6.17599 11.6139C6.06458 11.5025 6.00139 11.3518 6.00002 11.1943C5.99865 11.0367 6.05922 10.8849 6.16867 10.7716L9.5678 7.37249Z"
-                  fill="#27B9CD"
-                />
-              </svg>
-            </span>
-          </div>
-          <div class="geo-car-details">
-            <div class="geo-car-detail-row">
-              <span>IMEI</span><span>220902734</span>
-            </div>
-            <div class="geo-car-detail-row">
-              <span>Geofence Name</span><span>No Geofence</span>
-            </div>
-            <div class="geo-car-detail-row">
-              <span>Status</span
-              ><span class="status-red">Outside Geofence</span>
-            </div>
-            <div class="geo-car-detail-row">
-              <span>Date</span><span>August 04, 2025</span>
-            </div>
-            <div class="geo-car-detail-row">
-              <span>Time</span><span>13:20:15</span>
-            </div>
-            <div class="geo-car-detail-row">
-              <span>Location</span>
-              <span>
-                <a href="#" class="geoform-link"
-                  >7014 E Camelback Rd, Scottsdale, AZ 85251</a
-                >
-              </span>
-            </div>
-          </div>
-        </div>
-        <!-- Collapsed items -->
-        <div class="geo-car-card">
-          <div class="geo-car-head">
-            <span>Sales Car 2</span>
-            <span class="geo-collapse-arrow">
-              <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  fill="white"
-                />
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  stroke="#D7DBE2"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.4322 11.6275C10.3195 11.7402 10.1667 11.8034 10.0074 11.8034C9.84805 11.8034 9.69525 11.7402 9.58257 11.6275L6.18344 8.22838C6.12605 8.17296 6.08027 8.10665 6.04878 8.03334C6.01729 7.96003 6.00072 7.88119 6.00002 7.80141C5.99933 7.72162 6.01453 7.6425 6.04474 7.56865C6.07496 7.49481 6.11957 7.42772 6.17599 7.3713C6.23241 7.31489 6.2995 7.27027 6.37334 7.24006C6.44719 7.20984 6.52631 7.19464 6.60609 7.19534C6.68588 7.19603 6.76472 7.2126 6.83803 7.2441C6.91134 7.27559 6.97764 7.32136 7.03307 7.37875L10.0074 10.3531L12.9817 7.37875C13.095 7.2693 13.2468 7.20873 13.4043 7.2101C13.5619 7.21147 13.7126 7.27466 13.824 7.38607C13.9354 7.49748 13.9986 7.64818 14 7.80573C14.0013 7.96328 13.9408 8.11506 13.8313 8.22838L10.4322 11.6275Z"
-                  fill="#27B9CD"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-        <div class="geo-car-card">
-          <div class="geo-car-head">
-            <span>Sales Car 3</span>
-            <span class="geo-collapse-arrow">
-              <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  fill="white"
-                />
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  stroke="#D7DBE2"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.4322 11.6275C10.3195 11.7402 10.1667 11.8034 10.0074 11.8034C9.84805 11.8034 9.69525 11.7402 9.58257 11.6275L6.18344 8.22838C6.12605 8.17296 6.08027 8.10665 6.04878 8.03334C6.01729 7.96003 6.00072 7.88119 6.00002 7.80141C5.99933 7.72162 6.01453 7.6425 6.04474 7.56865C6.07496 7.49481 6.11957 7.42772 6.17599 7.3713C6.23241 7.31489 6.2995 7.27027 6.37334 7.24006C6.44719 7.20984 6.52631 7.19464 6.60609 7.19534C6.68588 7.19603 6.76472 7.2126 6.83803 7.2441C6.91134 7.27559 6.97764 7.32136 7.03307 7.37875L10.0074 10.3531L12.9817 7.37875C13.095 7.2693 13.2468 7.20873 13.4043 7.2101C13.5619 7.21147 13.7126 7.27466 13.824 7.38607C13.9354 7.49748 13.9986 7.64818 14 7.80573C14.0013 7.96328 13.9408 8.11506 13.8313 8.22838L10.4322 11.6275Z"
-                  fill="#27B9CD"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-        <div class="geo-car-card">
-          <div class="geo-car-head">
-            <span>Sales Car 4</span>
-            <span class="geo-collapse-arrow">
-              <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  fill="white"
-                />
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  stroke="#D7DBE2"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.4322 11.6275C10.3195 11.7402 10.1667 11.8034 10.0074 11.8034C9.84805 11.8034 9.69525 11.7402 9.58257 11.6275L6.18344 8.22838C6.12605 8.17296 6.08027 8.10665 6.04878 8.03334C6.01729 7.96003 6.00072 7.88119 6.00002 7.80141C5.99933 7.72162 6.01453 7.6425 6.04474 7.56865C6.07496 7.49481 6.11957 7.42772 6.17599 7.3713C6.23241 7.31489 6.2995 7.27027 6.37334 7.24006C6.44719 7.20984 6.52631 7.19464 6.60609 7.19534C6.68588 7.19603 6.76472 7.2126 6.83803 7.2441C6.91134 7.27559 6.97764 7.32136 7.03307 7.37875L10.0074 10.3531L12.9817 7.37875C13.095 7.2693 13.2468 7.20873 13.4043 7.2101C13.5619 7.21147 13.7126 7.27466 13.824 7.38607C13.9354 7.49748 13.9986 7.64818 14 7.80573C14.0013 7.96328 13.9408 8.11506 13.8313 8.22838L10.4322 11.6275Z"
-                  fill="#27B9CD"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-        <div class="geo-car-card">
-          <div class="geo-car-head">
-            <span>Sales Car 5</span>
-            <span class="geo-collapse-arrow">
-              <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  fill="white"
-                />
-                <rect
-                  x="-0.5"
-                  y="0.5"
-                  width="19"
-                  height="17"
-                  rx="4.5"
-                  transform="matrix(-1 0 0 1 19 0.5)"
-                  stroke="#D7DBE2"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.4322 11.6275C10.3195 11.7402 10.1667 11.8034 10.0074 11.8034C9.84805 11.8034 9.69525 11.7402 9.58257 11.6275L6.18344 8.22838C6.12605 8.17296 6.08027 8.10665 6.04878 8.03334C6.01729 7.96003 6.00072 7.88119 6.00002 7.80141C5.99933 7.72162 6.01453 7.6425 6.04474 7.56865C6.07496 7.49481 6.11957 7.42772 6.17599 7.3713C6.23241 7.31489 6.2995 7.27027 6.37334 7.24006C6.44719 7.20984 6.52631 7.19464 6.60609 7.19534C6.68588 7.19603 6.76472 7.2126 6.83803 7.2441C6.91134 7.27559 6.97764 7.32136 7.03307 7.37875L10.0074 10.3531L12.9817 7.37875C13.095 7.2693 13.2468 7.20873 13.4043 7.2101C13.5619 7.21147 13.7126 7.27466 13.824 7.38607C13.9354 7.49748 13.9986 7.64818 14 7.80573C14.0013 7.96328 13.9408 8.11506 13.8313 8.22838L10.4322 11.6275Z"
-                  fill="#27B9CD"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
+        
       </div>
     </div>
+    <script>
+  // Sample data for current report
+  const geoCars = [
+  {
+    name: "Sales Car 1",
+    device: "Device A",
+    geofence: "Geofence 1",
+    imei: "220902734",
+    status: "Outside Geofence",
+    date: "August 04, 2025",
+    time: "13:20:15",
+    location: "7014 E Camelback Rd, Scottsdale, AZ 85251",
+  },
+  {
+    name: "Sales Car 2",
+    device: "Device B",
+    geofence: "Geofence 2",
+    imei: "220902735",
+    status: "Inside Geofence",
+    date: "August 04, 2025",
+    time: "13:45:10",
+    location: "123 Main St, Phoenix, AZ 85001",
+  },
+  {
+    name: "Sales Car 3",
+    device: "Device C",
+    geofence: "Geofence 1",
+    imei: "220902736",
+    status: "Inside Geofence",
+    date: "August 04, 2025",
+    time: "14:10:55",
+    location: "456 Elm St, Scottsdale, AZ 85251",
+  },
+  {
+    name: "Sales Car 4",
+    device: "Device D",
+    geofence: "Geofence 3",
+    imei: "220902737",
+    status: "Outside Geofence",
+    date: "August 05, 2025",
+    time: "09:25:30",
+    location: "890 Oak St, Tempe, AZ 85281",
+  },
+  {
+    name: "Sales Car 5",
+    device: "Device E",
+    geofence: "Geofence 2",
+    imei: "220902738",
+    status: "Inside Geofence",
+    date: "August 05, 2025",
+    time: "10:15:42",
+    location: "234 Pine St, Mesa, AZ 85203",
+  },
+  {
+    name: "Sales Car 6",
+    device: "Device F",
+    geofence: "Geofence 3",
+    imei: "220902739",
+    status: "Outside Geofence",
+    date: "August 05, 2025",
+    time: "11:05:18",
+    location: "678 Willow Ave, Chandler, AZ 85225",
+  },
+];
+
+
+  const statusSelect = document.querySelectorAll(".geoform-select")[0];
+  const geofenceSelect = document.querySelectorAll(".geoform-select")[1];
+  const subgroupSelect = document.querySelectorAll(".geoform-select")[2];
+
+  // Populate dropdowns dynamically
+  [...new Set(geoCars.map((c) => c.device))].forEach((d) => {
+    const option = document.createElement("option");
+    option.value = d;
+    option.textContent = d;
+    statusSelect.appendChild(option);
+  });
+
+  [...new Set(geoCars.map((c) => c.geofence))].forEach((g) => {
+    const option = document.createElement("option");
+    option.value = g;
+    option.textContent = g;
+    geofenceSelect.appendChild(option);
+  });
+
+  // For subgroup, using dummy values
+  ["Group 1", "Group 2"].forEach((g) => {
+    const option = document.createElement("option");
+    option.value = g;
+    option.textContent = g;
+    subgroupSelect.appendChild(option);
+  });
+
+  const container = document.createElement("div");
+  container.id = "geoCarContainer";
+  document.querySelector(".geo-report-card").appendChild(container);
+
+  function renderCards(filteredCars) {
+    container.innerHTML = "";
+
+    filteredCars.forEach((car, index) => {
+      const card = document.createElement("div");
+      card.className = "geo-car-card" + (index === 0 ? " open" : "");
+
+      card.innerHTML = `
+        <div class="geo-car-head">
+          <span>${car.name}</span>
+          <span class="geo-collapse-arrow">
+            <svg width="20" height="19" viewBox="0 0 20 19" fill="none">
+              <rect x="-0.5" y="0.5" width="19" height="17" rx="4.5" transform="matrix(-1 0 0 1 19 0.5)" fill="white"/>
+              <rect x="-0.5" y="0.5" width="19" height="17" rx="4.5" transform="matrix(-1 0 0 1 19 0.5)" stroke="#D7DBE2"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5678 7.37249L13.8166 10.7716L6.16867 10.7716L9.5678 7.37249Z" fill="#27B9CD"/>
+            </svg>
+          </span>
+        </div>
+        <div class="geo-car-details">
+          <div class="geo-car-detail-row"><span>IMEI</span><span>${car.imei}</span></div>
+          <div class="geo-car-detail-row"><span>Geofence Name</span><span>${car.geofence}</span></div>
+          <div class="geo-car-detail-row"><span>Status</span><span class="${car.status === 'Inside Geofence' ? 'status-green' : 'status-red'}">${car.status}</span></div>
+          <div class="geo-car-detail-row"><span>Date</span><span>${car.date}</span></div>
+          <div class="geo-car-detail-row"><span>Time</span><span>${car.time}</span></div>
+          <div class="geo-car-detail-row"><span>Location</span><span><a href="#" class="geoform-link">${car.location}</a></span></div>
+        </div>
+      `;
+
+      container.appendChild(card);
+
+      // Toggle details
+      card.querySelector(".geo-collapse-arrow").addEventListener("click", () => {
+        card.classList.toggle("open");
+      });
+    });
+  }
+
+  renderCards(geoCars);
+
+  // Filter by dropdowns
+  document.querySelector(".geoform-submit").addEventListener("click", () => {
+    let filtered = geoCars;
+    const selectedDevice = statusSelect.value;
+    const selectedGeofence = geofenceSelect.value;
+    const selectedSubgroup = subgroupSelect.value;
+
+    if (selectedDevice !== "Select Device") {
+      filtered = filtered.filter((car) => car.device === selectedDevice);
+    }
+    if (selectedGeofence !== "Select Device") {
+      filtered = filtered.filter((car) => car.geofence === selectedGeofence);
+    }
+    // Subgroup filtering (dummy)
+    if (selectedSubgroup !== "Select Device") {
+      filtered = filtered.filter((car, idx) => idx % 2 === 0); // example logic
+    }
+
+    renderCards(filtered);
+  });
+
+  // Attach toggle on all current + future .geo-collapse-arrow
+
+</script>
+
   </body>
 </html>

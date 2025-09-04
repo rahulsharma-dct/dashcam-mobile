@@ -55,7 +55,7 @@
   font-weight: 400;
   padding: 13px 0 10px 0;
   cursor: pointer;
-  transition: background 0.2s;
+  /* transition: background 0.2s; */
 }
 
 .geo-car-card {
@@ -64,6 +64,19 @@
   margin-bottom: 11px;
   border-bottom: 1px solid #e2e8f0;
   padding-bottom: 10px;
+}
+.geo-car-details {
+  display: none;
+}
+.geo-car-card.open .geo-car-details {
+  display: block;
+}
+.geo-collapse-arrow svg {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+.geo-car-card.open .geo-collapse-arrow svg {
+  transform: rotate(0deg);
 }
 
 .geo-car-head {

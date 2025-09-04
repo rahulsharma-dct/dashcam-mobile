@@ -26,13 +26,21 @@ const services = [
 ];
 
 const mainservice = document.querySelector(".service-entry");
-services.forEach((item, index) => {
-  const data = document.createElement("div");
-  data.classList.add("main-service");
+const toggleActiveBtn = document.querySelector(".toggle-active-btn");
+const tableContainer = document.querySelector(".table--container");
+const btn = document.querySelector(".toggle--btn");
+const tableBody = document.querySelector(".table-body");
+const serviceEntry = document.querySelector(".service-entry");
 
-  const titleClass = index === 0 ? "service-title-red" : "service-title-green";
+function renderContent() {
+  services.forEach((item, index) => {
+    const data = document.createElement("div");
+    data.classList.add("main-service");
 
-  data.innerHTML = `
+    const titleClass =
+      index === 0 ? "service-title-red" : "service-title-green";
+
+    data.innerHTML = `
           <div class="service-entry-header">
            <div class="service-entry-title ${titleClass}">
               ${item.mainHeading}
@@ -134,10 +142,11 @@ services.forEach((item, index) => {
             </div>
           </div>
   `;
-  mainservice.appendChild(data);
+    mainservice.appendChild(data);
 
-  const toggleBtn = data.querySelector(".service-entry-toggle");
-  toggleBtn.addEventListener("click", () => {
-    data.classList.toggle("open");
+    const toggleBtn = data.querySelector(".service-entry-toggle");
+    toggleBtn.addEventListener("click", () => {
+      data.classList.toggle("open");
+    });
   });
-});
+}

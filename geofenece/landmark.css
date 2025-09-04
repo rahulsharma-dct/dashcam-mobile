@@ -99,6 +99,7 @@
   border: 1.5px solid #e6eaef;
   height: 44px;
   width: 260px;
+  flex: 1;
 }
 
 .search-icon {
@@ -126,7 +127,6 @@
   background: #fff;
   box-shadow: 0 0 0 1.5px #e6eaef;
   height: 44px;
-  width: 108px;
 }
 
 .toggle-btn {
@@ -147,4 +147,24 @@
 
 .toggle-btn svg {
   vertical-align: middle;
+}
+.geo-car-details {
+  display: none; /* hidden by default */
+}
+
+.geo-car-card.open .geo-car-details {
+  display: block; /* show when open */
+}
+
+.geo-collapse-arrow svg {
+  transform: rotate(180deg); /* default: downward */
+  transition: transform 0.3s ease;
+}
+
+.geo-car-card.open .geo-collapse-arrow svg {
+  transform: rotate(180deg); /* rotate arrow when open */
+}
+
+.geo-car-card.open .geo-collapse-arrow svg {
+  transform: rotate(0deg); /* open: upward */
 }

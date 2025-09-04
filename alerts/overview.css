@@ -401,3 +401,21 @@
   margin-bottom: 5px;
   font-weight: 400;
 }
+
+/* ejfherijf */
+
+.vehicle-alert-body {
+  display: none;
+}
+
+.vehicle-alert-item.open .vehicle-alert-body {
+  display: block;
+}
+
+.vehicle-alert-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.vehicle-alert-item.open .vehicle-alert-toggle svg {
+  transform: rotate(180deg); /* rotate arrow */
+}

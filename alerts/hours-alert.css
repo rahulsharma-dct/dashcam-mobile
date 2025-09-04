@@ -143,21 +143,19 @@
   border-radius: 9px;
   padding: 11px 15px;
   display: flex;
-  flex-direction: column;
-
   margin-bottom: 4px;
+  flex-direction: column;
+  margin-top: 13px;
   color: #838f9c;
   font-weight: 500;
   font-size: 15px;
   align-items: flex-start;
   box-sizing: border-box;
 }
-
 .geo-styling {
   font-weight: 400;
   font-size: 12px;
 }
-
 span {
   font-weight: 600;
 }

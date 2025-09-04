@@ -382,3 +382,7 @@
 .main-service.open .service-entry-toggle svg {
   transform: rotate(180deg);
 }
+
+.table--container {
+  display: none;
+}

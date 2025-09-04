@@ -263,7 +263,7 @@
 }
 .service-link {
   color: #27b9cd;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 500;
 }
 .service-value {
@@ -365,4 +365,24 @@
   font-weight: 400;
   padding: 7px 0;
   cursor: pointer;
+}
+
+.service-entry-body {
+  display: none;
+}
+
+.main-service.open .service-entry-body {
+  display: block;
+}
+
+.service-entry-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.main-service.open .service-entry-toggle svg {
+  transform: rotate(180deg);
+}
+
+.table--container {
+  display: none;
 }

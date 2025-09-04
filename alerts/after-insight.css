@@ -4,6 +4,7 @@
   box-shadow: 0 1px 8px rgba(16, 30, 54, 0.08);
   padding: 20px;
   margin: 20px;
+  flex: 1;
 }
 
 .period-label {
@@ -237,7 +238,6 @@
   color: #15803d;
   font-weight: 600;
   margin-left: 3px;
-  letter-spacing: 1px;
   font-size: 12px;
 }
 
@@ -263,6 +263,5 @@
   color: #f44336;
   font-weight: 600;
   margin-left: 3px;
-  letter-spacing: 1px;
   font-size: 12px;
 }

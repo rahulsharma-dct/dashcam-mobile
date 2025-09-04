@@ -15,10 +15,13 @@
       rel="stylesheet"
     />
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
-  <link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"
+    />
   </head>
   <body style="margin: 0">
     <div class="device-container">
@@ -283,211 +286,38 @@
             </div>
           </div>
           <div class="vehicle-alerts-list">
-            <div class="vehicle-alert-item expanded">
-              <div class="vehicle-alert-header">
-                <span class="vehicle-alert-title">Device 1</span>
-                <button class="vehicle-alert-toggle active">
-                  <svg
-                    width="20"
-                    height="19"
-                    viewBox="0 0 20 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="-0.5"
-                      y="0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(-1 0 0 1 19 0.5)"
-                      fill="white"
-                    />
-                    <rect
-                      x="-0.5"
-                      y="0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(-1 0 0 1 19 0.5)"
-                      stroke="#D7DBE2"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M9.5678 7.37249C9.68048 7.25984 9.83329 7.19656 9.99262 7.19656C10.1519 7.19656 10.3048 7.25984 10.4174 7.37249L13.8166 10.7716C13.874 10.827 13.9197 10.8933 13.9512 10.9667C13.9827 11.04 13.9993 11.1188 14 11.1986C14.0007 11.2784 13.9855 11.3575 13.9553 11.4313C13.925 11.5052 13.8804 11.5723 13.824 11.6287C13.7676 11.6851 13.7005 11.7297 13.6267 11.7599C13.5528 11.7902 13.4737 11.8054 13.3939 11.8047C13.3141 11.804 13.2353 11.7874 13.162 11.7559C13.0887 11.7244 13.0224 11.6786 12.9669 11.6212L9.99262 8.64694L7.0183 11.6212C6.90498 11.7307 6.7532 11.7913 6.59565 11.7899C6.4381 11.7885 6.2874 11.7253 6.17599 11.6139C6.06458 11.5025 6.00139 11.3518 6.00002 11.1943C5.99865 11.0367 6.05922 10.8849 6.16867 10.7716L9.5678 7.37249Z"
-                      fill="#27B9CD"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div class="vehicle-alert-body">
-                <a href="#" class="vehicle-link">Transmission Fluid Change</a>
-                <div class="vehicle-alert-details">
-                  <div class="vehicle-alert-row">
-                    <span>Date</span><span>0</span>
-                  </div>
-                  <div class="vehicle-alert-row">
-                    <span>Posted Speed</span><span>0</span>
-                  </div>
-                  <div class="vehicle-alert-row">
-                    <span>Speed</span><span>0</span>
-                  </div>
-                  <div class="vehicle-alert-row">
-                    <span>Over The Speed Limit</span><span>0</span>
-                  </div>
-                </div>
-              </div>
-            </div>
             <!-- Device 2-4 collapsed -->
-            <div class="vehicle-alert-item">
-              <div class="vehicle-alert-header">
-                <span class="vehicle-alert-title">Device 2</span>
-                <button class="vehicle-alert-toggle">
-                  <svg
-                    width="20"
-                    height="19"
-                    viewBox="0 0 20 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="-0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(1 0 0 -1 0 17.5)"
-                      fill="white"
-                    />
-                    <rect
-                      x="0.5"
-                      y="-0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(1 0 0 -1 0 17.5)"
-                      stroke="#D7DBE2"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.4322 11.6275C10.3195 11.7402 10.1667 11.8034 10.0074 11.8034C9.84805 11.8034 9.69525 11.7402 9.58257 11.6275L6.18344 8.22838C6.12605 8.17296 6.08027 8.10665 6.04878 8.03334C6.01729 7.96003 6.00072 7.88119 6.00002 7.80141C5.99933 7.72162 6.01453 7.6425 6.04474 7.56865C6.07496 7.49481 6.11957 7.42772 6.17599 7.3713C6.23241 7.31489 6.2995 7.27027 6.37334 7.24006C6.44719 7.20984 6.52631 7.19464 6.60609 7.19534C6.68588 7.19603 6.76472 7.2126 6.83803 7.2441C6.91134 7.27559 6.97764 7.32136 7.03307 7.37875L10.0074 10.3531L12.9817 7.37875C13.095 7.2693 13.2468 7.20873 13.4043 7.2101C13.5619 7.21147 13.7126 7.27466 13.824 7.38607C13.9354 7.49748 13.9986 7.64818 14 7.80573C14.0013 7.96328 13.9408 8.11506 13.8313 8.22838L10.4322 11.6275Z"
-                      fill="#27B9CD"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="vehicle-alert-item">
-              <div class="vehicle-alert-header">
-                <span class="vehicle-alert-title">Device 3</span>
-                <button class="vehicle-alert-toggle">
-                  <svg
-                    width="20"
-                    height="19"
-                    viewBox="0 0 20 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="-0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(1 0 0 -1 0 17.5)"
-                      fill="white"
-                    />
-                    <rect
-                      x="0.5"
-                      y="-0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(1 0 0 -1 0 17.5)"
-                      stroke="#D7DBE2"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.4322 11.6275C10.3195 11.7402 10.1667 11.8034 10.0074 11.8034C9.84805 11.8034 9.69525 11.7402 9.58257 11.6275L6.18344 8.22838C6.12605 8.17296 6.08027 8.10665 6.04878 8.03334C6.01729 7.96003 6.00072 7.88119 6.00002 7.80141C5.99933 7.72162 6.01453 7.6425 6.04474 7.56865C6.07496 7.49481 6.11957 7.42772 6.17599 7.3713C6.23241 7.31489 6.2995 7.27027 6.37334 7.24006C6.44719 7.20984 6.52631 7.19464 6.60609 7.19534C6.68588 7.19603 6.76472 7.2126 6.83803 7.2441C6.91134 7.27559 6.97764 7.32136 7.03307 7.37875L10.0074 10.3531L12.9817 7.37875C13.095 7.2693 13.2468 7.20873 13.4043 7.2101C13.5619 7.21147 13.7126 7.27466 13.824 7.38607C13.9354 7.49748 13.9986 7.64818 14 7.80573C14.0013 7.96328 13.9408 8.11506 13.8313 8.22838L10.4322 11.6275Z"
-                      fill="#27B9CD"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="vehicle-alert-item">
-              <div class="vehicle-alert-header">
-                <span class="vehicle-alert-title">Device 4</span>
-                <button class="vehicle-alert-toggle">
-                  <svg
-                    width="20"
-                    height="19"
-                    viewBox="0 0 20 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="-0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(1 0 0 -1 0 17.5)"
-                      fill="white"
-                    />
-                    <rect
-                      x="0.5"
-                      y="-0.5"
-                      width="19"
-                      height="17"
-                      rx="4.5"
-                      transform="matrix(1 0 0 -1 0 17.5)"
-                      stroke="#D7DBE2"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.4322 11.6275C10.3195 11.7402 10.1667 11.8034 10.0074 11.8034C9.84805 11.8034 9.69525 11.7402 9.58257 11.6275L6.18344 8.22838C6.12605 8.17296 6.08027 8.10665 6.04878 8.03334C6.01729 7.96003 6.00072 7.88119 6.00002 7.80141C5.99933 7.72162 6.01453 7.6425 6.04474 7.56865C6.07496 7.49481 6.11957 7.42772 6.17599 7.3713C6.23241 7.31489 6.2995 7.27027 6.37334 7.24006C6.44719 7.20984 6.52631 7.19464 6.60609 7.19534C6.68588 7.19603 6.76472 7.2126 6.83803 7.2441C6.91134 7.27559 6.97764 7.32136 7.03307 7.37875L10.0074 10.3531L12.9817 7.37875C13.095 7.2693 13.2468 7.20873 13.4043 7.2101C13.5619 7.21147 13.7126 7.27466 13.824 7.38607C13.9354 7.49748 13.9986 7.64818 14 7.80573C14.0013 7.96328 13.9408 8.11506 13.8313 8.22838L10.4322 11.6275Z"
-                      fill="#27B9CD"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
 
-
     <script>
-  // HERE Maps Init
-  const platform = new H.service.Platform({
-    apikey: "YOUR_API_KEY" // replace with your HERE Maps API key
-  });
-  const defaultLayers = platform.createDefaultLayers();
-  const map = new H.Map(
-    document.getElementById("map"),
-    defaultLayers.vector.normal.map,
-    {
-      zoom: 10,
-      center: { lat: 28.6139, lng: 77.209 } // New Delhi default
-    }
-  );
-  const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-  H.ui.UI.createDefault(map, defaultLayers);
+      // HERE Maps Init
+      const platform = new H.service.Platform({
+        apikey: "YOUR_API_KEY", // replace with your HERE Maps API key
+      });
+      const defaultLayers = platform.createDefaultLayers();
+      const map = new H.Map(
+        document.getElementById("map"),
+        defaultLayers.vector.normal.map,
+        {
+          zoom: 10,
+          center: { lat: 28.6139, lng: 77.209 }, // New Delhi default
+        }
+      );
+      const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+      H.ui.UI.createDefault(map, defaultLayers);
 
-  // Toggle expand/collapse
-  document.querySelectorAll(".vehicle-alert-toggle").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const parent = btn.closest(".vehicle-alert-item");
-      parent.classList.toggle("expanded");
-    });
-  });
-</script>
-
+      // Toggle expand/collapse
+      document.querySelectorAll(".vehicle-alert-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const parent = btn.closest(".vehicle-alert-item");
+          parent.classList.toggle("expanded");
+        });
+      });
+    </script>
   </body>
+
+  <script src="overview.js"></script>
 </html>

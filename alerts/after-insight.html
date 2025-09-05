@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
   </head>
   <body style="margin: 0">
     <div class="device-container">
@@ -56,13 +60,15 @@
         </div>
       </div>
       <div class="period-card">
-        <label for="periodSelect" class="period-label">Time Period:</label>
-        <select id="periodSelect" class="period-select">
-          <option selected disabled>Choose Period</option>
-          <!-- Add more period options as needed -->
-        </select>
-        <button class="period-submit-btn">Submit</button>
-
+        <div class="dropdown-row">
+          <input
+            type="text"
+            id="dateRange"
+            class="dropdown"
+            placeholder="Choose Period"
+            readonly
+          />
+        </div>
         <div class="toolbar-row">
           <div class="toolbar-search">
             <span class="toolbar-search-icon"
@@ -372,4 +378,5 @@
     });
   </script>
   <script src="after-insight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </html>

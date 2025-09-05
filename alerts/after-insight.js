@@ -199,3 +199,22 @@ paginationButtons[1].addEventListener("click", () => {
 
 // ▶️ Initial render
 renderCards();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dateRange = document.getElementById("dateRange");
+
+  flatpickr(dateRange, {
+    mode: "range",
+    dateFormat: "Y-m-d",
+    onOpen: function () {
+      console.log("Date range clicked");
+    },
+    onClose: function (selectedDates) {
+      if (selectedDates.length === 2) {
+        const start = selectedDates[0].toISOString().split("T")[0];
+        const end = selectedDates[1].toISOString().split("T")[0];
+        console.log("Range selected:", start, "-", end);
+      }
+    },
+  });
+});

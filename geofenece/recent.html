@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
   </head>
 
   <body style="margin: 0">
@@ -96,9 +100,13 @@
         <div class="geo-form-row">
           <label class="geoform-label">Date Range:</label>
           <div class="geoform-select-wrap">
-            <select class="geoform-select">
-              <option>Select Date Period</option>
-            </select>
+            <input
+              type="text"
+              class="geo-date-input"
+              value="08/04/2025 to 08/10/2025"
+              readonly
+            />
+            <input class="geoform-select" />
             <span class="geoform-dropdown-arrow">
               <!-- Calendar icon positioned right -->
               <svg
@@ -172,7 +180,6 @@
       </div>
     </div>
     <script>
-      // ✅ Dummy Array
       const geoCars = [
         {
           name: "Sales Car 1",
@@ -247,7 +254,6 @@
       const geofenceSelect = document.querySelectorAll(".geoform-select")[1];
       const dateSelect = document.querySelectorAll(".geoform-select")[2];
 
-      // ✅ Populate dropdowns dynamically
       function populateFilters() {
         const devices = [...new Set(geoCars.map((c) => c.device))];
         const geofences = [...new Set(geoCars.map((c) => c.geofence))];
@@ -267,12 +273,12 @@
           geofenceSelect.appendChild(opt);
         });
 
-        dates.forEach((dt) => {
-          const opt = document.createElement("option");
-          opt.value = dt;
-          opt.textContent = dt;
-          dateSelect.appendChild(opt);
-        });
+        // dates.forEach((dt) => {
+        //   const opt = document.createElement("option");
+        //   opt.value = dt;
+        //   opt.textContent = dt;
+        //   dateSelect.appendChild(opt);
+        // });
       }
 
       // ✅ Render Cards
@@ -345,7 +351,6 @@
 
           container.appendChild(card);
 
-          // ✅ Toggle on arrow click
           card
             .querySelector(".geo-collapse-arrow")
             .addEventListener("click", () => {
@@ -354,7 +359,6 @@
         });
       }
 
-      // ✅ Apply Filters on Submit
       document
         .querySelector(".geoform-submit")
         .addEventListener("click", () => {
@@ -379,9 +383,44 @@
           renderCards(filtered);
         });
 
-      // ✅ Init
       populateFilters();
       renderCards();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateRange = document.querySelector(".geo-date-input");
+
+        flatpickr(dateRange, {
+          mode: "range",
+          dateFormat: "Y-m-d",
+          onOpen: function () {
+            console.log("Date range clicked");
+          },
+          onClose: function (selectedDates) {
+            if (selectedDates.length === 2) {
+              // Format dates to "Month DD, YYYY"
+              const options = {
+                year: "numeric",
+                month: "long",
+                day: "2-digit",
+              };
+              const start = selectedDates[0].toLocaleDateString(
+                "en-US",
+                options
+              );
+              const end = selectedDates[1].toLocaleDateString("en-US", options);
+
+              // Update the <div class="geo-date-range">
+              if (dateRangeDisplay) {
+                dateRangeDisplay.textContent = `${start} - ${end}`;
+              }
+
+              console.log("Range selected:", start, "-", end);
+            }
+          },
+        });
+      });
     </script>
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </html>

@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
   </head>
   <body style="margin: 0">
     <div class="device-container">
@@ -210,4 +214,37 @@
       </div>
     </div>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dateRange = document.querySelector(".geo-date-input");
+
+      flatpickr(dateRange, {
+        mode: "range",
+        dateFormat: "Y-m-d",
+        onOpen: function () {
+          console.log("Date range clicked");
+        },
+        onClose: function (selectedDates) {
+          if (selectedDates.length === 2) {
+            // Format dates to "Month DD, YYYY"
+            const options = {
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+            };
+            const start = selectedDates[0].toLocaleDateString("en-US", options);
+            const end = selectedDates[1].toLocaleDateString("en-US", options);
+
+            // Update the <div class="geo-date-range">
+            if (dateRangeDisplay) {
+              dateRangeDisplay.textContent = `${start} - ${end}`;
+            }
+
+            console.log("Range selected:", start, "-", end);
+          }
+        },
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </html>

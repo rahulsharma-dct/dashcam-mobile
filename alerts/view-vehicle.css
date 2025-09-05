@@ -16,6 +16,75 @@
   display: block;
 }
 
+.actions-btn.actions-download {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 9px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.download-menu {
+  position: absolute;
+  top: 480px;
+  right: 21px;
+  width: 170px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 14px rgba(24, 54, 110, 0.15), 0 1px 0 #f2f2f2;
+
+  z-index: 10;
+  border: 1px solid #eff2f6;
+}
+.download-item {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 11px 17px;
+  gap: 10px;
+  font-size: 14px;
+  color: #1c222a;
+  font-family: inherit;
+  font-weight: 600;
+  transition: background 0.18s;
+}
+.download-item:hover {
+  background: #eaf9fb;
+}
+.download-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-divider {
+  border: none;
+  border-top: 1px solid #ececec;
+  margin: 4px 0;
+}
+
+.subuser-group {
+  border: 1px solid #eaeaea;
+
+  margin: 10px 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
 .service-select {
   width: 100%;
 

@@ -18,21 +18,23 @@
   <body style="margin: 0">
     <div class="device-container">
       <div class="device-topbar">
-        <button id="closeSidebar" class="icon-button-2">
-          <!-- Back Arrow -->
-          <svg
-            width="14"
-            height="12"
-            viewBox="0 0 14 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
-              fill="#5D5D5D"
-            />
-          </svg>
-        </button>
+        <a href="/">
+          <button id="closeSidebar" class="icon-button-2">
+            <!-- Back Arrow -->
+            <svg
+              width="14"
+              height="12"
+              viewBox="0 0 14 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
+                fill="#5D5D5D"
+              />
+            </svg>
+          </button>
+        </a>
         <div class="device-title">Alert Report</div>
         <div class="device-user">
           <svg
@@ -155,157 +157,159 @@
     </div>
   </body>
   <script>
-const reportsData = [
-  {
-    date: "August 04, 2025",
-    device: "Dashcam A",
-    details: {
-      "Event Name": "Lorem Ipsum",
-      Latitude: "33.4979°N",
-      Longitude: "111.9286°W",
-      Location: "7014 E Camelback Rd, Scottsdale, AZ 85251",
-      Speed: "53mph",
-      "Available Photo/Videos": "5+",
-    },
-  },
-  {
-    date: "August 05, 2025",
-    device: "Dashcam B",
-    details: {
-      "Event Name": "Over Speeding",
-      Latitude: "34.0522°N",
-      Longitude: "118.2437°W",
-      Location: "Los Angeles, CA",
-      Speed: "67mph",
-      "Available Photo/Videos": "2",
-    },
-  },
-  {
-    date: "August 06, 2025",
-    device: "Dashcam A",
-    details: {
-      "Event Name": "Harsh Braking",
-      Latitude: "36.1699°N",
-      Longitude: "115.1398°W",
-      Location: "Las Vegas, NV",
-      Speed: "40mph",
-      "Available Photo/Videos": "1",
-    },
-  },
-  {
-    date: "August 07, 2025",
-    device: "Dashcam A",
-    details: {
-      "Event Name": "Sharp Turn",
-      Latitude: "40.7128°N",
-      Longitude: "74.0060°W",
-      Location: "New York, NY",
-      Speed: "32mph",
-      "Available Photo/Videos": "3",
-    },
-  },
-  {
-    date: "August 08, 2025",
-    device: "Dashcam A",
-    details: {
-      "Event Name": "Idling Detected",
-      Latitude: "41.8781°N",
-      Longitude: "87.6298°W",
-      Location: "Chicago, IL",
-      Speed: "0mph",
-      "Available Photo/Videos": "0",
-    },
-  },
-  {
-    date: "August 09, 2025",
-    device: "Dashcam B",
-    details: {
-      "Event Name": "Night Driving",
-      Latitude: "29.7604°N",
-      Longitude: "95.3698°W",
-      Location: "Houston, TX",
-      Speed: "45mph",
-      "Available Photo/Videos": "4",
-    },
-  },
-  {
-    date: "August 10, 2025",
-    device: "Dashcam B",
-    details: {
-      "Event Name": "Geofence Exit",
-      Latitude: "37.7749°N",
-      Longitude: "122.4194°W",
-      Location: "San Francisco, CA",
-      Speed: "28mph",
-      "Available Photo/Videos": "1",
-    },
-  },
-  {
-    date: "August 11, 2025",
-    device: "Dashcam A",
-    details: {
-      "Event Name": "Geofence Entry",
-      Latitude: "47.6062°N",
-      Longitude: "122.3321°W",
-      Location: "Seattle, WA",
-      Speed: "36mph",
-      "Available Photo/Videos": "2",
-    },
-  },
-  {
-    date: "August 12, 2025",
-    device: "Dashcam C",
-    details: {
-      "Event Name": "Distracted Driving",
-      Latitude: "39.7392°N",
-      Longitude: "104.9903°W",
-      Location: "Denver, CO",
-      Speed: "55mph",
-      "Available Photo/Videos": "6",
-    },
-  },
-  {
-    date: "August 13, 2025",
-    device: "Dashcam C",
-    details: {
-      "Event Name": "Collision Warning",
-      Latitude: "32.7157°N",
-      Longitude: "117.1611°W",
-      Location: "San Diego, CA",
-      Speed: "60mph",
-      "Available Photo/Videos": "8",
-    },
-  },
-];
+    const reportsData = [
+      {
+        date: "August 04, 2025",
+        device: "Dashcam A",
+        details: {
+          "Event Name": "Lorem Ipsum",
+          Latitude: "33.4979°N",
+          Longitude: "111.9286°W",
+          Location: "7014 E Camelback Rd, Scottsdale, AZ 85251",
+          Speed: "53mph",
+          "Available Photo/Videos": "5+",
+        },
+      },
+      {
+        date: "August 05, 2025",
+        device: "Dashcam B",
+        details: {
+          "Event Name": "Over Speeding",
+          Latitude: "34.0522°N",
+          Longitude: "118.2437°W",
+          Location: "Los Angeles, CA",
+          Speed: "67mph",
+          "Available Photo/Videos": "2",
+        },
+      },
+      {
+        date: "August 06, 2025",
+        device: "Dashcam A",
+        details: {
+          "Event Name": "Harsh Braking",
+          Latitude: "36.1699°N",
+          Longitude: "115.1398°W",
+          Location: "Las Vegas, NV",
+          Speed: "40mph",
+          "Available Photo/Videos": "1",
+        },
+      },
+      {
+        date: "August 07, 2025",
+        device: "Dashcam A",
+        details: {
+          "Event Name": "Sharp Turn",
+          Latitude: "40.7128°N",
+          Longitude: "74.0060°W",
+          Location: "New York, NY",
+          Speed: "32mph",
+          "Available Photo/Videos": "3",
+        },
+      },
+      {
+        date: "August 08, 2025",
+        device: "Dashcam A",
+        details: {
+          "Event Name": "Idling Detected",
+          Latitude: "41.8781°N",
+          Longitude: "87.6298°W",
+          Location: "Chicago, IL",
+          Speed: "0mph",
+          "Available Photo/Videos": "0",
+        },
+      },
+      {
+        date: "August 09, 2025",
+        device: "Dashcam B",
+        details: {
+          "Event Name": "Night Driving",
+          Latitude: "29.7604°N",
+          Longitude: "95.3698°W",
+          Location: "Houston, TX",
+          Speed: "45mph",
+          "Available Photo/Videos": "4",
+        },
+      },
+      {
+        date: "August 10, 2025",
+        device: "Dashcam B",
+        details: {
+          "Event Name": "Geofence Exit",
+          Latitude: "37.7749°N",
+          Longitude: "122.4194°W",
+          Location: "San Francisco, CA",
+          Speed: "28mph",
+          "Available Photo/Videos": "1",
+        },
+      },
+      {
+        date: "August 11, 2025",
+        device: "Dashcam A",
+        details: {
+          "Event Name": "Geofence Entry",
+          Latitude: "47.6062°N",
+          Longitude: "122.3321°W",
+          Location: "Seattle, WA",
+          Speed: "36mph",
+          "Available Photo/Videos": "2",
+        },
+      },
+      {
+        date: "August 12, 2025",
+        device: "Dashcam C",
+        details: {
+          "Event Name": "Distracted Driving",
+          Latitude: "39.7392°N",
+          Longitude: "104.9903°W",
+          Location: "Denver, CO",
+          Speed: "55mph",
+          "Available Photo/Videos": "6",
+        },
+      },
+      {
+        date: "August 13, 2025",
+        device: "Dashcam C",
+        details: {
+          "Event Name": "Collision Warning",
+          Latitude: "32.7157°N",
+          Longitude: "117.1611°W",
+          Location: "San Diego, CA",
+          Speed: "60mph",
+          "Available Photo/Videos": "8",
+        },
+      },
+    ];
 
-const deviceSelect = document.querySelector(".alert-select-input");
-const container = document.querySelector(".alert-reports-container");
+    const deviceSelect = document.querySelector(".alert-select-input");
+    const container = document.querySelector(".alert-reports-container");
 
-// Get unique devices
-const devices = [...new Set(reportsData.map(r => r.device).filter(Boolean))];
+    // Get unique devices
+    const devices = [
+      ...new Set(reportsData.map((r) => r.device).filter(Boolean)),
+    ];
 
-// Populate select
-devices.forEach(device => {
-  const option = document.createElement("option");
-  option.value = device;
-  option.textContent = device;
-  deviceSelect.appendChild(option);
-});
+    // Populate select
+    devices.forEach((device) => {
+      const option = document.createElement("option");
+      option.value = device;
+      option.textContent = device;
+      deviceSelect.appendChild(option);
+    });
 
-// Render reports (with optional filter)
-function renderReports(filterDevice = null) {
-  container.innerHTML = "";
+    // Render reports (with optional filter)
+    function renderReports(filterDevice = null) {
+      container.innerHTML = "";
 
-  const filteredReports =
-    filterDevice && filterDevice !== "Select Device"
-      ? reportsData.filter(r => r.device === filterDevice)
-      : reportsData;
+      const filteredReports =
+        filterDevice && filterDevice !== "Select Device"
+          ? reportsData.filter((r) => r.device === filterDevice)
+          : reportsData;
 
-  filteredReports.forEach(report => {
-    const section = document.createElement("div");
-    section.classList.add("alert-report-section");
+      filteredReports.forEach((report) => {
+        const section = document.createElement("div");
+        section.classList.add("alert-report-section");
 
-    section.innerHTML = `
+        section.innerHTML = `
       <div class="alert-report-header">
         <span>${report.date}</span>
         <button class="alert-report-toggle">
@@ -313,7 +317,9 @@ function renderReports(filterDevice = null) {
         </button>
       </div>
       <div class="alert-report-body">
-        <div class="alert-row"><span>Device</span><span class="right">${report.device || "Unknown"}</span></div>
+        <div class="alert-row"><span>Device</span><span class="right">${
+          report.device || "Unknown"
+        }</span></div>
         ${Object.entries(report.details)
           .map(([key, value]) => {
             if (key === "Location") {
@@ -328,27 +334,26 @@ function renderReports(filterDevice = null) {
       </div>
     `;
 
-    container.appendChild(section);
-  });
-}
+        container.appendChild(section);
+      });
+    }
 
-// Handle toggle
-container.addEventListener("click", (e) => {
-  const toggleBtn = e.target.closest(".alert-report-toggle");
-  if (toggleBtn) {
-    const section = toggleBtn.closest(".alert-report-section");
-    section.classList.toggle("open");
-    toggleBtn.classList.toggle("active");
-  }
-});
+    // Handle toggle
+    container.addEventListener("click", (e) => {
+      const toggleBtn = e.target.closest(".alert-report-toggle");
+      if (toggleBtn) {
+        const section = toggleBtn.closest(".alert-report-section");
+        section.classList.toggle("open");
+        toggleBtn.classList.toggle("active");
+      }
+    });
 
-// Handle filter
-deviceSelect.addEventListener("change", (e) => {
-  renderReports(e.target.value);
-});
+    // Handle filter
+    deviceSelect.addEventListener("change", (e) => {
+      renderReports(e.target.value);
+    });
 
-// Initial render
-renderReports();
-</script>
-
+    // Initial render
+    renderReports();
+  </script>
 </html>

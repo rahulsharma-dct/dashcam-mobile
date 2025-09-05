@@ -1,16 +1,16 @@
-#map{
+#map {
   height: 51% !important;
 }
-.stats{
+.stats {
   height: 35% !important;
 }
 .geo-report-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 0 0 1px #e6eaef;
 
   padding: 20px;
-  margin: 20px;
+  margin: 0 20px;
+  flex: 1;
 }
 
 .geo-car-card {

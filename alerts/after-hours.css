@@ -1,9 +1,9 @@
 .afterhour-card {
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 1px 8px rgba(16, 30, 54, 0.07);
   padding: 22px 18px 18px 18px;
   margin: 20px;
+  flex: 1;
 }
 
 .afterhour-label {
@@ -23,6 +23,12 @@
   font-size: 15px;
   color: #676b6f;
   margin-bottom: 12px;
+}
+
+/* Chrome, Edge, Safari */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
 
 .afterhour-group {
@@ -64,7 +70,7 @@
   border: 1px solid #e6eaef;
   border-radius: 8px;
 
-  padding: 16px 38px 16px 12px;
+  padding: 10px 38px 10px 12px;
   font-size: 14px;
   outline: none;
   box-sizing: border-box;

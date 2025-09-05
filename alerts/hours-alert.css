@@ -3,10 +3,9 @@
 .geo-report-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 0 0 1px #e6eaef;
-
   padding: 20px;
   margin: 20px;
+  flex: 1;
 }
 
 .geo-title {
@@ -14,7 +13,6 @@
   font-weight: 400;
   color: #1c222a;
   margin-bottom: 8px;
-
   letter-spacing: 0.01em;
 }
 
@@ -105,8 +103,9 @@
   font-weight: 600;
   font-size: 16px;
   color: #1c222a;
-  padding-bottom: 10px;
+  padding: 10px 0;
   cursor: pointer;
+  border-bottom: 1px solid lightgrey;
 }
 
 .geo-collapse-arrow {

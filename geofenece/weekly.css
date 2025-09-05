@@ -1,49 +1,43 @@
 .geo-report {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 0 0 1px #e6eaef;
-
   padding: 20px;
   margin: 20px;
 }
 
 .geo-car-card {
-    border: 1px solid #d7dbe2;
-    border-radius: 10px;
-    background: #fff;
-    margin-bottom: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-  .geo-car-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    cursor: pointer;
-  }
+.geo-car-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  .geo-collapse-arrow svg {
-    transition: transform 0.3s ease;
-  }
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-  /* Initially hide details */
-  .geo-car-details {
-    display: none;
-    padding: 12px;
-    border-top: 1px solid #eee;
-  }
+.geo-collapse-arrow svg {
+  transition: transform 0.3s ease;
+}
 
-  /* When card is open */
-  .geo-car-card.open .geo-car-details {
-    display: block;
-  }
+/* Initially hide details */
+.geo-car-details {
+  display: none;
+}
 
-  /* Rotate arrow when open */
-  .geo-car-card.open .geo-collapse-arrow svg {
-    transform: rotate(180deg);
-  }
+/* When card is open */
+.geo-car-card.open .geo-car-details {
+  display: block;
+}
+
+/* Rotate arrow when open */
+.geo-car-card.open .geo-collapse-arrow svg {
+  transform: rotate(180deg);
+}
 .geo-title {
   font-size: 16px;
   font-weight: 400;
@@ -136,8 +130,8 @@
   width: 100%;
   border-radius: 9px;
   border: none;
-  margin-top: 12px;
-  margin-bottom: 20px;
+  margin-top: 8px;
+
   font-weight: 400;
   padding: 15px 0 12px 0;
   cursor: pointer;
@@ -147,7 +141,6 @@
 .geo-car-card {
   background: #fff;
 
-  margin-bottom: 11px;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -162,9 +155,7 @@
   font-weight: 600;
   font-size: 16px;
   color: #1c222a;
-  padding-bottom: 10px;
 
-  background: #fff;
   cursor: pointer;
 }
 
@@ -174,10 +165,6 @@
   margin-left: 10px;
 }
 
-.geo-car-details {
-  margin-top: 3px;
-}
-
 .geo-car-detail-row {
   display: flex;
   justify-content: space-between;
@@ -185,7 +172,6 @@
   color: #888b93;
   padding-bottom: 2px;
   font-weight: 400;
-  margin-top: 6px;
 }
 
 .geo-car-detail-row.faded {

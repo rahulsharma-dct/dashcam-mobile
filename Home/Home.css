@@ -345,6 +345,10 @@ vehicle-marker:hover {
   background: #e7f6f8;
 }
 
+.menu-text {
+  margin-left: 10px;
+}
+
 .menu-text h3 {
   font-size: 14px;
   font-weight: 600;

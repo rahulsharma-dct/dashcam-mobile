@@ -498,3 +498,10 @@ vehicle-marker:hover {
   margin: 0; /* remove default h1 margin */
   line-height: 1; /* keeps text centered with icon */
 }
+
+.menu-item.expanded .menu-arrow {
+  transform: rotate(180deg);
+}
+.menu-arrow {
+  transition: transform 0.3s ease;
+}

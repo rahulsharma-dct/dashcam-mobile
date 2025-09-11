@@ -338,16 +338,14 @@
   color: #64748b;
 }
 
-@media (max-width: 480px) {
-  .pagination {
-    padding: 16px;
-  }
+.pagination {
+  padding: 16px;
+}
 
-  .pagination {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffff;
-  }
+.pagination {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffff;
 }

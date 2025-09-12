@@ -14,18 +14,22 @@ closeSidebar.addEventListener("click", () => {
 document.querySelectorAll(".menu-item").forEach((menuItem) => {
   const arrow = menuItem.querySelector(".menu-arrow");
   const menuList = menuItem.querySelector(".menu-list");
+  const header = menuItem.querySelector("div:first-child"); // clickable header area
 
-  if (arrow && menuList) {
-    // Toggle menu list on arrow click
-    arrow.addEventListener("click", () => {
+  if (arrow && menuList && header) {
+    // Toggle menu list on header click (including arrow, text, icon)
+    header.addEventListener("click", () => {
       const isOpen = menuList.style.display === "block";
       menuList.style.display = isOpen ? "none" : "block";
+
+      // rotate arrow together
       arrow.classList.toggle("rotated", !isOpen);
     });
 
     // Handle active menu-link
     menuList.querySelectorAll(".menu-link").forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent closing when clicking link
         menuList
           .querySelectorAll(".menu-link")
           .forEach((item) => item.classList.remove("active"));
@@ -34,6 +38,7 @@ document.querySelectorAll(".menu-item").forEach((menuItem) => {
     });
   }
 });
+
 
 document.querySelectorAll(".menu-item").forEach((item) => {
   const arrow = item.querySelector(".menu-arrow");

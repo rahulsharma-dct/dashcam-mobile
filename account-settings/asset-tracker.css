@@ -1,0 +1,226 @@
+/* Tabs */
+.device-tabs {
+  display: flex;
+  background: #ffffff;
+  border-top: 1px solid #e5eaee;
+  gap: 2px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 8px 9px;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.15s, color 0.15s;
+}
+
+.para-style {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0px;
+}
+
+.para-link {
+  color: #27b9cd;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.tab-btn.active {
+  color: #27b9cd;
+  background: #eaf7fa;
+  box-shadow: 0 2px 6px 0 rgba(52, 144, 170, 0.04);
+}
+
+.tab-section {
+  border-radius: 0 0 16px 16px;
+  padding: 20px;
+}
+
+/* Hide non-active tab content */
+.tab-content {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #d7dbe2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .device-container {
+    max-width: 100vw;
+    margin: 0;
+    border-radius: 0;
+  }
+  .device-topbar {
+    padding: 10px 6px;
+  }
+  .device-title {
+    font-size: 16px;
+  }
+}
+
+.at-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.at-label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1c222a;
+}
+
+.at-select {
+  width: 100%;
+  padding: 11px 16px;
+  font-size: 14px;
+  border: 1px solid #d5dbe0;
+  border-radius: 9px;
+  background: #f9fbfc;
+  outline: none;
+  color: #6b7280;
+  appearance: none; /* Yeh important hai */
+  -webkit-appearance: none; /* Safari ke liye */
+  -moz-appearance: none; /* Firefox ke liye */
+
+  background-image: url('data:image/svg+xml;utf8,<svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 1L5.5 5L1.5 1" stroke="%23BBBBBB" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+
+  margin-bottom: 10px;
+}
+
+.at-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.at-checkbox {
+  accent-color: #27b9cd;
+  width: 14px;
+  height: 14px;
+}
+
+.at-checkbox-label {
+  font-size: 15px;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-hover-container {
+  display: inline-block;
+  position: relative;
+}
+
+.at-info {
+  width: 17px;
+  height: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide popup by default */
+.info-popup {
+  display: none;
+  position: absolute;
+  left: -165px;
+  top: 28px;
+  min-width: 187px;
+  background: #fff;
+  color: #a2a2a2;
+  font-size: 12px;
+
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(52, 144, 170, 0.13);
+  border: 2px solid #e5eaee;
+  padding: 14px;
+  z-index: 10;
+}
+
+.info-arrow {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: -19px;
+  left: 161px;
+
+  pointer-events: none;
+}
+.info-arrow::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  border-width: 0 11px 11px 11px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.info-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-close {
+  background: #f2f4f8;
+  color: #aaa;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 24px;
+  height: 20px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.info-close:hover {
+  background: #e5eaee;
+  color: #555;
+}
+
+/* Show popup only on hover or focus */
+.info-hover-container:hover .info-popup,
+.info-hover-container:focus-within .info-popup {
+  display: block;
+}
+
+.at-button {
+  background: #27b9cd;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+  padding: 13px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+.at-button:hover {
+  background: #1790a0;
+}
+
+@media (max-width: 480px) {
+  .at-select {
+    font-size: 14px;
+  }
+}

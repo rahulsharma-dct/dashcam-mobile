@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Asset Tracker Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="asset-tracker.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="margin: 0">
+    <div class="device-container">
+      <div class="device-topbar">
+        <button
+          id="closeSidebar"
+          class="icon-button-2"
+          onclick="window.location.href='/Home/Home.html?sidebar=open&menu=account-settings'"
+        >
+          <!-- Back Arrow -->
+          <svg
+            width="14"
+            height="12"
+            viewBox="0 0 14 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.293945 5.29414C-0.0966797 5.68477 -0.0966797 6.31914 0.293945 6.70977L5.29395 11.7098C5.68457 12.1004 6.31895 12.1004 6.70957 11.7098C7.1002 11.3191 7.1002 10.6848 6.70957 10.2941L3.4127 7.00039H13.0002C13.5533 7.00039 14.0002 6.55352 14.0002 6.00039C14.0002 5.44727 13.5533 5.00039 13.0002 5.00039H3.41582L6.70645 1.70664C7.09707 1.31602 7.09707 0.681641 6.70645 0.291016C6.31582 -0.0996094 5.68145 -0.0996094 5.29082 0.291016L0.29082 5.29102L0.293945 5.29414Z"
+              fill="#5D5D5D"
+            />
+          </svg>
+        </button>
+        <div class="device-title">Asset Tracker Settings</div>
+        <div class="device-user">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 8C8.06087 8 9.07828 7.57857 9.82843 6.82843C10.5786 6.07828 11 5.06087 11 4C11 2.93913 10.5786 1.92172 9.82843 1.17157C9.07828 0.421427 8.06087 0 7 0C5.93913 0 4.92172 0.421427 4.17157 1.17157C3.42143 1.92172 3 2.93913 3 4C3 5.06087 3.42143 6.07828 4.17157 6.82843C4.92172 7.57857 5.93913 8 7 8ZM5.57188 9.5C2.49375 9.5 0 11.9937 0 15.0719C0 15.5844 0.415625 16 0.928125 16H13.0719C13.5844 16 14 15.5844 14 15.0719C14 11.9937 11.5063 9.5 8.42813 9.5H5.57188Z"
+              fill="#27B9CD"
+            />
+          </svg>
+
+          <span class="device-badge">3</span>
+        </div>
+      </div>
+      <div class="device-tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">
+          Change Update Frequency
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">
+          Aggressive Mode/Change intervals
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">
+          Set Time Updates for MA10
+        </button>
+      </div>
+      <div class="tab-section">
+        <div id="tab1" class="tab-content" style="display: block">
+          <form class="at-form">
+            <label for="vehicle" class="at-label">Vehicle:</label>
+            <select id="vehicle" class="at-select">
+              <option>Select Vehicle</option>
+              <option>Vehicle 1</option>
+              <option>Vehicle 2</option>
+            </select>
+
+            <label for="frequency" class="at-label">Pings per Day:</label>
+            <select id="frequency" class="at-select">
+              <option>Select Frequency</option>
+              <option>1</option>
+              <option>2</option>
+              <option>4</option>
+            </select>
+
+            <div class="at-checkbox-row">
+              <input type="checkbox" id="movement" class="at-checkbox" />
+              <label for="movement" class="at-checkbox-label">
+                Send Movement Commands
+              </label>
+              <div class="info-hover-container">
+                <span class="at-info"
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="13"
+                      height="13"
+                      rx="6.5"
+                      stroke="black"
+                    />
+                    <path
+                      d="M6.75 9.5625H7.625V10.4375H6.75V9.5625ZM7.1875 3C7.48828 3 7.77083 3.05697 8.03516 3.1709C8.29948 3.28483 8.52962 3.44206 8.72559 3.64258C8.92155 3.8431 9.07878 4.07552 9.19727 4.33984C9.31576 4.60417 9.375 4.88672 9.375 5.1875C9.375 5.46094 9.33171 5.69792 9.24512 5.89844C9.15853 6.09896 9.05143 6.28353 8.92383 6.45215C8.79622 6.62077 8.65495 6.76888 8.5 6.89648C8.34505 7.02409 8.20605 7.15853 8.08301 7.2998C7.95996 7.44108 7.85059 7.58464 7.75488 7.73047C7.65918 7.8763 7.61589 8.04948 7.625 8.25V8.6875H6.75V8.25C6.75 7.97656 6.79329 7.73958 6.87988 7.53906C6.96647 7.33854 7.07357 7.15397 7.20117 6.98535C7.32878 6.81673 7.47005 6.66862 7.625 6.54102C7.77995 6.41341 7.91895 6.27897 8.04199 6.1377C8.16504 5.99642 8.27441 5.85286 8.37012 5.70703C8.46582 5.5612 8.50911 5.38802 8.5 5.1875C8.5 5.00521 8.46582 4.83431 8.39746 4.6748C8.3291 4.5153 8.23568 4.3763 8.11719 4.25781C7.9987 4.13932 7.8597 4.0459 7.7002 3.97754C7.54069 3.90918 7.36979 3.875 7.1875 3.875C7.00521 3.875 6.83431 3.90918 6.6748 3.97754C6.5153 4.0459 6.3763 4.13932 6.25781 4.25781C6.13932 4.3763 6.0459 4.5153 5.97754 4.6748C5.90918 4.83431 5.875 5.00521 5.875 5.1875H5C5 4.88672 5.05697 4.60417 5.1709 4.33984C5.28483 4.07552 5.43978 3.84538 5.63574 3.64941C5.83171 3.45345 6.06413 3.29622 6.33301 3.17773C6.60189 3.05924 6.88672 3 7.1875 3Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+                <div class="info-popup">
+                  <div class="info-arrow"></div>
+                  <div class="info-text">
+                    Please check the box if you <br />
+                    have a movement based <br />
+                    tracker
+                    <button class="info-close" aria-label="Close">
+                      &times;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="at-button">Update Frequency</button>
+          </form>
+        </div>
+        <div id="tab2" class="tab-content">
+          <!-- Put Aggressive Mode content here -->
+          <div style="padding: 24px">Aggressive Mode Section Here</div>
+        </div>
+        <div id="tab3" class="tab-content">
+          <form class="at-form">
+            <div style="display: flex; flex-direction: column; gap: 5px">
+              <p class="para-style">
+                Check whether your time zone is set correctly.
+              </p>
+              <a href="#" class="para-link">Click here</a>
+            </div>
+            <label for="vehicle" class="at-label">Vehicle:</label>
+            <select id="vehicle" class="at-select">
+              <option>Select Vehicle</option>
+              <option>Vehicle 1</option>
+              <option>Vehicle 2</option>
+            </select>
+
+            <label for="frequency" class="at-label">Pings per Day:</label>
+            <select id="frequency" class="at-select">
+              <option>Select Frequency</option>
+              <option>1</option>
+              <option>2</option>
+              <option>4</option>
+            </select>
+
+            <div class="at-checkbox-row">
+              <input type="checkbox" id="movement" class="at-checkbox" />
+              <label for="movement" class="at-checkbox-label">
+                Send Movement Commands
+              </label>
+              <div class="info-hover-container">
+                <span class="at-info"
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="13"
+                      height="13"
+                      rx="6.5"
+                      stroke="black"
+                    />
+                    <path
+                      d="M6.75 9.5625H7.625V10.4375H6.75V9.5625ZM7.1875 3C7.48828 3 7.77083 3.05697 8.03516 3.1709C8.29948 3.28483 8.52962 3.44206 8.72559 3.64258C8.92155 3.8431 9.07878 4.07552 9.19727 4.33984C9.31576 4.60417 9.375 4.88672 9.375 5.1875C9.375 5.46094 9.33171 5.69792 9.24512 5.89844C9.15853 6.09896 9.05143 6.28353 8.92383 6.45215C8.79622 6.62077 8.65495 6.76888 8.5 6.89648C8.34505 7.02409 8.20605 7.15853 8.08301 7.2998C7.95996 7.44108 7.85059 7.58464 7.75488 7.73047C7.65918 7.8763 7.61589 8.04948 7.625 8.25V8.6875H6.75V8.25C6.75 7.97656 6.79329 7.73958 6.87988 7.53906C6.96647 7.33854 7.07357 7.15397 7.20117 6.98535C7.32878 6.81673 7.47005 6.66862 7.625 6.54102C7.77995 6.41341 7.91895 6.27897 8.04199 6.1377C8.16504 5.99642 8.27441 5.85286 8.37012 5.70703C8.46582 5.5612 8.50911 5.38802 8.5 5.1875C8.5 5.00521 8.46582 4.83431 8.39746 4.6748C8.3291 4.5153 8.23568 4.3763 8.11719 4.25781C7.9987 4.13932 7.8597 4.0459 7.7002 3.97754C7.54069 3.90918 7.36979 3.875 7.1875 3.875C7.00521 3.875 6.83431 3.90918 6.6748 3.97754C6.5153 4.0459 6.3763 4.13932 6.25781 4.25781C6.13932 4.3763 6.0459 4.5153 5.97754 4.6748C5.90918 4.83431 5.875 5.00521 5.875 5.1875H5C5 4.88672 5.05697 4.60417 5.1709 4.33984C5.28483 4.07552 5.43978 3.84538 5.63574 3.64941C5.83171 3.45345 6.06413 3.29622 6.33301 3.17773C6.60189 3.05924 6.88672 3 7.1875 3Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+                <div class="info-popup">
+                  <div class="info-arrow"></div>
+                  <div class="info-text">
+                    Please check the box if you <br />
+                    have a movement based <br />
+                    tracker
+                    <button class="info-close" aria-label="Close">
+                      &times;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="at-button">Update Frequency</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openTab(evt, tabId) {
+        var i, tabcontent, tabbtns;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tabbtns = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabbtns.length; i++) {
+          tabbtns[i].classList.remove("active");
+        }
+        document.getElementById(tabId).style.display = "block";
+        evt.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
